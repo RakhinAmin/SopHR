@@ -4,6 +4,8 @@ import pytesseract
 from PIL import Image
 import openpyxl
 
+SUPPORTED_EXTENSIONS = ['.txt', '.pdf', '.xlsx', '.png', '.jpg', '.jpeg']
+
 def extract_text_from_file(file_path):
     ext = os.path.splitext(file_path)[-1].lower()
 
@@ -21,7 +23,7 @@ def extract_text_from_file(file_path):
             image = Image.open(file_path)
             return pytesseract.image_to_string(image)
 
-        elif ext in ['.xlsx', '.xls', '.csv']:
+        elif ext == ['.xlsx', '.xls', '.csv']:
             wb = openpyxl.load_workbook(file_path, data_only=True)
             text = ""
             for sheet in wb.worksheets:
@@ -34,3 +36,16 @@ def extract_text_from_file(file_path):
 
     except Exception as e:
         return f"Error processing {file_path}: {str(e)}"
+
+def extract_from_folder(folder_path):
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            path = os.path.join(root, file)
+            if os.path.splitext(file)[-1].lower() in SUPPORTED_EXTENSIONS:
+                print(f"\n--- {file} ---")
+                print(extract_text_from_file(path))
+
+# 🔧 Update this with your test folder path
+if __name__ == "__main__":
+    test_folder = "test_files"  # Replace with your folder name
+    extract_from_folder(test_folder)
