@@ -47,5 +47,5 @@ def extract_from_folder(folder_path):
 
 # 🔧 Update this with your test folder path
 if __name__ == "__main__":
-    test_folder = "test_files"  # Replace with your folder name
+    test_folder = r"C:\Users\Rakhin.Amin\OneDrive - Sopher + Co LLP\Software Development\BankStatements\SopHR\Extraction"  # Replace with your folder name
     extract_from_folder(test_folder)
