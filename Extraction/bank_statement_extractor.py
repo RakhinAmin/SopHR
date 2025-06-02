@@ -2,46 +2,39 @@ import pdfplumber
 import pandas as pd
 import re
 
-def is_date(s):
-    return re.match(r"\d{2}/\d{2}/\d{4}", s.strip()) is not None
-
-def try_parse_amount(s):
-    try:
-        return float(s.replace(",", "").replace("£", "").replace("$", ""))
-    except:
-        return None
-
-def extract_from_bank_pdf(pdf_path):
-    data = []
+def extract_transactions(pdf_path):
+    transactions = []
+    date_pattern = re.compile(r"^\d{2} \w{3} \d{2}")
+    txn_pattern = re.compile(r"^(\d{2} \w{3} \d{2})\s+(.+?)\s+£([\d,]+\.\d{2})\s+£([\d,]+\.\d{2})$")
 
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:
-            lines = page.extract_text().split('\n')
-            for line in lines:
-                parts = re.split(r'\s{2,}', line.strip())
-                
-                # Only consider lines that look like they start with a date
-                if parts and is_date(parts[0]):
-                    # Try basic patterns like: Date | Description | Amount | Balance
-                    if len(parts) >= 3:
-                        date = parts[0]
-                        description = parts[1]
-                        amount = try_parse_amount(parts[2])
-                        balance = try_parse_amount(parts[3]) if len(parts) > 3 else None
+            lines = page.extract_text().split("\n")
+            current_txn = None
 
-                        data.append({
-                            'Date': date,
-                            'Description': description,
-                            'Amount': amount,
-                            'Balance': balance
-                        })
+            for i, line in enumerate(lines):
+                line = line.strip()
+                # Match full transaction line
+                match = txn_pattern.match(line)
+                if match:
+                    date, description, amount, balance = match.groups()
+                    transactions.append({
+                        "Date": date,
+                        "Description": description,
+                        "Amount": float(amount.replace(",", "")),
+                        "Balance": float(balance.replace(",", ""))
+                    })
+                else:
+                    # Try to match partial line, and keep appending to last transaction
+                    if current_txn and not date_pattern.match(line):
+                        transactions[-1]["Description"] += " " + line.strip()
 
-    df = pd.DataFrame(data)
-    return df
+    return pd.DataFrame(transactions)
 
-# Usage
+
+# === Run It ===
 if __name__ == "__main__":
-    pdf_file = "bank_statement.pdf"  # Replace with your file
-    df = extract_from_bank_pdf(pdf_file)
+    pdf_file = r"C:\Users\Sopher.Intern\Documents\SopHR\Extraction\VM Statement - Dec 24.pdf"  # Replace with your actual file name
+    df = extract_transactions(pdf_file)
     df.to_excel("bank_statement_output.xlsx", index=False)
-    print("Output saved to bank_statement_output.xlsx")
+    print("Saved as 'bank_statement_output.xlsx'")
