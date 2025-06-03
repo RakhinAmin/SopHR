@@ -1,108 +1,120 @@
+#!/usr/bin/env python3
 """
-semantic_categoriser.py
-----------------------
-
-• Loads a bank-statement Excel file.
-• Uses SBERT embeddings to match each Description to the closest Category
-  (from the Categories sheet) via cosine similarity.
-• Falls back to 'Uncategorised' when no label exceeds a configurable threshold.
+semantic_categoriser.py  –  accepts CSV and Excel inputs.
 """
 
+import argparse, logging, re
+from pathlib import Path
 import pandas as pd
+import numpy as np
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
-import logging
 from functools import lru_cache
-from pathlib import Path
 
-# ───────────────────────────  CONFIG  ────────────────────────────
+# ────────────────── config ──────────────────
 MODEL_NAME   = "all-MiniLM-L6-v2"
 BATCH_SIZE   = 32
-THRESHOLD    = 0.70          # min cosine similarity to accept a label
-INPUT_FILE   = r"C:\Users\Sopher.Intern\Downloads\20250106_20250110_null.xlsx"
-DATA_SHEET   = "20250106_20250110_null"  # rename to your sheet tab
-CAT_SHEET    = "Categories"
-OUTPUT_FILE  = "auto_categorized_semantic.xlsx"
-# ────────────────────────────────────────────────────────────────
+THRESHOLD    = 0.75
+# ────────────────────────────────────────────
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s  %(levelname)s  %(message)s",
-)
-
-# ─────────────────────────  UTILITIES  ──────────────────────────
+# ---------- SBERT loader ----------
 @lru_cache(maxsize=1)
-def load_model(name: str = MODEL_NAME) -> SentenceTransformer:
-    logging.info("Loading SBERT model…")
-    return SentenceTransformer(name, device="cpu")        # switch to cuda if available
+def load_model() -> SentenceTransformer:
+    device = "cuda" if SentenceTransformer(MODEL_NAME).device.type == "cuda" else "cpu"
+    logging.info("Loading SBERT (%s) on %s", MODEL_NAME, device.upper())
+    return SentenceTransformer(MODEL_NAME, device=device)
 
-def load_data(file_path: str,
-              data_sheet: str = DATA_SHEET,
-              cat_sheet: str = CAT_SHEET):
-    path = Path(file_path)
-    if not path.exists():
-        raise FileNotFoundError(f"Excel file '{file_path}' not found.")
+# ---------- IO helpers ----------
+EXCEL_SUFX = {".xls", ".xlsx", ".xlsm", ".xlsb"}
 
-    with pd.ExcelFile(path) as xls:
-        logging.info("Sheets found: %s", ", ".join(xls.sheet_names))
-        df            = xls.parse(data_sheet)
-        categories_df = xls.parse(cat_sheet)
+def read_statement(path: Path, sheet: str | None):
+    if path.suffix.lower() in EXCEL_SUFX:
+        return pd.read_excel(path, sheet_name=sheet)
+    if path.suffix.lower() == ".csv":
+        if sheet:
+            logging.warning("Ignoring --data-sheet for CSV input.")
+        return pd.read_csv(path)
+    raise ValueError("Unsupported statement file type.")
 
-    # basic validation
-    if "Description" not in df.columns:
-        raise ValueError("Data sheet must contain a 'Description' column.")
-    if "Category" not in categories_df.columns:
-        raise ValueError("Categories sheet must contain a 'Category' column.")
+def read_categories(path: Path, sheet: str | None):
+    if path.suffix.lower() in EXCEL_SUFX:
+        return pd.read_excel(path, sheet_name=sheet or "Categories")
+    if path.suffix.lower() == ".csv":
+        return pd.read_csv(path)
+    raise ValueError("Unsupported categories file type.")
 
-    df["Description"] = df["Description"].fillna("").astype(str).str.strip()
-    categories_df["Category"] = (
-        categories_df["Category"].fillna("").astype(str).str.strip()
-    )
-    category_labels = categories_df["Category"].drop_duplicates().tolist()
-    if not category_labels:
-        raise ValueError("No categories provided in the Categories sheet.")
+# ---------- semantic matcher ----------
+def semantic_match(descs, cat_labels, model, threshold):
+    desc_vecs = model.encode(descs, batch_size=BATCH_SIZE, show_progress_bar=True)
+    cat_vecs  = model.encode(cat_labels, batch_size=BATCH_SIZE, show_progress_bar=False)
 
-    return df, category_labels
+    sims      = cosine_similarity(desc_vecs, cat_vecs)
+    idx       = np.argmax(sims, axis=1)
+    best_sim  = sims[np.arange(len(descs)), idx]
 
-def semantic_match(descriptions, category_labels, model, threshold=THRESHOLD):
-    """Return best category & similarity for each description."""
-    logging.info("Encoding %d descriptions…", len(descriptions))
-    desc_vecs = model.encode(descriptions, batch_size=BATCH_SIZE, show_progress_bar=True)
-
-    logging.info("Encoding %d category labels…", len(category_labels))
-    cat_vecs  = model.encode(category_labels, batch_size=BATCH_SIZE, show_progress_bar=True)
-
-    sims      = cosine_similarity(desc_vecs, cat_vecs)          # shape: [n_txn, n_cat]
-    best_idx  = np.argmax(sims, axis=1)
-    best_sim  = sims[np.arange(len(descriptions)), best_idx]
-
-    chosen    = [
-        category_labels[i] if sim >= threshold else "Uncategorised"
-        for i, sim in zip(best_idx, best_sim)
-    ]
+    chosen = [cat_labels[i] if s >= threshold else "Uncategorised"
+              for i, s in zip(idx, best_sim)]
     return chosen, best_sim
 
-def categorise_file():
-    # Load
-    df, category_labels = load_data(INPUT_FILE)
+# ---------- main ----------
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--statement", required=True,
+                    help="Bank statement file (.csv, .xls[x/m/b])")
+    ap.add_argument("--data-sheet", default=None,
+                    help="Sheet name for the statement (Excel only)")
+    ap.add_argument("--cat-file",   default=None,
+                    help="Separate file holding categories list (CSV/Excel). "
+                         "If omitted, script looks for a 'Categories' sheet in the statement workbook.")
+    ap.add_argument("--cat-sheet",  default="Categories",
+                    help="Sheet name for the categories list when --cat-file is Excel")
+    ap.add_argument("--output",     default="auto_categorised.xlsx")
+    ap.add_argument("--threshold",  type=float, default=THRESHOLD)
+    args = ap.parse_args()
 
-    # Model + semantic k-NN
+    logging.basicConfig(level=logging.INFO,
+                        format="%(asctime)s  %(levelname)s  %(message)s")
+
+    st_path  = Path(args.statement)
+    cat_path = Path(args.cat_file) if args.cat_file else None
+
+    # 1️⃣  Load data
+    df = read_statement(st_path, args.data_sheet)
+    if "Description" not in df.columns:
+        raise ValueError("Statement must contain a 'Description' column.")
+
+    if cat_path:
+        cat_df = read_categories(cat_path, args.cat_sheet)
+    else:
+        if st_path.suffix.lower() not in EXCEL_SUFX:
+            raise ValueError("For CSV statements you must supply --cat-file.")
+        cat_df = read_categories(st_path, args.cat_sheet)
+
+    if "Category" not in cat_df.columns:
+        raise ValueError("Categories file/sheet must contain a 'Category' column.")
+    categories = cat_df["Category"].dropna().astype(str).str.strip().tolist()
+    if not categories:
+        raise ValueError("No categories provided.")
+
+    df["Description"] = df["Description"].fillna("").astype(str).str.strip()
+
+    # 2️⃣  SBERT + cosine match
     model = load_model()
     df["Category"], df["Similarity"] = semantic_match(
         df["Description"].tolist(),
-        category_labels,
+        categories,
         model,
-        threshold=THRESHOLD,
+        args.threshold
     )
 
-    # Save
-    try:
-        df.to_excel(OUTPUT_FILE, index=False)
-        logging.info("✅ Categorised file written to '%s'", OUTPUT_FILE)
-    except PermissionError:
-        logging.error("Cannot write to '%s' (permission denied).", OUTPUT_FILE)
+    # 3️⃣  Save (always writes Excel so both sheets can live together)
+    with pd.ExcelWriter(args.output, engine="openpyxl") as writer:
+        df.to_excel(writer, sheet_name="Categorised_Data", index=False)
+        pd.DataFrame({"Category": categories}).to_excel(
+            writer, sheet_name="Categories", index=False)
 
-# ──────────────────────────────  MAIN  ──────────────────────────
+    logging.info("✅ Written %s", args.output)
+
+
 if __name__ == "__main__":
-    categorise_file()
+    main()
