@@ -12,7 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from functools import lru_cache
 
 # ────────────────── config ──────────────────
-MODEL_NAME   = "ProsusAI/finbert"
+MODEL_NAME   = "sentence-transformers/all-mpnet-base-v2"
 BATCH_SIZE   = 32
 THRESHOLD    = 0.75
 # ────────────────────────────────────────────
