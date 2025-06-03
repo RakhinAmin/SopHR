@@ -20,8 +20,8 @@ from pathlib import Path
 MODEL_NAME   = "all-MiniLM-L6-v2"
 BATCH_SIZE   = 32
 THRESHOLD    = 0.70          # min cosine similarity to accept a label
-INPUT_FILE   = "bank_statement.xlsx"
-DATA_SHEET   = "Transactions"  # rename to your sheet tab
+INPUT_FILE   = r"C:\Users\Sopher.Intern\Downloads\20250106_20250110_null.xlsx"
+DATA_SHEET   = "20250106_20250110_null"  # rename to your sheet tab
 CAT_SHEET    = "Categories"
 OUTPUT_FILE  = "auto_categorized_semantic.xlsx"
 # ────────────────────────────────────────────────────────────────
