@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-semantic_categoriser.py  –  accepts CSV and Excel inputs.
+Accepts CSV and Excel inputs.
 """
 
 import argparse, logging, re
@@ -12,7 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from functools import lru_cache
 
 # ────────────────── config ──────────────────
-MODEL_NAME   = "all-MiniLM-L6-v2"
+MODEL_NAME   = "ProsusAI/finbert"
 BATCH_SIZE   = 32
 THRESHOLD    = 0.75
 # ────────────────────────────────────────────
@@ -78,7 +78,7 @@ def main():
     st_path  = Path(args.statement)
     cat_path = Path(args.cat_file) if args.cat_file else None
 
-    # 1️⃣  Load data
+    # 1️ Load data
     df = read_statement(st_path, args.data_sheet)
     if "Description" not in df.columns:
         raise ValueError("Statement must contain a 'Description' column.")
@@ -98,7 +98,7 @@ def main():
 
     df["Description"] = df["Description"].fillna("").astype(str).str.strip()
 
-    # 2️⃣  SBERT + cosine match
+    # 2️ SBERT + cosine match
     model = load_model()
     df["Category"], df["Similarity"] = semantic_match(
         df["Description"].tolist(),
@@ -107,13 +107,13 @@ def main():
         args.threshold
     )
 
-    # 3️⃣  Save (always writes Excel so both sheets can live together)
+    # 3️ Save (always writes Excel so both sheets can live together)
     with pd.ExcelWriter(args.output, engine="openpyxl") as writer:
         df.to_excel(writer, sheet_name="Categorised_Data", index=False)
         pd.DataFrame({"Category": categories}).to_excel(
             writer, sheet_name="Categories", index=False)
 
-    logging.info("✅ Written %s", args.output)
+    logging.info("Written %s", args.output)
 
 
 if __name__ == "__main__":
