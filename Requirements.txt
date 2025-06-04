@@ -1,3 +1,7 @@
-Requirements
-
-Necessary libraries: Textract, Openpyxl, PyTesseract
+streamlit>=1.33
+pandas>=2.2
+sentence-transformers>=2.7
+scikit-learn>=1.6
+openpyxl>=3.1
+unidecode>=1.3          # for clean_description
+torch                   # pin to cpu or torchvision-cuda if GPU
