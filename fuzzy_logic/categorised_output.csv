@@ -1,21 +1,51 @@
-Description,Category,Suggestion_1,Suggestion_2,Suggestion_3
-Payment: Ocado,Uncategorised,Creditors Control Account,Creditors - trade,Creditors - trade
-Payment: Weightmans,Uncategorised,Creditors Control Account,Creditors - trade,"Creditors Control Account, 7906 - Exchange Rate Variance"
-Payment: Costa Coffee,Uncategorised,Creditors Control Account,Creditors - trade,Creditors - trade
-Payment: Box UK,Uncategorised,Creditors - trade,Creditors Control Account,Creditors - trade
-Payment: Green Hasson Janks,Uncategorised,Creditors Control Account,Creditors - trade,"Creditors Control Account, 7906 - Exchange Rate Variance"
-Payment: Alex Jacobs,Uncategorised,Creditors Control Account,Creditors - trade,"Creditors Control Account, 7906 - Exchange Rate Variance"
-Payment: Waitrose,Uncategorised,Creditors Control Account,"Creditors Control Account, 7906 - Exchange Rate Variance",Creditors - trade
-Payment: Gov.Uk,Uncategorised,Creditors - trade,Creditors Control Account,Creditors - trade
-Payment: BAFTA,Uncategorised,Creditors Control Account,"Creditors Control Account, 7906 - Exchange Rate Variance",Creditors - trade
-Payment: Sumup Pos,Uncategorised,Creditors Control Account,Creditors - trade,Creditors - trade
-Payment: Crozier,Uncategorised,Creditors - trade,Creditors Control Account,Creditors - trade
-Payment: Ridge Farm,Uncategorised,Creditors Control Account,"Creditors Control Account, 7906 - Exchange Rate Variance",Creditors - trade
-Payment: TFA London,Uncategorised,"Creditors Control Account, 7906 - Exchange Rate Variance",Creditors Control Account,Creditors - trade
-Payment: Amazon Digital,Creditors Control Account,,,
-John Restaurant,U.K. Entertainment,,,
-Payment: Addison Lee,Uncategorised,Creditors Control Account,Creditors - trade,Creditors - trade
-Payment: Sendean Cameras,Uncategorised,Creditors - trade,Creditors Control Account,Creditors - trade
-Overpayment: Sopher+Co,Uncategorised,Creditors - trade,Creditors Control Account,"Creditors Control Account, 7906 - Exchange Rate Variance"
-Payment: Tree Love,Uncategorised,"Creditors Control Account, 7906 - Exchange Rate Variance",Creditors - trade,Creditors Control Account
-Michael Hoppen,Uncategorised,U.K. Entertainment,Creditors - trade,Subscriptions
+Description,Category,Match_Score,Matched_Rule,Suggestion_1,Suggestion_2,Suggestion_3
+Payment Ikea&,Utilities,100.0,ikea,,,
+Express Ikea Limited,Utilities,100.0,ikea,,,
+Starbucks Subscription UK,Entertainment,100.0,starbucks subscription,,,
+Amazon Online Limited,Shopping,100.0,amazon online,,,
+H&M Subscription,Clothing,100.0,hm subscription,,,
+Ikea UK,Utilities,100.0,ikea,,,
+Waitrose Store,Fuel,100.0,waitrose store,,,
+Tesco123,Uncategorised,86.15,tesco,Travel (86.15%),Subscriptions (66.06%),Groceries (60.77%)
+JustEat Online.,Transport,100.0,justeat online,,,
+KFC Store,Entertainment,100.0,kfc store,,,
+Uber Store&,Dining,100.0,uber store,,,
+KFC123,Uncategorised,80.0,kfc,Electronics (80.0%),Entertainment (54.36%),Entertainment (50.67%)
+Payment Deliveroo Limited,Electronics,100.0,deliveroo,,,
+Apple123,Uncategorised,86.15,apple,Clothing (86.15%),Dining (66.06%),Shopping (60.77%)
+Store Coffee Costa,Uncategorised,89.09,costa coffee store,Clothing (89.09%),Health (79.01%),Entertainment (76.92%)
+Online Amazon Limited,Shopping,90.77,amazon online,,,
+Subscription Zara Limited,Travel,100.0,zara,,,
+Ltd H&M UK,Uncategorised,86.67,hm ltd,Electronics (86.67%),Clothing (66.67%),Fuel (66.67%)
+H&M Payment Limited,Dining,100.0,hm payment,,,
+Online Asda,Uncategorised,88.24,asda online,Fuel (88.24%),Dining (80.0%),Utilities (80.0%)
+Rail National Payment Limited,Fuel,90.48,national rail payment,,,
+Starbucks Subscription Limited,Entertainment,100.0,starbucks subscription,,,
+Subscription Starbucks.,Uncategorised,88.89,bp subscription,Clothing (88.89%),Clothing (88.89%),Entertainment (88.24%)
+Ltd Asda Limited,Groceries,90.0,asda ltd,,,
+Payment Sainsbury&,Health,100.0,sainsbury,,,
+Greggs Ltd UK,Subscriptions,100.0,greggs,,,
+Payment Waitrose.,Uncategorised,86.67,waitrose payment,Home Improvement (86.67%),Shopping (82.35%),Dining (82.35%)
+Online JustEat,Uncategorised,86.67,justeat online,Transport (86.67%),Dining (80.0%),Utilities (80.0%)
+Subscription BP,Groceries,100.0,bp,,,
+Morrisons Payment.,Home Improvement,100.0,morrisons payment,,,
+Zara Online UK,Travel,100.0,zara,,,
+Ltd Boots UK,Uncategorised,88.24,boots ltd,Transport (88.24%),Clothing (66.67%),Fuel (66.67%)
+Spotify Payment UK,Clothing,100.0,spotify payment,,,
+Shell Ltd Limited,Health,100.0,shell ltd,,,
+Costa Coffee Subscription.,Dining,100.0,costa coffee subscription,,,
+BP Ltd UK,Fuel,100.0,bp ltd,,,
+Express Ikea!,Utilities,100.0,ikea,,,
+Spotify Payment123,Entertainment,100.0,spotify,,,
+Trainline Store.,Subscriptions,100.0,trainline store,,,
+Express McDonalds&,Uncategorised,87.69,mcdonalds express,Transport (87.69%),Travel (82.35%),Entertainment (77.78%)
+Store BP&,Groceries,100.0,bp,,,
+Addison Express Lee UK,Clothing,95.29,addison lee express,,,
+Payment BP123,Uncategorised,85.12,bp payment,Shopping (85.12%),Dining (82.35%),Electronics (77.78%)
+JustEat Subscription UK,Transport,100.0,justeat subscription,,,
+Waitrose Subscription&,Electronics,100.0,waitrose subscription,,,
+Zara Subscription UK,Travel,100.0,zara,,,
+BP Subscription Limited,Clothing,100.0,bp subscription,,,
+Netflix Express Limited,Subscriptions,100.0,netflix express,,,
+JustEat Ltd.,Health,100.0,justeat ltd,,,
+Starbucks Online&,Entertainment,100.0,starbucks online,,,
