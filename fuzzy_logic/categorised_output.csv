@@ -1,51 +1,67 @@
-Description,Category,Match_Score,Matched_Rule,Suggestion_1,Suggestion_2,Suggestion_3
-Payment Ikea&,Utilities,100.0,ikea,,,
-Express Ikea Limited,Utilities,100.0,ikea,,,
-Starbucks Subscription UK,Entertainment,100.0,starbucks subscription,,,
-Amazon Online Limited,Shopping,100.0,amazon online,,,
-H&M Subscription,Clothing,100.0,hm subscription,,,
-Ikea UK,Utilities,100.0,ikea,,,
-Waitrose Store,Fuel,100.0,waitrose store,,,
-Tesco123,Uncategorised,86.15,tesco,Travel (86.15%),Subscriptions (66.06%),Groceries (60.77%)
-JustEat Online.,Transport,100.0,justeat online,,,
-KFC Store,Entertainment,100.0,kfc store,,,
-Uber Store&,Dining,100.0,uber store,,,
-KFC123,Uncategorised,80.0,kfc,Electronics (80.0%),Entertainment (54.36%),Entertainment (50.67%)
-Payment Deliveroo Limited,Electronics,100.0,deliveroo,,,
-Apple123,Uncategorised,86.15,apple,Clothing (86.15%),Dining (66.06%),Shopping (60.77%)
-Store Coffee Costa,Uncategorised,89.09,costa coffee store,Clothing (89.09%),Health (79.01%),Entertainment (76.92%)
-Online Amazon Limited,Shopping,90.77,amazon online,,,
-Subscription Zara Limited,Travel,100.0,zara,,,
-Ltd H&M UK,Uncategorised,86.67,hm ltd,Electronics (86.67%),Clothing (66.67%),Fuel (66.67%)
-H&M Payment Limited,Dining,100.0,hm payment,,,
-Online Asda,Uncategorised,88.24,asda online,Fuel (88.24%),Dining (80.0%),Utilities (80.0%)
-Rail National Payment Limited,Fuel,90.48,national rail payment,,,
-Starbucks Subscription Limited,Entertainment,100.0,starbucks subscription,,,
-Subscription Starbucks.,Uncategorised,88.89,bp subscription,Clothing (88.89%),Clothing (88.89%),Entertainment (88.24%)
-Ltd Asda Limited,Groceries,90.0,asda ltd,,,
-Payment Sainsbury&,Health,100.0,sainsbury,,,
-Greggs Ltd UK,Subscriptions,100.0,greggs,,,
-Payment Waitrose.,Uncategorised,86.67,waitrose payment,Home Improvement (86.67%),Shopping (82.35%),Dining (82.35%)
-Online JustEat,Uncategorised,86.67,justeat online,Transport (86.67%),Dining (80.0%),Utilities (80.0%)
-Subscription BP,Groceries,100.0,bp,,,
-Morrisons Payment.,Home Improvement,100.0,morrisons payment,,,
-Zara Online UK,Travel,100.0,zara,,,
-Ltd Boots UK,Uncategorised,88.24,boots ltd,Transport (88.24%),Clothing (66.67%),Fuel (66.67%)
-Spotify Payment UK,Clothing,100.0,spotify payment,,,
-Shell Ltd Limited,Health,100.0,shell ltd,,,
-Costa Coffee Subscription.,Dining,100.0,costa coffee subscription,,,
-BP Ltd UK,Fuel,100.0,bp ltd,,,
-Express Ikea!,Utilities,100.0,ikea,,,
-Spotify Payment123,Entertainment,100.0,spotify,,,
-Trainline Store.,Subscriptions,100.0,trainline store,,,
-Express McDonalds&,Uncategorised,87.69,mcdonalds express,Transport (87.69%),Travel (82.35%),Entertainment (77.78%)
-Store BP&,Groceries,100.0,bp,,,
-Addison Express Lee UK,Clothing,95.29,addison lee express,,,
-Payment BP123,Uncategorised,85.12,bp payment,Shopping (85.12%),Dining (82.35%),Electronics (77.78%)
-JustEat Subscription UK,Transport,100.0,justeat subscription,,,
-Waitrose Subscription&,Electronics,100.0,waitrose subscription,,,
-Zara Subscription UK,Travel,100.0,zara,,,
-BP Subscription Limited,Clothing,100.0,bp subscription,,,
-Netflix Express Limited,Subscriptions,100.0,netflix express,,,
-JustEat Ltd.,Health,100.0,justeat ltd,,,
-Starbucks Online&,Entertainment,100.0,starbucks online,,,
+Date,Description,Amount,Type,Description_Clean,Category,Match_Score,Matched_Rule,Auto_Approved,Suggestion_1,Suggestion_2,Suggestion_3
+2024-01-15,TESCO EXTRA LONDON,-45.67,Debit,tesco extra london,Groceries,100.0,tesco,True,,,
+2024-01-15,SALARY PAYMENT ACME CORP,2850.0,Credit,salary acme corp,Uncategorised,48.24,costa coffee store,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-01-15,STARBUCKS OXFORD ST,-4.85,Debit,starbucks oxford st,Dining,100.0,starbucks,True,,,
+2024-01-16,SHELL PETROL STATION,-52.3,Debit,shell petrol station,Fuel,100.0,shell,True,,,
+2024-01-16,AMAZON PRIME VIDEO,-8.99,Debit,amazon prime video,Shopping,100.0,amazon,True,,,
+2024-01-16,REFUND ZARA ONLINE RETURN,34.99,Credit,refund zara online return,Clothing,100.0,zara,True,,,
+2024-01-17,TRAINLINE BOOKING REF 12345,-28.5,Debit,trainline booking,Travel,100.0,trainline,True,,,
+2024-01-17,KFC PICCADILLY CIRCUS,-12.95,Debit,kfc piccadilly circus,Dining,100.0,kfc,True,,,
+2024-01-18,SAINSBURY LOCAL BRANCH,-23.44,Debit,sainsbury local branch,Groceries,100.0,sainsbury,True,,,
+2024-01-18,NETFLIX SUBSCRIPTION,-15.99,Debit,netflix subscription,Entertainment,100.0,netflix subscription,True,,,
+2024-01-18,FREELANCE PAYMENT CLIENT ABC,450.0,Credit,freelance client abc,Uncategorised,51.95,internet bill,False,Utilities (51.95%),Utilities (51.19%),No Match (0.0%)
+2024-01-19,UBER TRIP FROM HOME TO WORK,-18.75,Debit,uber trip from home to work,Travel,100.0,uber,True,,,
+2024-01-19,COSTA COFFEE WATERLOO,-3.6,Debit,costa coffee waterloo,Dining,100.0,costa coffee,True,,,
+2024-01-20,BP GARAGE FUEL,-48.22,Debit,bp garage fuel,Fuel,100.0,bp,True,,,
+2024-01-20,ZARA OXFORD STREET,-89.99,Debit,zara oxford street,Clothing,100.0,zara,True,,,
+2024-01-20,CASHBACK CREDIT CARD REWARDS,15.5,Credit,cashback card rewards,Uncategorised,46.32,asda express,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-01-21,DELIVEROO ORDER 987654,-22.85,Debit,deliveroo order,Dining,100.0,deliveroo,True,,,
+2024-01-21,ASDA SUPERSTORE,-67.33,Debit,asda superstore,Groceries,100.0,asda,True,,,
+2024-01-22,SPOTIFY PREMIUM,-9.99,Debit,spotify premium,Entertainment,100.0,spotify,True,,,
+2024-01-22,MCDONALD'S TOTTENHAM COURT RD,-8.47,Debit,mcdonalds tottenham court rd,Dining,100.0,mcdonalds,True,,,
+2024-01-22,EBAY SALE ELECTRONICS,125.0,Credit,ebay sale electronics,Uncategorised,61.96,electric bill,False,Utilities (61.96%),No Match (0.0%),No Match (0.0%)
+2024-01-23,H&M REGENT STREET,-34.5,Debit,hm regent street,Clothing,100.0,hm,True,,,
+2024-01-23,WAITROSE & PARTNERS,-41.28,Debit,waitrose partners,Groceries,100.0,waitrose,True,,,
+2024-01-24,APPLE STORE COVENT GARDEN,-199.99,Debit,apple store covent garden,Electronics,100.0,apple,True,,,
+2024-01-24,JUSTEAT ORDER FROM PIZZA HUT,-18.9,Debit,justeat order from pizza hut,Dining,100.0,justeat,True,,,
+2024-01-24,REFUND APPLE STORE RETURN,45.99,Credit,refund apple store return,Electronics,100.0,apple,True,,,
+2024-01-25,BOOTS PHARMACY KINGS CROSS,-15.67,Debit,boots pharmacy kings cross,Health,100.0,boots,True,,,
+2024-01-25,IKEA WEMBLEY,-124.5,Debit,ikea wembley,Home Improvement,100.0,ikea,True,,,
+2024-01-25,DIVIDEND PAYMENT STOCKS,89.25,Credit,dividend stocks,Uncategorised,55.84,dentist,False,Health (55.84%),Dining (55.7%),Home Improvement (52.8%)
+2024-01-26,NATIONAL RAIL LONDON TO BIRMINGHAM,-65.0,Debit,national rail london to birmingham,Travel,100.0,national rail,True,,,
+2024-01-26,GREGGS BAKER STREET,-5.2,Debit,greggs baker street,Dining,100.0,greggs,True,,,
+2024-01-27,B&Q WAREHOUSE PAINT SUPPLIES,-87.45,Debit,bq warehouse paint supplies,Home Improvement,100.0,bq,True,,,
+2024-01-27,MORRISONS SUPERMARKET,-38.91,Debit,morrisons supermarket,Groceries,100.0,morrisons,True,,,
+2024-01-27,PART TIME JOB PAYMENT,180.0,Credit,part time job,Uncategorised,46.74,justeat store,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-01-28,ADDISON LEE TAXI SERVICE,-25.6,Debit,addison lee taxi service,Travel,100.0,addison lee,True,,,
+2024-01-28,JOHN LEWIS PARTNERSHIP,-156.0,Debit,john lewis partnership,Clothing,100.0,john lewis,True,,,
+2024-01-29,ESSO EXPRESS FUEL STATION,-44.8,Debit,esso express fuel station,Fuel,100.0,esso,True,,,
+2024-01-29,RESTAURANT UNKNOWN NAME,-42.5,Debit,restaurant unknown name,Uncategorised,47.78,rent,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-01-29,INSURANCE CLAIM PAYOUT,275.0,Credit,insurance claim payout,Utilities,100.0,insurance,True,,,
+2024-01-30,ELECTRIC UTILITY BILL PAYMENT,-89.0,Debit,electric utility bill,Utilities,93.85,electric bill,False,,,
+2024-01-30,GAS SUPPLY MONTHLY CHARGE,-65.5,Debit,gas supply monthly charge,Uncategorised,59.39,gas bill,False,Utilities (59.39%),No Match (0.0%),No Match (0.0%)
+2024-01-31,COUNCIL TAX DIRECT DEBIT,-125.0,Debit,council tax direct,Utilities,100.0,council tax,True,,,
+2024-01-31,TAX REFUND HMRC,156.8,Credit,tax refund hmrc,Uncategorised,54.12,hm,False,Clothing (54.12%),No Match (0.0%),No Match (0.0%)
+2024-02-01,MORTGAGE PAYMENT TO HALIFAX,-1250.0,Debit,mortgage to halifax,Utilities,100.0,mortgage,True,,,
+2024-02-01,PHONE BILL THREE MOBILE,-35.0,Debit,phone bill three mobile,Utilities,100.0,phone bill,True,,,
+2024-02-01,RENTAL INCOME PROPERTY,650.0,Credit,rental income property,Uncategorised,58.46,rent,False,Utilities (58.46%),No Match (0.0%),No Match (0.0%)
+2024-02-02,INSURANCE DIRECT DEBIT AVIVA,-78.99,Debit,insurance direct aviva,Utilities,100.0,insurance,True,,,
+2024-02-02,INTERNET BROADBAND BT GROUP,-32.99,Debit,internet broadband bt group,Uncategorised,80.5,internet bill,False,Utilities (80.5%),No Match (0.0%),No Match (0.0%)
+2024-02-03,WATER BILL THAMES WATER,-42.5,Debit,water bill thames water,Utilities,100.0,water bill,True,,,
+2024-02-03,RANDOM COFFEE SHOP CAMDEN,-4.2,Debit,random coffee shop camden,Uncategorised,66.67,costa coffee,False,Dining (66.67%),Dining (58.63%),Dining (56.73%)
+2024-02-03,GIFT MONEY TRANSFER,100.0,Credit,gift money transfer,Uncategorised,52.63,trainline store,False,Travel (52.63%),No Match (0.0%),No Match (0.0%)
+2024-02-04,UNKNOWN PETROL STATION M25,-38.75,Debit,unknown petrol station m25,Uncategorised,43.48,netflix subscription,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-02-04,MYSTERY SUPERMARKET RECEIPT,-28.9,Debit,mystery supermarket receipt,Uncategorised,45.95,uber store,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-02-05,FOOD DELIVERY APP ORDER,-15.8,Debit,food delivery app order,Uncategorised,67.72,deliveroo store,False,Dining (67.72%),Dining (64.86%),Dining (61.88%)
+2024-02-05,CLOTHING STORE PURCHASE,-67.25,Debit,clothing store,Uncategorised,80.44,bp store,False,Fuel (80.44%),Clothing (80.44%),Home Improvement (80.44%)
+2024-02-05,SURVEY PAYMENT ONLINE,25.0,Credit,survey online,Uncategorised,83.0,bp online,False,Fuel (83.0%),Clothing (83.0%),Home Improvement (83.0%)
+2024-02-06,TECH STORE ELECTRONICS,-89.99,Debit,tech store electronics,Uncategorised,81.15,hm store,False,Clothing (81.15%),Fuel (76.15%),Home Improvement (76.15%)
+2024-02-06,PHARMACY PRESCRIPTION,-12.35,Debit,pharmacy prescription,Health,100.0,pharmacy,True,,,
+2024-02-07,HOME IMPROVEMENT STORE,-145.6,Debit,home improvement store,Uncategorised,80.44,bp store,False,Fuel (80.44%),Clothing (80.44%),Home Improvement (80.44%)
+2024-02-07,TRANSPORT PAYMENT CARD TOPUP,-25.0,Debit,transport card topup,Uncategorised,48.35,trainline store,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-02-07,BONUS PAYMENT WORK,300.0,Credit,bonus work,Uncategorised,58.29,boots store,False,Health (58.29%),Groceries (54.06%),Dining (52.8%)
+2024-02-08,SUBSCRIPTION SERVICE MONTHLY,-11.99,Debit,subscription service monthly,Uncategorised,88.89,bp subscription,False,Fuel (88.89%),Clothing (88.89%),Home Improvement (88.89%)
+2024-02-08,GROCERY SHOPPING WEEKLY,-72.45,Debit,grocery shopping weekly,Uncategorised,44.87,greggs store,False,No Match (0.0%),No Match (0.0%),No Match (0.0%)
+2024-02-09,RESTAURANT DINING EXPERIENCE,-89.5,Debit,restaurant dining experience,Uncategorised,52.55,trainline express,False,Travel (52.55%),No Match (0.0%),No Match (0.0%)
+2024-02-09,FUEL PAYMENT AT STATION,-41.2,Debit,fuel at station,Uncategorised,52.19,justeat subscription,False,Dining (52.19%),Dining (51.82%),Dining (51.67%)
+2024-02-09,INTEREST EARNED SAVINGS,12.45,Credit,interest earned savings,Uncategorised,55.76,internet bill,False,Utilities (55.76%),Groceries (50.0%),No Match (0.0%)

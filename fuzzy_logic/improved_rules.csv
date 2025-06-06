@@ -1,0 +1,221 @@
+Description,Category
+Amazon,Shopping
+Amazon Express,Shopping
+Amazon Online,Shopping
+Amazon Store,Shopping
+Amazon Ltd,Shopping
+Amazon Payment,Shopping
+Amazon Subscription,Shopping
+Starbucks,Dining
+Starbucks Express,Dining
+Starbucks Online,Dining
+Starbucks Store,Dining
+Starbucks Ltd,Dining
+Starbucks Payment,Dining
+Starbucks Subscription,Dining
+KFC,Dining
+KFC Express,Dining
+KFC Online,Dining
+KFC Store,Dining
+KFC Ltd,Dining
+KFC Payment,Dining
+KFC Subscription,Dining
+McDonalds,Dining
+McDonalds Express,Dining
+McDonalds Online,Dining
+McDonalds Store,Dining
+McDonalds Ltd,Dining
+McDonalds Payment,Dining
+McDonalds Subscription,Dining
+Greggs,Dining
+Greggs Express,Dining
+Greggs Online,Dining
+Greggs Store,Dining
+Greggs Ltd,Dining
+Greggs Payment,Dining
+Greggs Subscription,Dining
+Costa Coffee,Dining
+Costa Coffee Express,Dining
+Costa Coffee Online,Dining
+Costa Coffee Store,Dining
+Costa Coffee Ltd,Dining
+Costa Coffee Payment,Dining
+Costa Coffee Subscription,Dining
+JustEat,Dining
+JustEat Express,Dining
+JustEat Online,Dining
+JustEat Store,Dining
+JustEat Ltd,Dining
+JustEat Payment,Dining
+JustEat Subscription,Dining
+Deliveroo,Dining
+Deliveroo Express,Dining
+Deliveroo Online,Dining
+Deliveroo Store,Dining
+Deliveroo Ltd,Dining
+Deliveroo Payment,Dining
+Deliveroo Subscription,Dining
+Uber Eats,Dining
+Uber Food,Dining
+Tesco,Groceries
+Tesco Express,Groceries
+Tesco Online,Groceries
+Tesco Store,Groceries
+Tesco Ltd,Groceries
+Tesco Payment,Groceries
+Tesco Subscription,Groceries
+Sainsbury,Groceries
+Sainsbury Express,Groceries
+Sainsbury Online,Groceries
+Sainsbury Store,Groceries
+Sainsbury Ltd,Groceries
+Sainsbury Payment,Groceries
+Sainsbury Subscription,Groceries
+Asda,Groceries
+Asda Express,Groceries
+Asda Online,Groceries
+Asda Store,Groceries
+Asda Ltd,Groceries
+Asda Payment,Groceries
+Asda Subscription,Groceries
+Waitrose,Groceries
+Waitrose Express,Groceries
+Waitrose Online,Groceries
+Waitrose Store,Groceries
+Waitrose Ltd,Groceries
+Waitrose Payment,Groceries
+Waitrose Subscription,Groceries
+Morrisons,Groceries
+Morrisons Express,Groceries
+Morrisons Online,Groceries
+Morrisons Store,Groceries
+Morrisons Ltd,Groceries
+Morrisons Payment,Groceries
+Morrisons Subscription,Groceries
+Shell,Fuel
+Shell Express,Fuel
+Shell Online,Fuel
+Shell Store,Fuel
+Shell Ltd,Fuel
+Shell Payment,Fuel
+Shell Subscription,Fuel
+BP,Fuel
+BP Express,Fuel
+BP Online,Fuel
+BP Store,Fuel
+BP Ltd,Fuel
+BP Payment,Fuel
+BP Subscription,Fuel
+Esso,Fuel
+Esso Express,Fuel
+Esso Online,Fuel
+Esso Store,Fuel
+Esso Ltd,Fuel
+Esso Payment,Fuel
+Esso Subscription,Fuel
+Trainline,Travel
+Trainline Express,Travel
+Trainline Online,Travel
+Trainline Store,Travel
+Trainline Ltd,Travel
+Trainline Payment,Travel
+Trainline Subscription,Travel
+National Rail,Travel
+National Rail Express,Travel
+National Rail Online,Travel
+National Rail Store,Travel
+National Rail Ltd,Travel
+National Rail Payment,Travel
+National Rail Subscription,Travel
+Uber,Travel
+Uber Express,Travel
+Uber Online,Travel
+Uber Store,Travel
+Uber Ltd,Travel
+Uber Payment,Travel
+Uber Subscription,Travel
+Addison Lee,Travel
+Addison Lee Express,Travel
+Addison Lee Online,Travel
+Addison Lee Store,Travel
+Addison Lee Ltd,Travel
+Addison Lee Payment,Travel
+Addison Lee Subscription,Travel
+Zara,Clothing
+Zara Express,Clothing
+Zara Online,Clothing
+Zara Store,Clothing
+Zara Ltd,Clothing
+Zara Payment,Clothing
+Zara Subscription,Clothing
+H&M,Clothing
+H&M Express,Clothing
+H&M Online,Clothing
+H&M Store,Clothing
+H&M Ltd,Clothing
+H&M Payment,Clothing
+H&M Subscription,Clothing
+John Lewis,Clothing
+John Lewis Express,Clothing
+John Lewis Online,Clothing
+John Lewis Store,Clothing
+John Lewis Ltd,Clothing
+John Lewis Payment,Clothing
+John Lewis Subscription,Clothing
+Netflix,Entertainment
+Netflix Express,Entertainment
+Netflix Online,Entertainment
+Netflix Store,Entertainment
+Netflix Ltd,Entertainment
+Netflix Payment,Entertainment
+Netflix Subscription,Entertainment
+Spotify,Entertainment
+Spotify Express,Entertainment
+Spotify Online,Entertainment
+Spotify Store,Entertainment
+Spotify Ltd,Entertainment
+Spotify Payment,Entertainment
+Spotify Subscription,Entertainment
+Apple,Electronics
+Apple Express,Electronics
+Apple Online,Electronics
+Apple Store,Electronics
+Apple Ltd,Electronics
+Apple Payment,Electronics
+Apple Subscription,Electronics
+B&Q,Home Improvement
+B&Q Express,Home Improvement
+B&Q Online,Home Improvement
+B&Q Store,Home Improvement
+B&Q Ltd,Home Improvement
+B&Q Payment,Home Improvement
+B&Q Subscription,Home Improvement
+Ikea,Home Improvement
+Ikea Express,Home Improvement
+Ikea Online,Home Improvement
+Ikea Store,Home Improvement
+Ikea Ltd,Home Improvement
+Ikea Payment,Home Improvement
+Ikea Subscription,Home Improvement
+Boots,Health
+Boots Express,Health
+Boots Online,Health
+Boots Store,Health
+Boots Ltd,Health
+Boots Payment,Health
+Boots Subscription,Health
+Gym,Health
+Fitness,Health
+Hospital,Health
+Pharmacy,Health
+Doctor,Health
+Dentist,Health
+Electric Bill,Utilities
+Gas Bill,Utilities
+Water Bill,Utilities
+Internet Bill,Utilities
+Phone Bill,Utilities
+Council Tax,Utilities
+Rent,Utilities
+Mortgage,Utilities
+Insurance,Utilities

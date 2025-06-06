@@ -1,0 +1,17 @@
+2025-06-06 11:09:10,234 - INFO - Starting bank statement categorization process
+2025-06-06 11:09:10,234 - INFO - Loading rules from C:\Users\Sopher.Intern\Downloads\improved_rules.csv
+2025-06-06 11:09:10,266 - INFO - Successfully loaded 191 rules
+2025-06-06 11:09:10,267 - INFO - Loading bank statement from C:\Users\Sopher.Intern\Downloads\bank_statement_test.csv
+2025-06-06 11:09:10,285 - INFO - Successfully loaded 66 transactions
+2025-06-06 11:09:10,285 - INFO - Starting transaction categorization...
+2025-06-06 11:09:10,362 - INFO - Categorization completed in 0.08 seconds
+2025-06-06 11:09:10,368 - INFO - === CATEGORIZATION REPORT ===
+2025-06-06 11:09:10,369 - INFO - Total Transactions: 66
+2025-06-06 11:09:10,369 - INFO - Categorised: 39
+2025-06-06 11:09:10,369 - INFO - Uncategorised: 27
+2025-06-06 11:09:10,370 - INFO - Categorisation Rate: 59.09
+2025-06-06 11:09:10,370 - INFO - Auto Approved: 38
+2025-06-06 11:09:10,370 - INFO - Avg Confidence: 99.84
+2025-06-06 11:09:10,370 - INFO - High Confidence Matches: 38
+2025-06-06 11:09:10,386 - INFO - [SUCCESS] Results saved to categorised_output.csv
+2025-06-06 11:09:10,386 - INFO - [SUCCESS] Categorization process completed successfully
