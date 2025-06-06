@@ -3,48 +3,49 @@ from tkinter.filedialog import askopenfilename
 import pandas as pd
 import pickle
 from sqlalchemy.orm import sessionmaker
-
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import SGDClassifier
 from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+import chardet
 
 from models import *
 from exceptions import *
 
+# ─────────── Encoding Helper ───────────
+
+def read_csv_with_fallback(filepath):
+    with open(filepath, 'rb') as f:
+        encoding = chardet.detect(f.read())['encoding'] or 'utf-8'
+    try:
+        return pd.read_csv(filepath, encoding=encoding)
+    except Exception:
+        return pd.read_csv(filepath, encoding='ISO-8859-1')
+
 
 class Train:
-
     def __init__(self, fp):
         self.filepath = fp
         self.categories = None
 
-        # get data from specified filepath as dataframe
         try:
             new_data = self._get_new_data()
         except InvalidTrainingData as e:
             raise e
 
-        # if data is valid then start DB session
         DBSession = sessionmaker(bind=engine)
         self.session = DBSession()
 
-        # get existing data from DB as dataframe
         existing_data = self._get_database_as_df()
 
-        # combine new data with old data
         all_data = pd.concat([existing_data, new_data], axis=0, sort=True)
-
-        # drop the duplicates from the combined data set
         all_data.drop_duplicates(subset=['description', 'category'], inplace=True)
 
-        # write to database
         self._write_df_to_database(all_data)
 
-        # train model with training data
-        trained_model = self.train_model(all_data)
-
-        # save trained model
+        trained_model = self.evaluate_model(all_data)
         self._save_trained_model(trained_model)
 
         print('Model successfully trained.')
@@ -54,12 +55,43 @@ class Train:
             pickle.dump(mdl, f)
 
     def train_model(self, df):
-        text_clf_svm = Pipeline([
-            ('vect', CountVectorizer()),
+        text_clf = Pipeline([
+            ('vect', CountVectorizer(ngram_range=(1, 2), stop_words='english', max_features=5000)),
             ('tfidf', TfidfTransformer()),
-            ('clf-svm', SGDClassifier(loss='modified_huber', penalty='l2', alpha=1e-3, max_iter=10, random_state=42))
+            ('clf-svm', SGDClassifier(
+                loss='log_loss',
+                penalty='l2',
+                alpha=1e-4,
+                max_iter=1000,
+                class_weight='balanced',
+                random_state=42
+            ))
         ])
-        return text_clf_svm.fit(df.description, df.category)
+        return text_clf
+
+    def evaluate_model(self, df):
+    # Drop rows with missing descriptions or categories
+        df = df.dropna(subset=['description', 'category'])
+        df['description'] = df['description'].astype(str)
+
+        X_train, X_test, y_train, y_test = train_test_split(
+            df['description'], df['category'], test_size=0.2, random_state=42
+        )
+
+        model = self.train_model(df)
+
+    # Drop NaNs and convert to string (defensive check)
+        X_train = X_train.dropna().astype(str)
+        y_train = y_train[X_train.index]
+        X_test = X_test.dropna().astype(str)
+        y_test = y_test[X_test.index]
+
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+
+        print(classification_report(y_test, y_pred))
+        return model
+
 
     def _write_df_to_database(self, df):
         df.to_sql('TrainingData', self.session.bind, if_exists='replace', index=False)
@@ -68,73 +100,73 @@ class Train:
         return pd.read_sql(self.session.query(Training).statement, self.session.bind)
 
     def _get_new_data(self):
-        # if empty filepath then return false
         if self.filepath == '':
             raise InvalidTrainingData('No file specified')
 
-        # if the dataframe has description and category columns then return true
-        df = pd.read_csv(self.filepath, index_col=False, encoding='utf-8-sig')
+        df = read_csv_with_fallback(self.filepath)
         df.columns = map(str.lower, df.columns)
         df.columns = map(str.strip, df.columns)
-        if 'description' and 'category' in df.columns.values:
-            df.columns = map(str.lower, df.columns)
+
+        if 'description' in df.columns and 'category' in df.columns:
             return df
         else:
-            raise InvalidTrainingData(
-                'Incorrect headers in specified file. File should only contain \'Description\' and \'Category\' headers.')
-        raise InvalidTrainingData('Uncaught error with the supplied training data.')
+            raise InvalidTrainingData("CSV must contain 'Description' and 'Category' headers.")
 
 
 class Categorise:
+    CONFIDENCE_THRESHOLD = 0.3  # You can tune this
 
     def __init__(self, fp):
         self.filepath = fp
 
-        # get data from specified filepath as dataframe
         try:
             test_data = self._get_test_data()
         except InvalidBankStatement as e:
             raise e
 
-        # get trained svm model from expected location
         try:
             self.model = self._get_svm_model()
         except FileNotFoundError as e:
             raise e
 
-        categories = self.model.predict(test_data.description)
-        probabilities = self.model.predict_proba(test_data.description).max(axis=1)
+        # Make predictions
+        predicted_probs = self.model.predict_proba(test_data['description'])
+        predicted_labels = self.model.predict(test_data['description'])
+        max_probs = predicted_probs.max(axis=1)
 
-        test_data['predicted_category'] = categories
-        test_data['probability'] = probabilities
+        # Apply thresholding
+        predicted_final = [
+            label if prob >= self.CONFIDENCE_THRESHOLD else "Uncategorised"
+            for label, prob in zip(predicted_labels, max_probs)
+        ]
+
+        test_data['predicted_category'] = predicted_final
+        test_data['probability'] = max_probs
 
         self._save_results(test_data)
 
     def _save_results(self, d):
         while True:
             try:
-                d.to_csv('data/test_results.csv', encoding='utf-8-sig')
+                d.to_csv('data/test_results.csv', encoding='utf-8-sig', index=False)
                 break
             except PermissionError as e:
-                p = input(
-                    'Error saving results. \'{}\' is already open, please close this file. Press enter to retry.'.format(
-                        e.filename))
+                input(f"❌ Close the file: {e.filename}, then press Enter to retry...")
 
     def _get_test_data(self):
-        # if empty filepath then raise error
         if self.filepath == '':
             raise InvalidBankStatement('No file specified')
 
-        # if the dataframe has description then return df
-        df = pd.read_csv(self.filepath, index_col=False, encoding='utf-8-sig')
+        df = read_csv_with_fallback(self.filepath)
         df.columns = map(str.lower, df.columns)
         df.columns = map(str.strip, df.columns)
-        if 'description' in df.columns.values:
-            df = df.dropna(subset=['description'])  # Drop rows with missing descriptions
-            df['description'] = df['description'].astype(str)  # Ensure all are strings
-            return df
-        raise InvalidBankStatement(
-            'Incorrect headers in specified file. File should contain a \'Description\' header.')
+
+        if 'description' not in df.columns:
+            raise InvalidBankStatement("CSV must contain a 'Description' column.")
+
+        df = df.dropna(subset=['description'])
+        df['description'] = df['description'].astype(str)
+        return df
 
     def _get_svm_model(self):
         with open('./data/trained_svm.pkl', "rb") as input_file:
@@ -145,27 +177,10 @@ class Categorise:
             raise InvalidModelError('The detected model is not compatible.')
 
 
-def get_data_path():
-    root = Tk()
-    filepath = askopenfilename(initialdir="./data/", title="Select file", filetypes=(("CSV", "*.csv"),))
-    root.destroy()
-    return filepath
-
-
 if __name__ == '__main__':
-    # CLI usage
-    from tkinter import Tk
-    from tkinter.filedialog import askopenfilename
-
-    def get_data_path():
-        root = Tk()
-        filepath = askopenfilename(initialdir="./data/", title="Select file", filetypes=(("CSV", "*.csv"),))
-        root.destroy()
-        return filepath
-
     while True:
         session_type = input('Select an option:\n'
-                             '[1] - Categorise a bank statement (requires a trained categorisation model)\n'
+                             '[1] - Categorise a bank statement (requires a trained model)\n'
                              '[2] - Train the categorisation model\n\n'
                              'Choice: ')
 
@@ -178,5 +193,4 @@ if __name__ == '__main__':
             Train(fp)
             break
         else:
-            print('Invalid selection, please try again...\n\n')
-
+            print('Invalid selection, please try again...\n')

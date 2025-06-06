@@ -1,25 +1,34 @@
 import streamlit as st
 import pandas as pd
 import os
+import chardet  # Add this for encoding detection
 from main import Train, Categorise
 
 st.set_page_config(page_title="Bank Categorizer", layout="centered")
 st.title("🏦 Bank Statement Categorizer")
 
-# Option selector
 mode = st.radio("Choose an action:", ["Train a Model", "Categorise Transactions"])
 
-# File uploader
 uploaded_file = st.file_uploader("Upload CSV File", type=["csv"])
 
-if uploaded_file:
-    # Save file locally to a temporary path
+def save_and_detect_encoding(uploaded_file):
     temp_path = os.path.join("uploads", uploaded_file.name)
     os.makedirs("uploads", exist_ok=True)
+
     with open(temp_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
 
-    # Run based on selected mode
+    with open(temp_path, "rb") as f:
+        encoding = chardet.detect(f.read())['encoding'] or 'utf-8'
+
+    return temp_path, encoding
+
+if uploaded_file:
+    temp_path, detected_encoding = save_and_detect_encoding(uploaded_file)
+
+    # Display the encoding to the user
+    st.info(f"Detected Encoding: `{detected_encoding}`")
+
     if mode == "Train a Model":
         if st.button("Train"):
             try:
