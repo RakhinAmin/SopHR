@@ -9,8 +9,8 @@ def hybrid_score(a, b, **kwargs):
     return 0.6 * fuzz.token_set_ratio(a, b) + 0.4 * fuzz.partial_ratio(a, b)
 
 # CONFIGURATION
-BANK_STATEMENT_FILE = r"C:\Users\Sopher.Intern\Downloads\bank_statement_test.csv"
-RULES_FILE = r"C:\Users\Sopher.Intern\Downloads\rules_large.csv"
+BANK_STATEMENT_FILE = r"C:\Users\Sopher.Intern\Downloads\Testing\bank_statement.csv"
+RULES_FILE = r"C:\Users\Sopher.Intern\Downloads\Testing\rules.csv"
 OUTPUT_FILE = "categorised_output.csv"
 MATCH_THRESHOLD = 90
 NUM_SUGGESTIONS = 3

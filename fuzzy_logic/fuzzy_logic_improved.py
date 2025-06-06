@@ -13,9 +13,9 @@ from pathlib import Path
 @dataclass
 class Config:
     """Configuration settings for the categorizer"""
-    bank_statement_file: str = r"C:\Users\Sopher.Intern\Downloads\Testing\Fuzzy_Logic_Test_Statement.csv"
-    rules_file: str = r"C:\Users\Sopher.Intern\Downloads\Testing\Generated_Rule_Set.csv"
-    output_file: str = "categorised_output.csv"
+    bank_statement_file: str = r"C:\Users\Sopher.Intern\Downloads\Testing\bank_statement_2.csv"
+    rules_file: str = r"C:\Users\Sopher.Intern\Downloads\Testing\rules.csv"
+    output_file: str = r"C:\Users\Sopher.Intern\Downloads\Testing\categorised_output.csv"
     match_threshold: int = 90
     num_suggestions: int = 3
     auto_approve_threshold: int = 95
