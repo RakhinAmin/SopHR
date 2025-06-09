@@ -15,3 +15,60 @@
 2025-06-06 11:09:10,370 - INFO - High Confidence Matches: 38
 2025-06-06 11:09:10,386 - INFO - [SUCCESS] Results saved to categorised_output.csv
 2025-06-06 11:09:10,386 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-09 09:56:29,725 - INFO - Starting bank statement categorization process
+2025-06-09 09:56:29,726 - INFO - Loading rules from C:\Users\Sopher.Intern\Downloads\Testing\rules.csv
+2025-06-09 09:56:29,754 - INFO - Successfully loaded 1827 rules
+2025-06-09 09:56:29,755 - INFO - Loading bank statement from C:\Users\Sopher.Intern\Downloads\Michael_Heller_-_Account_Transactions.csv
+2025-06-09 09:56:29,815 - INFO - Successfully loaded 3670 transactions
+2025-06-09 09:56:29,815 - INFO - Starting transaction categorization...
+2025-06-09 09:56:30,320 - INFO - Processed 100/3670 transactions
+2025-06-09 09:56:30,705 - INFO - Processed 200/3670 transactions
+2025-06-09 09:56:30,975 - INFO - Processed 300/3670 transactions
+2025-06-09 09:56:31,285 - INFO - Processed 400/3670 transactions
+2025-06-09 09:56:31,540 - INFO - Processed 500/3670 transactions
+2025-06-09 09:56:31,793 - INFO - Processed 600/3670 transactions
+2025-06-09 09:56:32,127 - INFO - Processed 700/3670 transactions
+2025-06-09 09:56:32,420 - INFO - Processed 800/3670 transactions
+2025-06-09 09:56:32,702 - INFO - Processed 900/3670 transactions
+2025-06-09 09:56:32,984 - INFO - Processed 1000/3670 transactions
+2025-06-09 09:56:33,235 - INFO - Processed 1100/3670 transactions
+2025-06-09 09:56:33,464 - INFO - Processed 1200/3670 transactions
+2025-06-09 09:56:33,687 - INFO - Processed 1300/3670 transactions
+2025-06-09 09:56:33,953 - INFO - Processed 1400/3670 transactions
+2025-06-09 09:56:34,204 - INFO - Processed 1500/3670 transactions
+2025-06-09 09:56:34,633 - INFO - Processed 1600/3670 transactions
+2025-06-09 09:56:34,972 - INFO - Processed 1700/3670 transactions
+2025-06-09 09:56:35,337 - INFO - Processed 1800/3670 transactions
+2025-06-09 09:56:35,713 - INFO - Processed 1900/3670 transactions
+2025-06-09 09:56:35,983 - INFO - Processed 2000/3670 transactions
+2025-06-09 09:56:36,303 - INFO - Processed 2100/3670 transactions
+2025-06-09 09:56:36,551 - INFO - Processed 2200/3670 transactions
+2025-06-09 09:56:36,831 - INFO - Processed 2300/3670 transactions
+2025-06-09 09:56:37,191 - INFO - Processed 2400/3670 transactions
+2025-06-09 09:56:37,510 - INFO - Processed 2500/3670 transactions
+2025-06-09 09:56:37,844 - INFO - Processed 2600/3670 transactions
+2025-06-09 09:56:38,288 - INFO - Processed 2700/3670 transactions
+2025-06-09 09:56:38,629 - INFO - Processed 2800/3670 transactions
+2025-06-09 09:56:38,919 - INFO - Processed 2900/3670 transactions
+2025-06-09 09:56:39,395 - INFO - Processed 3000/3670 transactions
+2025-06-09 09:56:39,683 - INFO - Processed 3100/3670 transactions
+2025-06-09 09:56:39,994 - INFO - Processed 3200/3670 transactions
+2025-06-09 09:56:40,300 - INFO - Processed 3300/3670 transactions
+2025-06-09 09:56:40,671 - INFO - Processed 3400/3670 transactions
+2025-06-09 09:56:40,979 - INFO - Processed 3500/3670 transactions
+2025-06-09 09:56:41,255 - INFO - Processed 3600/3670 transactions
+2025-06-09 09:56:41,647 - INFO - Categorization completed in 11.83 seconds
+2025-06-09 09:56:41,653 - INFO - === CATEGORIZATION REPORT ===
+2025-06-09 09:56:41,653 - INFO - Total Transactions: 3670
+2025-06-09 09:56:41,653 - INFO - Categorised: 2618
+2025-06-09 09:56:41,653 - INFO - Uncategorised: 1052
+2025-06-09 09:56:41,654 - INFO - Categorisation Rate: 71.34
+2025-06-09 09:56:41,654 - INFO - Auto Approved: 2571
+2025-06-09 09:56:41,654 - INFO - Avg Confidence: 99.89
+2025-06-09 09:56:41,654 - INFO - High Confidence Matches: 2571
+2025-06-09 09:56:41,691 - INFO - [SUCCESS] Results saved to C:\Users\Sopher.Intern\Downloads\Testing\categorised_output.csv
+2025-06-09 09:56:41,692 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-09 10:21:16,677 - INFO - Loading rules from C:\Users\Sopher.Intern\Downloads\Testing\rules.csv
+2025-06-09 10:21:16,760 - INFO - Loading bank data from C:\Users\Sopher.Intern\Downloads\Michael_Heller_-_Account_Transactions.csv
+2025-06-09 10:21:16,793 - WARNING - Fuzzy match error: FuzzyMatcher.hybrid_score() got an unexpected keyword argument 'score_cutoff'
+2025-06-09 10:21:16,794 - ERROR - Failed: FuzzyMatcher.hybrid_score() got an unexpected keyword argument 'score_cutoff'
