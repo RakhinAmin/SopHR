@@ -1,6 +1,6 @@
-# Bank Statement Categorizer
+# Bank Statement Categoriser
 
-A powerful Python tool for automatically categorizing bank transactions using fuzzy logic matching. This system uses advanced string matching algorithms to intelligently classify financial transactions based on customizable rules.
+A powerful Python tool for automatically categorizing bank transactions using fuzzy logic matching. This system uses advanced string matching algorithms to intelligently classify financial transactions based on customizable rules. Created by Ali Ladak.
 
 ## Features
 
@@ -29,7 +29,7 @@ rapidfuzz>=2.0.0
 1. **Clone or download the repository**
 ```bash
 git clone <repository-url>
-cd bank-statement-categorizer
+cd bank-statement-categoriser
 ```
 
 2. **Install required packages**
@@ -40,7 +40,7 @@ pip install pandas rapidfuzz
 ## File Structure
 
 ```
-bank-statement-categorizer/
+bank-statement-categoriser/
 ├── fuzzy_logic_improved.py    # Main application file
 ├── README.md                  # This file
 ├── rules.csv                  # Category rules file
@@ -225,7 +225,7 @@ ValueError: Rules file is empty
 
 ### Debugging
 
-Enable detailed logging by checking the generated `categorizer.log` file:
+Enable detailed logging by checking the generated `categoriser.log` file:
 ```
 2024-01-01 10:00:00 - INFO - Loading rules from rules.csv
 2024-01-01 10:00:01 - INFO - Successfully loaded 150 rules
@@ -254,7 +254,7 @@ Typical performance on a standard laptop:
 
 ## Contributing
 
-To improve the categorizer:
+To improve the categoriser:
 1. Test with your own transaction data
 2. Suggest improvements to matching algorithms
 3. Report bugs or edge cases
