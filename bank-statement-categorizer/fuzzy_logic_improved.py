@@ -13,9 +13,9 @@ from pathlib import Path
 @dataclass
 class Config:
     """Configuration settings for the categorizer"""
-    bank_statement_file: str = r"C:\Users\Sopher.Intern\Downloads\Michael_Heller_-_Account_Transactions.csv"
-    rules_file: str = r"C:\Users\Sopher.Intern\Downloads\Testing\rules.csv"
-    output_file: str = r"C:\Users\Sopher.Intern\Downloads\Testing\categorised_output.csv"
+    bank_statement_file: str = ""
+    rules_file: str = ""
+    output_file: str = ""
     match_threshold: int = 90
     num_suggestions: int = 3
     auto_approve_threshold: int = 95

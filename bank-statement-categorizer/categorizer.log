@@ -1,0 +1,1795 @@
+2025-06-11 09:38:42,118 - INFO - Starting bank statement categorization process
+2025-06-11 09:38:42,119 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpmw9kqpej.csv
+2025-06-11 09:38:42,230 - INFO - Successfully loaded 1899 rules
+2025-06-11 09:38:42,230 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpz0vd20hc.csv
+2025-06-11 09:38:42,293 - INFO - Successfully loaded 3670 transactions
+2025-06-11 09:38:42,294 - INFO - Starting transaction categorization...
+2025-06-11 09:38:42,932 - INFO - Processed 100/3670 transactions
+2025-06-11 09:38:43,425 - INFO - Processed 200/3670 transactions
+2025-06-11 09:38:43,732 - INFO - Processed 300/3670 transactions
+2025-06-11 09:38:44,067 - INFO - Processed 400/3670 transactions
+2025-06-11 09:38:44,366 - INFO - Processed 500/3670 transactions
+2025-06-11 09:38:44,650 - INFO - Processed 600/3670 transactions
+2025-06-11 09:38:45,056 - INFO - Processed 700/3670 transactions
+2025-06-11 09:38:45,318 - INFO - Processed 800/3670 transactions
+2025-06-11 09:38:45,578 - INFO - Processed 900/3670 transactions
+2025-06-11 09:38:45,853 - INFO - Processed 1000/3670 transactions
+2025-06-11 09:38:46,139 - INFO - Processed 1100/3670 transactions
+2025-06-11 09:38:46,373 - INFO - Processed 1200/3670 transactions
+2025-06-11 09:38:46,633 - INFO - Processed 1300/3670 transactions
+2025-06-11 09:38:46,930 - INFO - Processed 1400/3670 transactions
+2025-06-11 09:38:47,244 - INFO - Processed 1500/3670 transactions
+2025-06-11 09:38:47,737 - INFO - Processed 1600/3670 transactions
+2025-06-11 09:38:48,123 - INFO - Processed 1700/3670 transactions
+2025-06-11 09:38:48,563 - INFO - Processed 1800/3670 transactions
+2025-06-11 09:38:48,979 - INFO - Processed 1900/3670 transactions
+2025-06-11 09:38:49,314 - INFO - Processed 2000/3670 transactions
+2025-06-11 09:38:49,683 - INFO - Processed 2100/3670 transactions
+2025-06-11 09:38:49,950 - INFO - Processed 2200/3670 transactions
+2025-06-11 09:38:50,246 - INFO - Processed 2300/3670 transactions
+2025-06-11 09:38:50,595 - INFO - Processed 2400/3670 transactions
+2025-06-11 09:38:50,930 - INFO - Processed 2500/3670 transactions
+2025-06-11 09:38:51,261 - INFO - Processed 2600/3670 transactions
+2025-06-11 09:38:51,732 - INFO - Processed 2700/3670 transactions
+2025-06-11 09:38:52,131 - INFO - Processed 2800/3670 transactions
+2025-06-11 09:38:52,438 - INFO - Processed 2900/3670 transactions
+2025-06-11 09:38:52,979 - INFO - Processed 3000/3670 transactions
+2025-06-11 09:38:53,282 - INFO - Processed 3100/3670 transactions
+2025-06-11 09:38:53,630 - INFO - Processed 3200/3670 transactions
+2025-06-11 09:38:53,940 - INFO - Processed 3300/3670 transactions
+2025-06-11 09:38:54,303 - INFO - Processed 3400/3670 transactions
+2025-06-11 09:38:54,653 - INFO - Processed 3500/3670 transactions
+2025-06-11 09:38:54,944 - INFO - Processed 3600/3670 transactions
+2025-06-11 09:38:55,319 - INFO - Categorization completed in 13.02 seconds
+2025-06-11 09:38:55,340 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 09:38:55,341 - INFO - Total Transactions: 3670
+2025-06-11 09:38:55,341 - INFO - Categorised: 2607
+2025-06-11 09:38:55,341 - INFO - Uncategorised: 1063
+2025-06-11 09:38:55,342 - INFO - Categorisation Rate: 71.04
+2025-06-11 09:38:55,342 - INFO - Auto Approved: 2560
+2025-06-11 09:38:55,342 - INFO - Avg Confidence: 99.89
+2025-06-11 09:38:55,343 - INFO - High Confidence Matches: 2560
+2025-06-11 09:38:55,391 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_5dbf2860.csv
+2025-06-11 09:38:55,392 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 09:47:26,622 - INFO - Starting bank statement categorization process
+2025-06-11 09:47:26,622 - INFO - Starting bank statement categorization process
+2025-06-11 09:47:26,623 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp1g0mc054.csv
+2025-06-11 09:47:26,623 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp1g0mc054.csv
+2025-06-11 09:47:26,674 - INFO - Successfully loaded 1899 rules
+2025-06-11 09:47:26,674 - INFO - Successfully loaded 1899 rules
+2025-06-11 09:47:26,675 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpawollmv1.csv
+2025-06-11 09:47:26,675 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpawollmv1.csv
+2025-06-11 09:47:26,709 - INFO - Successfully loaded 142 transactions
+2025-06-11 09:47:26,709 - INFO - Successfully loaded 142 transactions
+2025-06-11 09:47:26,710 - INFO - Starting transaction categorization...
+2025-06-11 09:47:26,710 - INFO - Starting transaction categorization...
+2025-06-11 09:47:28,361 - INFO - Processed 100/142 transactions
+2025-06-11 09:47:28,361 - INFO - Processed 100/142 transactions
+2025-06-11 09:47:29,121 - INFO - Categorization completed in 2.41 seconds
+2025-06-11 09:47:29,121 - INFO - Categorization completed in 2.41 seconds
+2025-06-11 09:47:29,135 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 09:47:29,135 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 09:47:29,136 - INFO - Total Transactions: 142
+2025-06-11 09:47:29,136 - INFO - Total Transactions: 142
+2025-06-11 09:47:29,136 - INFO - Categorised: 26
+2025-06-11 09:47:29,136 - INFO - Categorised: 26
+2025-06-11 09:47:29,137 - INFO - Uncategorised: 116
+2025-06-11 09:47:29,137 - INFO - Uncategorised: 116
+2025-06-11 09:47:29,137 - INFO - Categorisation Rate: 18.31
+2025-06-11 09:47:29,137 - INFO - Categorisation Rate: 18.31
+2025-06-11 09:47:29,137 - INFO - Auto Approved: 26
+2025-06-11 09:47:29,137 - INFO - Auto Approved: 26
+2025-06-11 09:47:29,138 - INFO - Avg Confidence: 100.0
+2025-06-11 09:47:29,138 - INFO - Avg Confidence: 100.0
+2025-06-11 09:47:29,138 - INFO - High Confidence Matches: 26
+2025-06-11 09:47:29,138 - INFO - High Confidence Matches: 26
+2025-06-11 09:47:29,142 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_93f61749.csv
+2025-06-11 09:47:29,142 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_93f61749.csv
+2025-06-11 09:47:29,143 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 09:47:29,143 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 09:59:01,188 - INFO - Starting bank statement categorization process
+2025-06-11 09:59:01,188 - INFO - Starting bank statement categorization process
+2025-06-11 09:59:01,188 - INFO - Starting bank statement categorization process
+2025-06-11 09:59:01,189 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpw__rveyo.csv
+2025-06-11 09:59:01,189 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpw__rveyo.csv
+2025-06-11 09:59:01,189 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpw__rveyo.csv
+2025-06-11 09:59:01,235 - INFO - Successfully loaded 1899 rules
+2025-06-11 09:59:01,235 - INFO - Successfully loaded 1899 rules
+2025-06-11 09:59:01,235 - INFO - Successfully loaded 1899 rules
+2025-06-11 09:59:01,236 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmps839u1qi.csv
+2025-06-11 09:59:01,236 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmps839u1qi.csv
+2025-06-11 09:59:01,236 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmps839u1qi.csv
+2025-06-11 09:59:01,281 - INFO - Successfully loaded 132 transactions
+2025-06-11 09:59:01,281 - INFO - Successfully loaded 132 transactions
+2025-06-11 09:59:01,281 - INFO - Successfully loaded 132 transactions
+2025-06-11 09:59:01,282 - INFO - Starting transaction categorization...
+2025-06-11 09:59:01,282 - INFO - Starting transaction categorization...
+2025-06-11 09:59:01,282 - INFO - Starting transaction categorization...
+2025-06-11 09:59:02,474 - INFO - Processed 100/132 transactions
+2025-06-11 09:59:02,474 - INFO - Processed 100/132 transactions
+2025-06-11 09:59:02,474 - INFO - Processed 100/132 transactions
+2025-06-11 09:59:02,846 - INFO - Categorization completed in 1.56 seconds
+2025-06-11 09:59:02,846 - INFO - Categorization completed in 1.56 seconds
+2025-06-11 09:59:02,846 - INFO - Categorization completed in 1.56 seconds
+2025-06-11 09:59:02,848 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 09:59:02,848 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 09:59:02,848 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 09:59:02,849 - INFO - Total Transactions: 132
+2025-06-11 09:59:02,849 - INFO - Total Transactions: 132
+2025-06-11 09:59:02,849 - INFO - Total Transactions: 132
+2025-06-11 09:59:02,849 - INFO - Categorised: 21
+2025-06-11 09:59:02,849 - INFO - Categorised: 21
+2025-06-11 09:59:02,849 - INFO - Categorised: 21
+2025-06-11 09:59:02,850 - INFO - Uncategorised: 111
+2025-06-11 09:59:02,850 - INFO - Uncategorised: 111
+2025-06-11 09:59:02,850 - INFO - Uncategorised: 111
+2025-06-11 09:59:02,850 - INFO - Categorisation Rate: 15.91
+2025-06-11 09:59:02,850 - INFO - Categorisation Rate: 15.91
+2025-06-11 09:59:02,850 - INFO - Categorisation Rate: 15.91
+2025-06-11 09:59:02,851 - INFO - Auto Approved: 21
+2025-06-11 09:59:02,851 - INFO - Auto Approved: 21
+2025-06-11 09:59:02,851 - INFO - Auto Approved: 21
+2025-06-11 09:59:02,852 - INFO - Avg Confidence: 100.0
+2025-06-11 09:59:02,852 - INFO - Avg Confidence: 100.0
+2025-06-11 09:59:02,852 - INFO - Avg Confidence: 100.0
+2025-06-11 09:59:02,852 - INFO - High Confidence Matches: 21
+2025-06-11 09:59:02,852 - INFO - High Confidence Matches: 21
+2025-06-11 09:59:02,852 - INFO - High Confidence Matches: 21
+2025-06-11 09:59:02,856 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_38806ceb.csv
+2025-06-11 09:59:02,856 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_38806ceb.csv
+2025-06-11 09:59:02,856 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_38806ceb.csv
+2025-06-11 09:59:02,857 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 09:59:02,857 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 09:59:02,857 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 10:03:35,921 - INFO - Starting bank statement categorization process
+2025-06-11 10:03:35,921 - INFO - Starting bank statement categorization process
+2025-06-11 10:03:35,921 - INFO - Starting bank statement categorization process
+2025-06-11 10:03:35,921 - INFO - Starting bank statement categorization process
+2025-06-11 10:03:35,923 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmphd3211dw.csv
+2025-06-11 10:03:35,923 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmphd3211dw.csv
+2025-06-11 10:03:35,923 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmphd3211dw.csv
+2025-06-11 10:03:35,923 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmphd3211dw.csv
+2025-06-11 10:03:35,981 - INFO - Successfully loaded 1899 rules
+2025-06-11 10:03:35,981 - INFO - Successfully loaded 1899 rules
+2025-06-11 10:03:35,981 - INFO - Successfully loaded 1899 rules
+2025-06-11 10:03:35,981 - INFO - Successfully loaded 1899 rules
+2025-06-11 10:03:35,982 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpz7yn7k1y.csv
+2025-06-11 10:03:35,982 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpz7yn7k1y.csv
+2025-06-11 10:03:35,982 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpz7yn7k1y.csv
+2025-06-11 10:03:35,982 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpz7yn7k1y.csv
+2025-06-11 10:03:36,003 - INFO - Successfully loaded 122 transactions
+2025-06-11 10:03:36,003 - INFO - Successfully loaded 122 transactions
+2025-06-11 10:03:36,003 - INFO - Successfully loaded 122 transactions
+2025-06-11 10:03:36,003 - INFO - Successfully loaded 122 transactions
+2025-06-11 10:03:36,004 - INFO - Starting transaction categorization...
+2025-06-11 10:03:36,004 - INFO - Starting transaction categorization...
+2025-06-11 10:03:36,004 - INFO - Starting transaction categorization...
+2025-06-11 10:03:36,004 - INFO - Starting transaction categorization...
+2025-06-11 10:03:37,754 - INFO - Processed 100/122 transactions
+2025-06-11 10:03:37,754 - INFO - Processed 100/122 transactions
+2025-06-11 10:03:37,754 - INFO - Processed 100/122 transactions
+2025-06-11 10:03:37,754 - INFO - Processed 100/122 transactions
+2025-06-11 10:03:37,966 - INFO - Categorization completed in 1.96 seconds
+2025-06-11 10:03:37,966 - INFO - Categorization completed in 1.96 seconds
+2025-06-11 10:03:37,966 - INFO - Categorization completed in 1.96 seconds
+2025-06-11 10:03:37,966 - INFO - Categorization completed in 1.96 seconds
+2025-06-11 10:03:37,970 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 10:03:37,970 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 10:03:37,970 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 10:03:37,970 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 10:03:37,972 - INFO - Total Transactions: 122
+2025-06-11 10:03:37,972 - INFO - Total Transactions: 122
+2025-06-11 10:03:37,972 - INFO - Total Transactions: 122
+2025-06-11 10:03:37,972 - INFO - Total Transactions: 122
+2025-06-11 10:03:37,973 - INFO - Categorised: 41
+2025-06-11 10:03:37,973 - INFO - Categorised: 41
+2025-06-11 10:03:37,973 - INFO - Categorised: 41
+2025-06-11 10:03:37,973 - INFO - Categorised: 41
+2025-06-11 10:03:37,974 - INFO - Uncategorised: 81
+2025-06-11 10:03:37,974 - INFO - Uncategorised: 81
+2025-06-11 10:03:37,974 - INFO - Uncategorised: 81
+2025-06-11 10:03:37,974 - INFO - Uncategorised: 81
+2025-06-11 10:03:37,975 - INFO - Categorisation Rate: 33.61
+2025-06-11 10:03:37,975 - INFO - Categorisation Rate: 33.61
+2025-06-11 10:03:37,975 - INFO - Categorisation Rate: 33.61
+2025-06-11 10:03:37,975 - INFO - Categorisation Rate: 33.61
+2025-06-11 10:03:37,976 - INFO - Auto Approved: 41
+2025-06-11 10:03:37,976 - INFO - Auto Approved: 41
+2025-06-11 10:03:37,976 - INFO - Auto Approved: 41
+2025-06-11 10:03:37,976 - INFO - Auto Approved: 41
+2025-06-11 10:03:37,977 - INFO - Avg Confidence: 100.0
+2025-06-11 10:03:37,977 - INFO - Avg Confidence: 100.0
+2025-06-11 10:03:37,977 - INFO - Avg Confidence: 100.0
+2025-06-11 10:03:37,977 - INFO - Avg Confidence: 100.0
+2025-06-11 10:03:37,978 - INFO - High Confidence Matches: 41
+2025-06-11 10:03:37,978 - INFO - High Confidence Matches: 41
+2025-06-11 10:03:37,978 - INFO - High Confidence Matches: 41
+2025-06-11 10:03:37,978 - INFO - High Confidence Matches: 41
+2025-06-11 10:03:37,983 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_e65a64d4.csv
+2025-06-11 10:03:37,983 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_e65a64d4.csv
+2025-06-11 10:03:37,983 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_e65a64d4.csv
+2025-06-11 10:03:37,983 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_e65a64d4.csv
+2025-06-11 10:03:37,984 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 10:03:37,984 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 10:03:37,984 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 10:03:37,984 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 10:14:59,191 - INFO - Starting bank statement categorization process
+2025-06-11 10:14:59,192 - INFO - Loading rules from rules.csv
+2025-06-11 10:14:59,275 - INFO - Successfully loaded 1827 rules
+2025-06-11 10:14:59,276 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpv8yfrxao.csv
+2025-06-11 10:14:59,294 - INFO - Successfully loaded 122 transactions
+2025-06-11 10:14:59,294 - INFO - Starting transaction categorization...
+2025-06-11 10:15:01,071 - INFO - Processed 100/122 transactions
+2025-06-11 10:15:01,280 - INFO - Categorization completed in 1.98 seconds
+2025-06-11 10:15:01,282 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 10:15:01,282 - INFO - Total Transactions: 122
+2025-06-11 10:15:01,283 - INFO - Categorised: 41
+2025-06-11 10:15:01,283 - INFO - Uncategorised: 81
+2025-06-11 10:15:01,283 - INFO - Categorisation Rate: 33.61
+2025-06-11 10:15:01,284 - INFO - Auto Approved: 41
+2025-06-11 10:15:01,284 - INFO - Avg Confidence: 100.0
+2025-06-11 10:15:01,285 - INFO - High Confidence Matches: 41
+2025-06-11 10:15:01,312 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_2a9a038d.csv
+2025-06-11 10:15:01,312 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 11:16:17,919 - INFO - Starting bank statement categorization process
+2025-06-11 11:16:17,919 - INFO - Starting bank statement categorization process
+2025-06-11 11:16:17,923 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpjy_czg_b.csv
+2025-06-11 11:16:17,923 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpjy_czg_b.csv
+2025-06-11 11:16:18,061 - INFO - Successfully loaded 1029 rules
+2025-06-11 11:16:18,061 - INFO - Successfully loaded 1029 rules
+2025-06-11 11:16:18,062 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpl8bsfy9j.csv
+2025-06-11 11:16:18,062 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpl8bsfy9j.csv
+2025-06-11 11:16:18,210 - INFO - Successfully loaded 12082 transactions
+2025-06-11 11:16:18,210 - INFO - Successfully loaded 12082 transactions
+2025-06-11 11:16:18,211 - INFO - Starting transaction categorization...
+2025-06-11 11:16:18,211 - INFO - Starting transaction categorization...
+2025-06-11 11:16:18,604 - INFO - Processed 100/12082 transactions
+2025-06-11 11:16:18,604 - INFO - Processed 100/12082 transactions
+2025-06-11 11:16:18,766 - INFO - Processed 200/12082 transactions
+2025-06-11 11:16:18,766 - INFO - Processed 200/12082 transactions
+2025-06-11 11:16:18,976 - INFO - Processed 300/12082 transactions
+2025-06-11 11:16:18,976 - INFO - Processed 300/12082 transactions
+2025-06-11 11:16:19,098 - INFO - Processed 400/12082 transactions
+2025-06-11 11:16:19,098 - INFO - Processed 400/12082 transactions
+2025-06-11 11:16:19,390 - INFO - Processed 500/12082 transactions
+2025-06-11 11:16:19,390 - INFO - Processed 500/12082 transactions
+2025-06-11 11:16:19,547 - INFO - Processed 600/12082 transactions
+2025-06-11 11:16:19,547 - INFO - Processed 600/12082 transactions
+2025-06-11 11:16:19,707 - INFO - Processed 700/12082 transactions
+2025-06-11 11:16:19,707 - INFO - Processed 700/12082 transactions
+2025-06-11 11:16:19,943 - INFO - Processed 800/12082 transactions
+2025-06-11 11:16:19,943 - INFO - Processed 800/12082 transactions
+2025-06-11 11:16:20,094 - INFO - Processed 900/12082 transactions
+2025-06-11 11:16:20,094 - INFO - Processed 900/12082 transactions
+2025-06-11 11:16:20,188 - INFO - Processed 1000/12082 transactions
+2025-06-11 11:16:20,188 - INFO - Processed 1000/12082 transactions
+2025-06-11 11:16:20,339 - INFO - Processed 1100/12082 transactions
+2025-06-11 11:16:20,339 - INFO - Processed 1100/12082 transactions
+2025-06-11 11:16:20,406 - INFO - Processed 1200/12082 transactions
+2025-06-11 11:16:20,406 - INFO - Processed 1200/12082 transactions
+2025-06-11 11:16:20,616 - INFO - Processed 1300/12082 transactions
+2025-06-11 11:16:20,616 - INFO - Processed 1300/12082 transactions
+2025-06-11 11:16:20,840 - INFO - Processed 1400/12082 transactions
+2025-06-11 11:16:20,840 - INFO - Processed 1400/12082 transactions
+2025-06-11 11:16:20,977 - INFO - Processed 1500/12082 transactions
+2025-06-11 11:16:20,977 - INFO - Processed 1500/12082 transactions
+2025-06-11 11:16:21,051 - INFO - Processed 1600/12082 transactions
+2025-06-11 11:16:21,051 - INFO - Processed 1600/12082 transactions
+2025-06-11 11:16:21,106 - INFO - Processed 1700/12082 transactions
+2025-06-11 11:16:21,106 - INFO - Processed 1700/12082 transactions
+2025-06-11 11:16:21,373 - INFO - Processed 1800/12082 transactions
+2025-06-11 11:16:21,373 - INFO - Processed 1800/12082 transactions
+2025-06-11 11:16:21,570 - INFO - Processed 1900/12082 transactions
+2025-06-11 11:16:21,570 - INFO - Processed 1900/12082 transactions
+2025-06-11 11:16:21,703 - INFO - Processed 2000/12082 transactions
+2025-06-11 11:16:21,703 - INFO - Processed 2000/12082 transactions
+2025-06-11 11:16:21,862 - INFO - Processed 2100/12082 transactions
+2025-06-11 11:16:21,862 - INFO - Processed 2100/12082 transactions
+2025-06-11 11:16:21,963 - INFO - Processed 2200/12082 transactions
+2025-06-11 11:16:21,963 - INFO - Processed 2200/12082 transactions
+2025-06-11 11:16:22,119 - INFO - Processed 2300/12082 transactions
+2025-06-11 11:16:22,119 - INFO - Processed 2300/12082 transactions
+2025-06-11 11:16:22,192 - INFO - Processed 2400/12082 transactions
+2025-06-11 11:16:22,192 - INFO - Processed 2400/12082 transactions
+2025-06-11 11:16:22,432 - INFO - Processed 2500/12082 transactions
+2025-06-11 11:16:22,432 - INFO - Processed 2500/12082 transactions
+2025-06-11 11:16:22,497 - INFO - Processed 2600/12082 transactions
+2025-06-11 11:16:22,497 - INFO - Processed 2600/12082 transactions
+2025-06-11 11:16:22,548 - INFO - Processed 2700/12082 transactions
+2025-06-11 11:16:22,548 - INFO - Processed 2700/12082 transactions
+2025-06-11 11:16:22,623 - INFO - Processed 2800/12082 transactions
+2025-06-11 11:16:22,623 - INFO - Processed 2800/12082 transactions
+2025-06-11 11:16:22,695 - INFO - Processed 2900/12082 transactions
+2025-06-11 11:16:22,695 - INFO - Processed 2900/12082 transactions
+2025-06-11 11:16:22,760 - INFO - Processed 3000/12082 transactions
+2025-06-11 11:16:22,760 - INFO - Processed 3000/12082 transactions
+2025-06-11 11:16:22,884 - INFO - Processed 3100/12082 transactions
+2025-06-11 11:16:22,884 - INFO - Processed 3100/12082 transactions
+2025-06-11 11:16:23,020 - INFO - Processed 3200/12082 transactions
+2025-06-11 11:16:23,020 - INFO - Processed 3200/12082 transactions
+2025-06-11 11:16:23,170 - INFO - Processed 3300/12082 transactions
+2025-06-11 11:16:23,170 - INFO - Processed 3300/12082 transactions
+2025-06-11 11:16:23,317 - INFO - Processed 3400/12082 transactions
+2025-06-11 11:16:23,317 - INFO - Processed 3400/12082 transactions
+2025-06-11 11:16:23,446 - INFO - Processed 3500/12082 transactions
+2025-06-11 11:16:23,446 - INFO - Processed 3500/12082 transactions
+2025-06-11 11:16:23,605 - INFO - Processed 3600/12082 transactions
+2025-06-11 11:16:23,605 - INFO - Processed 3600/12082 transactions
+2025-06-11 11:16:23,742 - INFO - Processed 3700/12082 transactions
+2025-06-11 11:16:23,742 - INFO - Processed 3700/12082 transactions
+2025-06-11 11:16:23,876 - INFO - Processed 3800/12082 transactions
+2025-06-11 11:16:23,876 - INFO - Processed 3800/12082 transactions
+2025-06-11 11:16:24,031 - INFO - Processed 3900/12082 transactions
+2025-06-11 11:16:24,031 - INFO - Processed 3900/12082 transactions
+2025-06-11 11:16:24,169 - INFO - Processed 4000/12082 transactions
+2025-06-11 11:16:24,169 - INFO - Processed 4000/12082 transactions
+2025-06-11 11:16:24,295 - INFO - Processed 4100/12082 transactions
+2025-06-11 11:16:24,295 - INFO - Processed 4100/12082 transactions
+2025-06-11 11:16:24,407 - INFO - Processed 4200/12082 transactions
+2025-06-11 11:16:24,407 - INFO - Processed 4200/12082 transactions
+2025-06-11 11:16:24,613 - INFO - Processed 4300/12082 transactions
+2025-06-11 11:16:24,613 - INFO - Processed 4300/12082 transactions
+2025-06-11 11:16:24,866 - INFO - Processed 4400/12082 transactions
+2025-06-11 11:16:24,866 - INFO - Processed 4400/12082 transactions
+2025-06-11 11:16:25,164 - INFO - Processed 4500/12082 transactions
+2025-06-11 11:16:25,164 - INFO - Processed 4500/12082 transactions
+2025-06-11 11:16:25,395 - INFO - Processed 4600/12082 transactions
+2025-06-11 11:16:25,395 - INFO - Processed 4600/12082 transactions
+2025-06-11 11:16:25,636 - INFO - Processed 4700/12082 transactions
+2025-06-11 11:16:25,636 - INFO - Processed 4700/12082 transactions
+2025-06-11 11:16:25,780 - INFO - Processed 4800/12082 transactions
+2025-06-11 11:16:25,780 - INFO - Processed 4800/12082 transactions
+2025-06-11 11:16:25,842 - INFO - Processed 4900/12082 transactions
+2025-06-11 11:16:25,842 - INFO - Processed 4900/12082 transactions
+2025-06-11 11:16:26,016 - INFO - Processed 5000/12082 transactions
+2025-06-11 11:16:26,016 - INFO - Processed 5000/12082 transactions
+2025-06-11 11:16:26,221 - INFO - Processed 5100/12082 transactions
+2025-06-11 11:16:26,221 - INFO - Processed 5100/12082 transactions
+2025-06-11 11:16:26,407 - INFO - Processed 5200/12082 transactions
+2025-06-11 11:16:26,407 - INFO - Processed 5200/12082 transactions
+2025-06-11 11:16:26,535 - INFO - Processed 5300/12082 transactions
+2025-06-11 11:16:26,535 - INFO - Processed 5300/12082 transactions
+2025-06-11 11:16:26,641 - INFO - Processed 5400/12082 transactions
+2025-06-11 11:16:26,641 - INFO - Processed 5400/12082 transactions
+2025-06-11 11:16:26,748 - INFO - Processed 5500/12082 transactions
+2025-06-11 11:16:26,748 - INFO - Processed 5500/12082 transactions
+2025-06-11 11:16:26,878 - INFO - Processed 5600/12082 transactions
+2025-06-11 11:16:26,878 - INFO - Processed 5600/12082 transactions
+2025-06-11 11:16:27,073 - INFO - Processed 5700/12082 transactions
+2025-06-11 11:16:27,073 - INFO - Processed 5700/12082 transactions
+2025-06-11 11:16:27,160 - INFO - Processed 5800/12082 transactions
+2025-06-11 11:16:27,160 - INFO - Processed 5800/12082 transactions
+2025-06-11 11:16:27,392 - INFO - Processed 5900/12082 transactions
+2025-06-11 11:16:27,392 - INFO - Processed 5900/12082 transactions
+2025-06-11 11:16:27,597 - INFO - Processed 6000/12082 transactions
+2025-06-11 11:16:27,597 - INFO - Processed 6000/12082 transactions
+2025-06-11 11:16:27,725 - INFO - Processed 6100/12082 transactions
+2025-06-11 11:16:27,725 - INFO - Processed 6100/12082 transactions
+2025-06-11 11:16:27,844 - INFO - Processed 6200/12082 transactions
+2025-06-11 11:16:27,844 - INFO - Processed 6200/12082 transactions
+2025-06-11 11:16:27,995 - INFO - Processed 6300/12082 transactions
+2025-06-11 11:16:27,995 - INFO - Processed 6300/12082 transactions
+2025-06-11 11:16:28,121 - INFO - Processed 6400/12082 transactions
+2025-06-11 11:16:28,121 - INFO - Processed 6400/12082 transactions
+2025-06-11 11:16:28,270 - INFO - Processed 6500/12082 transactions
+2025-06-11 11:16:28,270 - INFO - Processed 6500/12082 transactions
+2025-06-11 11:16:28,380 - INFO - Processed 6600/12082 transactions
+2025-06-11 11:16:28,380 - INFO - Processed 6600/12082 transactions
+2025-06-11 11:16:28,532 - INFO - Processed 6700/12082 transactions
+2025-06-11 11:16:28,532 - INFO - Processed 6700/12082 transactions
+2025-06-11 11:16:28,636 - INFO - Processed 6800/12082 transactions
+2025-06-11 11:16:28,636 - INFO - Processed 6800/12082 transactions
+2025-06-11 11:16:28,746 - INFO - Processed 6900/12082 transactions
+2025-06-11 11:16:28,746 - INFO - Processed 6900/12082 transactions
+2025-06-11 11:16:28,888 - INFO - Processed 7000/12082 transactions
+2025-06-11 11:16:28,888 - INFO - Processed 7000/12082 transactions
+2025-06-11 11:16:28,991 - INFO - Processed 7100/12082 transactions
+2025-06-11 11:16:28,991 - INFO - Processed 7100/12082 transactions
+2025-06-11 11:16:29,173 - INFO - Processed 7200/12082 transactions
+2025-06-11 11:16:29,173 - INFO - Processed 7200/12082 transactions
+2025-06-11 11:16:29,430 - INFO - Processed 7300/12082 transactions
+2025-06-11 11:16:29,430 - INFO - Processed 7300/12082 transactions
+2025-06-11 11:16:29,612 - INFO - Processed 7400/12082 transactions
+2025-06-11 11:16:29,612 - INFO - Processed 7400/12082 transactions
+2025-06-11 11:16:29,716 - INFO - Processed 7500/12082 transactions
+2025-06-11 11:16:29,716 - INFO - Processed 7500/12082 transactions
+2025-06-11 11:16:29,880 - INFO - Processed 7600/12082 transactions
+2025-06-11 11:16:29,880 - INFO - Processed 7600/12082 transactions
+2025-06-11 11:16:29,994 - INFO - Processed 7700/12082 transactions
+2025-06-11 11:16:29,994 - INFO - Processed 7700/12082 transactions
+2025-06-11 11:16:30,199 - INFO - Processed 7800/12082 transactions
+2025-06-11 11:16:30,199 - INFO - Processed 7800/12082 transactions
+2025-06-11 11:16:30,343 - INFO - Processed 7900/12082 transactions
+2025-06-11 11:16:30,343 - INFO - Processed 7900/12082 transactions
+2025-06-11 11:16:30,488 - INFO - Processed 8000/12082 transactions
+2025-06-11 11:16:30,488 - INFO - Processed 8000/12082 transactions
+2025-06-11 11:16:30,651 - INFO - Processed 8100/12082 transactions
+2025-06-11 11:16:30,651 - INFO - Processed 8100/12082 transactions
+2025-06-11 11:16:30,784 - INFO - Processed 8200/12082 transactions
+2025-06-11 11:16:30,784 - INFO - Processed 8200/12082 transactions
+2025-06-11 11:16:30,971 - INFO - Processed 8300/12082 transactions
+2025-06-11 11:16:30,971 - INFO - Processed 8300/12082 transactions
+2025-06-11 11:16:31,102 - INFO - Processed 8400/12082 transactions
+2025-06-11 11:16:31,102 - INFO - Processed 8400/12082 transactions
+2025-06-11 11:16:31,239 - INFO - Processed 8500/12082 transactions
+2025-06-11 11:16:31,239 - INFO - Processed 8500/12082 transactions
+2025-06-11 11:16:31,413 - INFO - Processed 8600/12082 transactions
+2025-06-11 11:16:31,413 - INFO - Processed 8600/12082 transactions
+2025-06-11 11:16:31,558 - INFO - Processed 8700/12082 transactions
+2025-06-11 11:16:31,558 - INFO - Processed 8700/12082 transactions
+2025-06-11 11:16:31,774 - INFO - Processed 8800/12082 transactions
+2025-06-11 11:16:31,774 - INFO - Processed 8800/12082 transactions
+2025-06-11 11:16:31,957 - INFO - Processed 8900/12082 transactions
+2025-06-11 11:16:31,957 - INFO - Processed 8900/12082 transactions
+2025-06-11 11:16:32,211 - INFO - Processed 9000/12082 transactions
+2025-06-11 11:16:32,211 - INFO - Processed 9000/12082 transactions
+2025-06-11 11:16:32,427 - INFO - Processed 9100/12082 transactions
+2025-06-11 11:16:32,427 - INFO - Processed 9100/12082 transactions
+2025-06-11 11:16:32,652 - INFO - Processed 9200/12082 transactions
+2025-06-11 11:16:32,652 - INFO - Processed 9200/12082 transactions
+2025-06-11 11:16:32,779 - INFO - Processed 9300/12082 transactions
+2025-06-11 11:16:32,779 - INFO - Processed 9300/12082 transactions
+2025-06-11 11:16:32,898 - INFO - Processed 9400/12082 transactions
+2025-06-11 11:16:32,898 - INFO - Processed 9400/12082 transactions
+2025-06-11 11:16:33,094 - INFO - Processed 9500/12082 transactions
+2025-06-11 11:16:33,094 - INFO - Processed 9500/12082 transactions
+2025-06-11 11:16:33,294 - INFO - Processed 9600/12082 transactions
+2025-06-11 11:16:33,294 - INFO - Processed 9600/12082 transactions
+2025-06-11 11:16:33,429 - INFO - Processed 9700/12082 transactions
+2025-06-11 11:16:33,429 - INFO - Processed 9700/12082 transactions
+2025-06-11 11:16:33,696 - INFO - Processed 9800/12082 transactions
+2025-06-11 11:16:33,696 - INFO - Processed 9800/12082 transactions
+2025-06-11 11:16:33,959 - INFO - Processed 9900/12082 transactions
+2025-06-11 11:16:33,959 - INFO - Processed 9900/12082 transactions
+2025-06-11 11:16:34,189 - INFO - Processed 10000/12082 transactions
+2025-06-11 11:16:34,189 - INFO - Processed 10000/12082 transactions
+2025-06-11 11:16:34,399 - INFO - Processed 10100/12082 transactions
+2025-06-11 11:16:34,399 - INFO - Processed 10100/12082 transactions
+2025-06-11 11:16:34,602 - INFO - Processed 10200/12082 transactions
+2025-06-11 11:16:34,602 - INFO - Processed 10200/12082 transactions
+2025-06-11 11:16:34,753 - INFO - Processed 10300/12082 transactions
+2025-06-11 11:16:34,753 - INFO - Processed 10300/12082 transactions
+2025-06-11 11:16:34,866 - INFO - Processed 10400/12082 transactions
+2025-06-11 11:16:34,866 - INFO - Processed 10400/12082 transactions
+2025-06-11 11:16:35,077 - INFO - Processed 10500/12082 transactions
+2025-06-11 11:16:35,077 - INFO - Processed 10500/12082 transactions
+2025-06-11 11:16:35,276 - INFO - Processed 10600/12082 transactions
+2025-06-11 11:16:35,276 - INFO - Processed 10600/12082 transactions
+2025-06-11 11:16:35,427 - INFO - Processed 10700/12082 transactions
+2025-06-11 11:16:35,427 - INFO - Processed 10700/12082 transactions
+2025-06-11 11:16:35,569 - INFO - Processed 10800/12082 transactions
+2025-06-11 11:16:35,569 - INFO - Processed 10800/12082 transactions
+2025-06-11 11:16:35,751 - INFO - Processed 10900/12082 transactions
+2025-06-11 11:16:35,751 - INFO - Processed 10900/12082 transactions
+2025-06-11 11:16:35,848 - INFO - Processed 11000/12082 transactions
+2025-06-11 11:16:35,848 - INFO - Processed 11000/12082 transactions
+2025-06-11 11:16:35,965 - INFO - Processed 11100/12082 transactions
+2025-06-11 11:16:35,965 - INFO - Processed 11100/12082 transactions
+2025-06-11 11:16:36,071 - INFO - Processed 11200/12082 transactions
+2025-06-11 11:16:36,071 - INFO - Processed 11200/12082 transactions
+2025-06-11 11:16:36,199 - INFO - Processed 11300/12082 transactions
+2025-06-11 11:16:36,199 - INFO - Processed 11300/12082 transactions
+2025-06-11 11:16:36,329 - INFO - Processed 11400/12082 transactions
+2025-06-11 11:16:36,329 - INFO - Processed 11400/12082 transactions
+2025-06-11 11:16:36,511 - INFO - Processed 11500/12082 transactions
+2025-06-11 11:16:36,511 - INFO - Processed 11500/12082 transactions
+2025-06-11 11:16:36,679 - INFO - Processed 11600/12082 transactions
+2025-06-11 11:16:36,679 - INFO - Processed 11600/12082 transactions
+2025-06-11 11:16:36,766 - INFO - Processed 11700/12082 transactions
+2025-06-11 11:16:36,766 - INFO - Processed 11700/12082 transactions
+2025-06-11 11:16:36,839 - INFO - Processed 11800/12082 transactions
+2025-06-11 11:16:36,839 - INFO - Processed 11800/12082 transactions
+2025-06-11 11:16:36,995 - INFO - Processed 11900/12082 transactions
+2025-06-11 11:16:36,995 - INFO - Processed 11900/12082 transactions
+2025-06-11 11:16:37,171 - INFO - Processed 12000/12082 transactions
+2025-06-11 11:16:37,171 - INFO - Processed 12000/12082 transactions
+2025-06-11 11:16:37,323 - INFO - Categorization completed in 19.11 seconds
+2025-06-11 11:16:37,323 - INFO - Categorization completed in 19.11 seconds
+2025-06-11 11:16:37,347 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 11:16:37,347 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 11:16:37,348 - INFO - Total Transactions: 12082
+2025-06-11 11:16:37,348 - INFO - Total Transactions: 12082
+2025-06-11 11:16:37,349 - INFO - Categorised: 9935
+2025-06-11 11:16:37,349 - INFO - Categorised: 9935
+2025-06-11 11:16:37,349 - INFO - Uncategorised: 2147
+2025-06-11 11:16:37,349 - INFO - Uncategorised: 2147
+2025-06-11 11:16:37,349 - INFO - Categorisation Rate: 82.23
+2025-06-11 11:16:37,349 - INFO - Categorisation Rate: 82.23
+2025-06-11 11:16:37,350 - INFO - Auto Approved: 9882
+2025-06-11 11:16:37,350 - INFO - Auto Approved: 9882
+2025-06-11 11:16:37,351 - INFO - Avg Confidence: 99.94
+2025-06-11 11:16:37,351 - INFO - Avg Confidence: 99.94
+2025-06-11 11:16:37,352 - INFO - High Confidence Matches: 9882
+2025-06-11 11:16:37,352 - INFO - High Confidence Matches: 9882
+2025-06-11 11:16:37,414 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_54a8dabf.csv
+2025-06-11 11:16:37,414 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorized_output_54a8dabf.csv
+2025-06-11 11:16:37,415 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 11:16:37,415 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 15:13:43,275 - INFO - Starting bank statement categorization process
+2025-06-11 15:13:43,281 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpmmy6avde.csv
+2025-06-11 15:13:43,415 - ERROR - Error loading rules file: Missing columns in rules file: ['Category']
+2025-06-11 15:14:01,739 - INFO - Starting bank statement categorization process
+2025-06-11 15:14:01,739 - INFO - Starting bank statement categorization process
+2025-06-11 15:14:01,740 - INFO - Loading rules from rules.csv
+2025-06-11 15:14:01,740 - INFO - Loading rules from rules.csv
+2025-06-11 15:14:01,845 - INFO - Successfully loaded 1827 rules
+2025-06-11 15:14:01,845 - INFO - Successfully loaded 1827 rules
+2025-06-11 15:14:01,846 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp_w1o9ghn.csv
+2025-06-11 15:14:01,846 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp_w1o9ghn.csv
+2025-06-11 15:14:01,971 - INFO - Successfully loaded 12082 transactions
+2025-06-11 15:14:01,971 - INFO - Successfully loaded 12082 transactions
+2025-06-11 15:14:01,972 - INFO - Starting transaction categorization...
+2025-06-11 15:14:01,972 - INFO - Starting transaction categorization...
+2025-06-11 15:14:03,458 - INFO - Processed 100/12082 transactions
+2025-06-11 15:14:03,458 - INFO - Processed 100/12082 transactions
+2025-06-11 15:14:04,687 - INFO - Processed 200/12082 transactions
+2025-06-11 15:14:04,687 - INFO - Processed 200/12082 transactions
+2025-06-11 15:14:06,082 - INFO - Processed 300/12082 transactions
+2025-06-11 15:14:06,082 - INFO - Processed 300/12082 transactions
+2025-06-11 15:14:07,159 - INFO - Processed 400/12082 transactions
+2025-06-11 15:14:07,159 - INFO - Processed 400/12082 transactions
+2025-06-11 15:14:08,292 - INFO - Processed 500/12082 transactions
+2025-06-11 15:14:08,292 - INFO - Processed 500/12082 transactions
+2025-06-11 15:14:09,112 - INFO - Processed 600/12082 transactions
+2025-06-11 15:14:09,112 - INFO - Processed 600/12082 transactions
+2025-06-11 15:14:10,106 - INFO - Processed 700/12082 transactions
+2025-06-11 15:14:10,106 - INFO - Processed 700/12082 transactions
+2025-06-11 15:14:10,955 - INFO - Processed 800/12082 transactions
+2025-06-11 15:14:10,955 - INFO - Processed 800/12082 transactions
+2025-06-11 15:14:11,638 - INFO - Processed 900/12082 transactions
+2025-06-11 15:14:11,638 - INFO - Processed 900/12082 transactions
+2025-06-11 15:14:12,210 - INFO - Processed 1000/12082 transactions
+2025-06-11 15:14:12,210 - INFO - Processed 1000/12082 transactions
+2025-06-11 15:14:12,941 - INFO - Processed 1100/12082 transactions
+2025-06-11 15:14:12,941 - INFO - Processed 1100/12082 transactions
+2025-06-11 15:14:13,584 - INFO - Processed 1200/12082 transactions
+2025-06-11 15:14:13,584 - INFO - Processed 1200/12082 transactions
+2025-06-11 15:14:14,172 - INFO - Processed 1300/12082 transactions
+2025-06-11 15:14:14,172 - INFO - Processed 1300/12082 transactions
+2025-06-11 15:14:14,905 - INFO - Processed 1400/12082 transactions
+2025-06-11 15:14:14,905 - INFO - Processed 1400/12082 transactions
+2025-06-11 15:14:15,599 - INFO - Processed 1500/12082 transactions
+2025-06-11 15:14:15,599 - INFO - Processed 1500/12082 transactions
+2025-06-11 15:14:16,172 - INFO - Processed 1600/12082 transactions
+2025-06-11 15:14:16,172 - INFO - Processed 1600/12082 transactions
+2025-06-11 15:14:16,683 - INFO - Processed 1700/12082 transactions
+2025-06-11 15:14:16,683 - INFO - Processed 1700/12082 transactions
+2025-06-11 15:14:17,443 - INFO - Processed 1800/12082 transactions
+2025-06-11 15:14:17,443 - INFO - Processed 1800/12082 transactions
+2025-06-11 15:14:18,161 - INFO - Processed 1900/12082 transactions
+2025-06-11 15:14:18,161 - INFO - Processed 1900/12082 transactions
+2025-06-11 15:14:19,196 - INFO - Processed 2000/12082 transactions
+2025-06-11 15:14:19,196 - INFO - Processed 2000/12082 transactions
+2025-06-11 15:14:20,101 - INFO - Processed 2100/12082 transactions
+2025-06-11 15:14:20,101 - INFO - Processed 2100/12082 transactions
+2025-06-11 15:14:20,940 - INFO - Processed 2200/12082 transactions
+2025-06-11 15:14:20,940 - INFO - Processed 2200/12082 transactions
+2025-06-11 15:14:21,796 - INFO - Processed 2300/12082 transactions
+2025-06-11 15:14:21,796 - INFO - Processed 2300/12082 transactions
+2025-06-11 15:14:22,884 - INFO - Processed 2400/12082 transactions
+2025-06-11 15:14:22,884 - INFO - Processed 2400/12082 transactions
+2025-06-11 15:14:23,951 - INFO - Processed 2500/12082 transactions
+2025-06-11 15:14:23,951 - INFO - Processed 2500/12082 transactions
+2025-06-11 15:14:24,828 - INFO - Processed 2600/12082 transactions
+2025-06-11 15:14:24,828 - INFO - Processed 2600/12082 transactions
+2025-06-11 15:14:25,754 - INFO - Processed 2700/12082 transactions
+2025-06-11 15:14:25,754 - INFO - Processed 2700/12082 transactions
+2025-06-11 15:14:26,309 - INFO - Processed 2800/12082 transactions
+2025-06-11 15:14:26,309 - INFO - Processed 2800/12082 transactions
+2025-06-11 15:14:26,999 - INFO - Processed 2900/12082 transactions
+2025-06-11 15:14:26,999 - INFO - Processed 2900/12082 transactions
+2025-06-11 15:14:27,368 - INFO - Processed 3000/12082 transactions
+2025-06-11 15:14:27,368 - INFO - Processed 3000/12082 transactions
+2025-06-11 15:14:28,036 - INFO - Processed 3100/12082 transactions
+2025-06-11 15:14:28,036 - INFO - Processed 3100/12082 transactions
+2025-06-11 15:14:28,979 - INFO - Processed 3200/12082 transactions
+2025-06-11 15:14:28,979 - INFO - Processed 3200/12082 transactions
+2025-06-11 15:14:29,996 - INFO - Processed 3300/12082 transactions
+2025-06-11 15:14:29,996 - INFO - Processed 3300/12082 transactions
+2025-06-11 15:14:30,958 - INFO - Processed 3400/12082 transactions
+2025-06-11 15:14:30,958 - INFO - Processed 3400/12082 transactions
+2025-06-11 15:14:31,928 - INFO - Processed 3500/12082 transactions
+2025-06-11 15:14:31,928 - INFO - Processed 3500/12082 transactions
+2025-06-11 15:14:32,481 - INFO - Processed 3600/12082 transactions
+2025-06-11 15:14:32,481 - INFO - Processed 3600/12082 transactions
+2025-06-11 15:14:33,413 - INFO - Processed 3700/12082 transactions
+2025-06-11 15:14:33,413 - INFO - Processed 3700/12082 transactions
+2025-06-11 15:14:34,167 - INFO - Processed 3800/12082 transactions
+2025-06-11 15:14:34,167 - INFO - Processed 3800/12082 transactions
+2025-06-11 15:14:35,134 - INFO - Processed 3900/12082 transactions
+2025-06-11 15:14:35,134 - INFO - Processed 3900/12082 transactions
+2025-06-11 15:14:36,048 - INFO - Processed 4000/12082 transactions
+2025-06-11 15:14:36,048 - INFO - Processed 4000/12082 transactions
+2025-06-11 15:14:37,185 - INFO - Processed 4100/12082 transactions
+2025-06-11 15:14:37,185 - INFO - Processed 4100/12082 transactions
+2025-06-11 15:14:38,026 - INFO - Processed 4200/12082 transactions
+2025-06-11 15:14:38,026 - INFO - Processed 4200/12082 transactions
+2025-06-11 15:14:39,195 - INFO - Processed 4300/12082 transactions
+2025-06-11 15:14:39,195 - INFO - Processed 4300/12082 transactions
+2025-06-11 15:14:39,937 - INFO - Processed 4400/12082 transactions
+2025-06-11 15:14:39,937 - INFO - Processed 4400/12082 transactions
+2025-06-11 15:14:40,461 - INFO - Processed 4500/12082 transactions
+2025-06-11 15:14:40,461 - INFO - Processed 4500/12082 transactions
+2025-06-11 15:14:41,282 - INFO - Processed 4600/12082 transactions
+2025-06-11 15:14:41,282 - INFO - Processed 4600/12082 transactions
+2025-06-11 15:14:42,249 - INFO - Processed 4700/12082 transactions
+2025-06-11 15:14:42,249 - INFO - Processed 4700/12082 transactions
+2025-06-11 15:14:43,201 - INFO - Processed 4800/12082 transactions
+2025-06-11 15:14:43,201 - INFO - Processed 4800/12082 transactions
+2025-06-11 15:14:43,737 - INFO - Processed 4900/12082 transactions
+2025-06-11 15:14:43,737 - INFO - Processed 4900/12082 transactions
+2025-06-11 15:14:44,699 - INFO - Processed 5000/12082 transactions
+2025-06-11 15:14:44,699 - INFO - Processed 5000/12082 transactions
+2025-06-11 15:14:45,832 - INFO - Processed 5100/12082 transactions
+2025-06-11 15:14:45,832 - INFO - Processed 5100/12082 transactions
+2025-06-11 15:14:47,077 - INFO - Processed 5200/12082 transactions
+2025-06-11 15:14:47,077 - INFO - Processed 5200/12082 transactions
+2025-06-11 15:14:47,810 - INFO - Processed 5300/12082 transactions
+2025-06-11 15:14:47,810 - INFO - Processed 5300/12082 transactions
+2025-06-11 15:14:48,683 - INFO - Processed 5400/12082 transactions
+2025-06-11 15:14:48,683 - INFO - Processed 5400/12082 transactions
+2025-06-11 15:14:49,590 - INFO - Processed 5500/12082 transactions
+2025-06-11 15:14:49,590 - INFO - Processed 5500/12082 transactions
+2025-06-11 15:14:50,599 - INFO - Processed 5600/12082 transactions
+2025-06-11 15:14:50,599 - INFO - Processed 5600/12082 transactions
+2025-06-11 15:14:51,520 - INFO - Processed 5700/12082 transactions
+2025-06-11 15:14:51,520 - INFO - Processed 5700/12082 transactions
+2025-06-11 15:14:52,263 - INFO - Processed 5800/12082 transactions
+2025-06-11 15:14:52,263 - INFO - Processed 5800/12082 transactions
+2025-06-11 15:14:52,918 - INFO - Processed 5900/12082 transactions
+2025-06-11 15:14:52,918 - INFO - Processed 5900/12082 transactions
+2025-06-11 15:14:53,789 - INFO - Processed 6000/12082 transactions
+2025-06-11 15:14:53,789 - INFO - Processed 6000/12082 transactions
+2025-06-11 15:14:54,762 - INFO - Processed 6100/12082 transactions
+2025-06-11 15:14:54,762 - INFO - Processed 6100/12082 transactions
+2025-06-11 15:14:55,660 - INFO - Processed 6200/12082 transactions
+2025-06-11 15:14:55,660 - INFO - Processed 6200/12082 transactions
+2025-06-11 15:14:56,661 - INFO - Processed 6300/12082 transactions
+2025-06-11 15:14:56,661 - INFO - Processed 6300/12082 transactions
+2025-06-11 15:14:57,477 - INFO - Processed 6400/12082 transactions
+2025-06-11 15:14:57,477 - INFO - Processed 6400/12082 transactions
+2025-06-11 15:14:58,472 - INFO - Processed 6500/12082 transactions
+2025-06-11 15:14:58,472 - INFO - Processed 6500/12082 transactions
+2025-06-11 15:14:59,384 - INFO - Processed 6600/12082 transactions
+2025-06-11 15:14:59,384 - INFO - Processed 6600/12082 transactions
+2025-06-11 15:15:00,165 - INFO - Processed 6700/12082 transactions
+2025-06-11 15:15:00,165 - INFO - Processed 6700/12082 transactions
+2025-06-11 15:15:01,094 - INFO - Processed 6800/12082 transactions
+2025-06-11 15:15:01,094 - INFO - Processed 6800/12082 transactions
+2025-06-11 15:15:01,750 - INFO - Processed 6900/12082 transactions
+2025-06-11 15:15:01,750 - INFO - Processed 6900/12082 transactions
+2025-06-11 15:15:02,699 - INFO - Processed 7000/12082 transactions
+2025-06-11 15:15:02,699 - INFO - Processed 7000/12082 transactions
+2025-06-11 15:15:03,537 - INFO - Processed 7100/12082 transactions
+2025-06-11 15:15:03,537 - INFO - Processed 7100/12082 transactions
+2025-06-11 15:15:04,520 - INFO - Processed 7200/12082 transactions
+2025-06-11 15:15:04,520 - INFO - Processed 7200/12082 transactions
+2025-06-11 15:15:05,430 - INFO - Processed 7300/12082 transactions
+2025-06-11 15:15:05,430 - INFO - Processed 7300/12082 transactions
+2025-06-11 15:15:06,128 - INFO - Processed 7400/12082 transactions
+2025-06-11 15:15:06,128 - INFO - Processed 7400/12082 transactions
+2025-06-11 15:15:06,940 - INFO - Processed 7500/12082 transactions
+2025-06-11 15:15:06,940 - INFO - Processed 7500/12082 transactions
+2025-06-11 15:15:07,650 - INFO - Processed 7600/12082 transactions
+2025-06-11 15:15:07,650 - INFO - Processed 7600/12082 transactions
+2025-06-11 15:15:08,492 - INFO - Processed 7700/12082 transactions
+2025-06-11 15:15:08,492 - INFO - Processed 7700/12082 transactions
+2025-06-11 15:15:09,257 - INFO - Processed 7800/12082 transactions
+2025-06-11 15:15:09,257 - INFO - Processed 7800/12082 transactions
+2025-06-11 15:15:10,212 - INFO - Processed 7900/12082 transactions
+2025-06-11 15:15:10,212 - INFO - Processed 7900/12082 transactions
+2025-06-11 15:15:11,103 - INFO - Processed 8000/12082 transactions
+2025-06-11 15:15:11,103 - INFO - Processed 8000/12082 transactions
+2025-06-11 15:15:11,862 - INFO - Processed 8100/12082 transactions
+2025-06-11 15:15:11,862 - INFO - Processed 8100/12082 transactions
+2025-06-11 15:15:12,727 - INFO - Processed 8200/12082 transactions
+2025-06-11 15:15:12,727 - INFO - Processed 8200/12082 transactions
+2025-06-11 15:15:13,551 - INFO - Processed 8300/12082 transactions
+2025-06-11 15:15:13,551 - INFO - Processed 8300/12082 transactions
+2025-06-11 15:15:14,348 - INFO - Processed 8400/12082 transactions
+2025-06-11 15:15:14,348 - INFO - Processed 8400/12082 transactions
+2025-06-11 15:15:15,135 - INFO - Processed 8500/12082 transactions
+2025-06-11 15:15:15,135 - INFO - Processed 8500/12082 transactions
+2025-06-11 15:15:15,863 - INFO - Processed 8600/12082 transactions
+2025-06-11 15:15:15,863 - INFO - Processed 8600/12082 transactions
+2025-06-11 15:15:16,626 - INFO - Processed 8700/12082 transactions
+2025-06-11 15:15:16,626 - INFO - Processed 8700/12082 transactions
+2025-06-11 15:15:17,477 - INFO - Processed 8800/12082 transactions
+2025-06-11 15:15:17,477 - INFO - Processed 8800/12082 transactions
+2025-06-11 15:15:18,413 - INFO - Processed 8900/12082 transactions
+2025-06-11 15:15:18,413 - INFO - Processed 8900/12082 transactions
+2025-06-11 15:15:19,252 - INFO - Processed 9000/12082 transactions
+2025-06-11 15:15:19,252 - INFO - Processed 9000/12082 transactions
+2025-06-11 15:15:20,136 - INFO - Processed 9100/12082 transactions
+2025-06-11 15:15:20,136 - INFO - Processed 9100/12082 transactions
+2025-06-11 15:15:21,066 - INFO - Processed 9200/12082 transactions
+2025-06-11 15:15:21,066 - INFO - Processed 9200/12082 transactions
+2025-06-11 15:15:21,783 - INFO - Processed 9300/12082 transactions
+2025-06-11 15:15:21,783 - INFO - Processed 9300/12082 transactions
+2025-06-11 15:15:22,692 - INFO - Processed 9400/12082 transactions
+2025-06-11 15:15:22,692 - INFO - Processed 9400/12082 transactions
+2025-06-11 15:15:23,588 - INFO - Processed 9500/12082 transactions
+2025-06-11 15:15:23,588 - INFO - Processed 9500/12082 transactions
+2025-06-11 15:15:24,547 - INFO - Processed 9600/12082 transactions
+2025-06-11 15:15:24,547 - INFO - Processed 9600/12082 transactions
+2025-06-11 15:15:25,292 - INFO - Processed 9700/12082 transactions
+2025-06-11 15:15:25,292 - INFO - Processed 9700/12082 transactions
+2025-06-11 15:15:26,177 - INFO - Processed 9800/12082 transactions
+2025-06-11 15:15:26,177 - INFO - Processed 9800/12082 transactions
+2025-06-11 15:15:26,998 - INFO - Processed 9900/12082 transactions
+2025-06-11 15:15:26,998 - INFO - Processed 9900/12082 transactions
+2025-06-11 15:15:27,785 - INFO - Processed 10000/12082 transactions
+2025-06-11 15:15:27,785 - INFO - Processed 10000/12082 transactions
+2025-06-11 15:15:28,555 - INFO - Processed 10100/12082 transactions
+2025-06-11 15:15:28,555 - INFO - Processed 10100/12082 transactions
+2025-06-11 15:15:29,330 - INFO - Processed 10200/12082 transactions
+2025-06-11 15:15:29,330 - INFO - Processed 10200/12082 transactions
+2025-06-11 15:15:30,022 - INFO - Processed 10300/12082 transactions
+2025-06-11 15:15:30,022 - INFO - Processed 10300/12082 transactions
+2025-06-11 15:15:30,781 - INFO - Processed 10400/12082 transactions
+2025-06-11 15:15:30,781 - INFO - Processed 10400/12082 transactions
+2025-06-11 15:15:31,513 - INFO - Processed 10500/12082 transactions
+2025-06-11 15:15:31,513 - INFO - Processed 10500/12082 transactions
+2025-06-11 15:15:32,223 - INFO - Processed 10600/12082 transactions
+2025-06-11 15:15:32,223 - INFO - Processed 10600/12082 transactions
+2025-06-11 15:15:33,133 - INFO - Processed 10700/12082 transactions
+2025-06-11 15:15:33,133 - INFO - Processed 10700/12082 transactions
+2025-06-11 15:15:33,786 - INFO - Processed 10800/12082 transactions
+2025-06-11 15:15:33,786 - INFO - Processed 10800/12082 transactions
+2025-06-11 15:15:34,506 - INFO - Processed 10900/12082 transactions
+2025-06-11 15:15:34,506 - INFO - Processed 10900/12082 transactions
+2025-06-11 15:15:35,135 - INFO - Processed 11000/12082 transactions
+2025-06-11 15:15:35,135 - INFO - Processed 11000/12082 transactions
+2025-06-11 15:15:35,929 - INFO - Processed 11100/12082 transactions
+2025-06-11 15:15:35,929 - INFO - Processed 11100/12082 transactions
+2025-06-11 15:15:36,723 - INFO - Processed 11200/12082 transactions
+2025-06-11 15:15:36,723 - INFO - Processed 11200/12082 transactions
+2025-06-11 15:15:37,433 - INFO - Processed 11300/12082 transactions
+2025-06-11 15:15:37,433 - INFO - Processed 11300/12082 transactions
+2025-06-11 15:15:38,377 - INFO - Processed 11400/12082 transactions
+2025-06-11 15:15:38,377 - INFO - Processed 11400/12082 transactions
+2025-06-11 15:15:39,114 - INFO - Processed 11500/12082 transactions
+2025-06-11 15:15:39,114 - INFO - Processed 11500/12082 transactions
+2025-06-11 15:15:39,938 - INFO - Processed 11600/12082 transactions
+2025-06-11 15:15:39,938 - INFO - Processed 11600/12082 transactions
+2025-06-11 15:15:40,639 - INFO - Processed 11700/12082 transactions
+2025-06-11 15:15:40,639 - INFO - Processed 11700/12082 transactions
+2025-06-11 15:15:41,500 - INFO - Processed 11800/12082 transactions
+2025-06-11 15:15:41,500 - INFO - Processed 11800/12082 transactions
+2025-06-11 15:15:42,438 - INFO - Processed 11900/12082 transactions
+2025-06-11 15:15:42,438 - INFO - Processed 11900/12082 transactions
+2025-06-11 15:15:43,353 - INFO - Processed 12000/12082 transactions
+2025-06-11 15:15:43,353 - INFO - Processed 12000/12082 transactions
+2025-06-11 15:15:44,327 - INFO - Categorization completed in 102.35 seconds
+2025-06-11 15:15:44,327 - INFO - Categorization completed in 102.35 seconds
+2025-06-11 15:15:44,354 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 15:15:44,354 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 15:15:44,355 - INFO - Total Transactions: 12082
+2025-06-11 15:15:44,355 - INFO - Total Transactions: 12082
+2025-06-11 15:15:44,356 - INFO - Categorised: 4361
+2025-06-11 15:15:44,356 - INFO - Categorised: 4361
+2025-06-11 15:15:44,356 - INFO - Uncategorised: 7721
+2025-06-11 15:15:44,356 - INFO - Uncategorised: 7721
+2025-06-11 15:15:44,357 - INFO - Categorisation Rate: 36.1
+2025-06-11 15:15:44,357 - INFO - Categorisation Rate: 36.1
+2025-06-11 15:15:44,358 - INFO - Auto Approved: 4323
+2025-06-11 15:15:44,358 - INFO - Auto Approved: 4323
+2025-06-11 15:15:44,358 - INFO - Avg Confidence: 99.92
+2025-06-11 15:15:44,358 - INFO - Avg Confidence: 99.92
+2025-06-11 15:15:44,359 - INFO - High Confidence Matches: 4323
+2025-06-11 15:15:44,359 - INFO - High Confidence Matches: 4323
+2025-06-11 15:15:44,442 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_bc377e37.csv
+2025-06-11 15:15:44,442 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_bc377e37.csv
+2025-06-11 15:15:44,443 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 15:15:44,443 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 15:53:00,737 - INFO - Starting bank statement categorization process
+2025-06-11 15:53:00,737 - INFO - Starting bank statement categorization process
+2025-06-11 15:53:00,737 - INFO - Starting bank statement categorization process
+2025-06-11 15:53:00,738 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp4d7d3mm5.csv
+2025-06-11 15:53:00,738 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp4d7d3mm5.csv
+2025-06-11 15:53:00,738 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp4d7d3mm5.csv
+2025-06-11 15:53:00,799 - INFO - Successfully loaded 1029 rules
+2025-06-11 15:53:00,799 - INFO - Successfully loaded 1029 rules
+2025-06-11 15:53:00,799 - INFO - Successfully loaded 1029 rules
+2025-06-11 15:53:00,801 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpgjh45w76.csv
+2025-06-11 15:53:00,801 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpgjh45w76.csv
+2025-06-11 15:53:00,801 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpgjh45w76.csv
+2025-06-11 15:53:00,930 - INFO - Successfully loaded 12082 transactions
+2025-06-11 15:53:00,930 - INFO - Successfully loaded 12082 transactions
+2025-06-11 15:53:00,930 - INFO - Successfully loaded 12082 transactions
+2025-06-11 15:53:00,931 - INFO - Starting transaction categorization...
+2025-06-11 15:53:00,931 - INFO - Starting transaction categorization...
+2025-06-11 15:53:00,931 - INFO - Starting transaction categorization...
+2025-06-11 15:53:01,311 - INFO - Processed 100/12082 transactions
+2025-06-11 15:53:01,311 - INFO - Processed 100/12082 transactions
+2025-06-11 15:53:01,311 - INFO - Processed 100/12082 transactions
+2025-06-11 15:53:01,472 - INFO - Processed 200/12082 transactions
+2025-06-11 15:53:01,472 - INFO - Processed 200/12082 transactions
+2025-06-11 15:53:01,472 - INFO - Processed 200/12082 transactions
+2025-06-11 15:53:01,687 - INFO - Processed 300/12082 transactions
+2025-06-11 15:53:01,687 - INFO - Processed 300/12082 transactions
+2025-06-11 15:53:01,687 - INFO - Processed 300/12082 transactions
+2025-06-11 15:53:01,822 - INFO - Processed 400/12082 transactions
+2025-06-11 15:53:01,822 - INFO - Processed 400/12082 transactions
+2025-06-11 15:53:01,822 - INFO - Processed 400/12082 transactions
+2025-06-11 15:53:02,131 - INFO - Processed 500/12082 transactions
+2025-06-11 15:53:02,131 - INFO - Processed 500/12082 transactions
+2025-06-11 15:53:02,131 - INFO - Processed 500/12082 transactions
+2025-06-11 15:53:02,281 - INFO - Processed 600/12082 transactions
+2025-06-11 15:53:02,281 - INFO - Processed 600/12082 transactions
+2025-06-11 15:53:02,281 - INFO - Processed 600/12082 transactions
+2025-06-11 15:53:02,443 - INFO - Processed 700/12082 transactions
+2025-06-11 15:53:02,443 - INFO - Processed 700/12082 transactions
+2025-06-11 15:53:02,443 - INFO - Processed 700/12082 transactions
+2025-06-11 15:53:02,654 - INFO - Processed 800/12082 transactions
+2025-06-11 15:53:02,654 - INFO - Processed 800/12082 transactions
+2025-06-11 15:53:02,654 - INFO - Processed 800/12082 transactions
+2025-06-11 15:53:02,802 - INFO - Processed 900/12082 transactions
+2025-06-11 15:53:02,802 - INFO - Processed 900/12082 transactions
+2025-06-11 15:53:02,802 - INFO - Processed 900/12082 transactions
+2025-06-11 15:53:02,895 - INFO - Processed 1000/12082 transactions
+2025-06-11 15:53:02,895 - INFO - Processed 1000/12082 transactions
+2025-06-11 15:53:02,895 - INFO - Processed 1000/12082 transactions
+2025-06-11 15:53:03,047 - INFO - Processed 1100/12082 transactions
+2025-06-11 15:53:03,047 - INFO - Processed 1100/12082 transactions
+2025-06-11 15:53:03,047 - INFO - Processed 1100/12082 transactions
+2025-06-11 15:53:03,114 - INFO - Processed 1200/12082 transactions
+2025-06-11 15:53:03,114 - INFO - Processed 1200/12082 transactions
+2025-06-11 15:53:03,114 - INFO - Processed 1200/12082 transactions
+2025-06-11 15:53:03,318 - INFO - Processed 1300/12082 transactions
+2025-06-11 15:53:03,318 - INFO - Processed 1300/12082 transactions
+2025-06-11 15:53:03,318 - INFO - Processed 1300/12082 transactions
+2025-06-11 15:53:03,553 - INFO - Processed 1400/12082 transactions
+2025-06-11 15:53:03,553 - INFO - Processed 1400/12082 transactions
+2025-06-11 15:53:03,553 - INFO - Processed 1400/12082 transactions
+2025-06-11 15:53:03,703 - INFO - Processed 1500/12082 transactions
+2025-06-11 15:53:03,703 - INFO - Processed 1500/12082 transactions
+2025-06-11 15:53:03,703 - INFO - Processed 1500/12082 transactions
+2025-06-11 15:53:03,784 - INFO - Processed 1600/12082 transactions
+2025-06-11 15:53:03,784 - INFO - Processed 1600/12082 transactions
+2025-06-11 15:53:03,784 - INFO - Processed 1600/12082 transactions
+2025-06-11 15:53:03,849 - INFO - Processed 1700/12082 transactions
+2025-06-11 15:53:03,849 - INFO - Processed 1700/12082 transactions
+2025-06-11 15:53:03,849 - INFO - Processed 1700/12082 transactions
+2025-06-11 15:53:04,118 - INFO - Processed 1800/12082 transactions
+2025-06-11 15:53:04,118 - INFO - Processed 1800/12082 transactions
+2025-06-11 15:53:04,118 - INFO - Processed 1800/12082 transactions
+2025-06-11 15:53:04,355 - INFO - Processed 1900/12082 transactions
+2025-06-11 15:53:04,355 - INFO - Processed 1900/12082 transactions
+2025-06-11 15:53:04,355 - INFO - Processed 1900/12082 transactions
+2025-06-11 15:53:04,499 - INFO - Processed 2000/12082 transactions
+2025-06-11 15:53:04,499 - INFO - Processed 2000/12082 transactions
+2025-06-11 15:53:04,499 - INFO - Processed 2000/12082 transactions
+2025-06-11 15:53:04,680 - INFO - Processed 2100/12082 transactions
+2025-06-11 15:53:04,680 - INFO - Processed 2100/12082 transactions
+2025-06-11 15:53:04,680 - INFO - Processed 2100/12082 transactions
+2025-06-11 15:53:04,790 - INFO - Processed 2200/12082 transactions
+2025-06-11 15:53:04,790 - INFO - Processed 2200/12082 transactions
+2025-06-11 15:53:04,790 - INFO - Processed 2200/12082 transactions
+2025-06-11 15:53:04,967 - INFO - Processed 2300/12082 transactions
+2025-06-11 15:53:04,967 - INFO - Processed 2300/12082 transactions
+2025-06-11 15:53:04,967 - INFO - Processed 2300/12082 transactions
+2025-06-11 15:53:05,055 - INFO - Processed 2400/12082 transactions
+2025-06-11 15:53:05,055 - INFO - Processed 2400/12082 transactions
+2025-06-11 15:53:05,055 - INFO - Processed 2400/12082 transactions
+2025-06-11 15:53:05,316 - INFO - Processed 2500/12082 transactions
+2025-06-11 15:53:05,316 - INFO - Processed 2500/12082 transactions
+2025-06-11 15:53:05,316 - INFO - Processed 2500/12082 transactions
+2025-06-11 15:53:05,389 - INFO - Processed 2600/12082 transactions
+2025-06-11 15:53:05,389 - INFO - Processed 2600/12082 transactions
+2025-06-11 15:53:05,389 - INFO - Processed 2600/12082 transactions
+2025-06-11 15:53:05,444 - INFO - Processed 2700/12082 transactions
+2025-06-11 15:53:05,444 - INFO - Processed 2700/12082 transactions
+2025-06-11 15:53:05,444 - INFO - Processed 2700/12082 transactions
+2025-06-11 15:53:05,521 - INFO - Processed 2800/12082 transactions
+2025-06-11 15:53:05,521 - INFO - Processed 2800/12082 transactions
+2025-06-11 15:53:05,521 - INFO - Processed 2800/12082 transactions
+2025-06-11 15:53:05,596 - INFO - Processed 2900/12082 transactions
+2025-06-11 15:53:05,596 - INFO - Processed 2900/12082 transactions
+2025-06-11 15:53:05,596 - INFO - Processed 2900/12082 transactions
+2025-06-11 15:53:05,659 - INFO - Processed 3000/12082 transactions
+2025-06-11 15:53:05,659 - INFO - Processed 3000/12082 transactions
+2025-06-11 15:53:05,659 - INFO - Processed 3000/12082 transactions
+2025-06-11 15:53:05,800 - INFO - Processed 3100/12082 transactions
+2025-06-11 15:53:05,800 - INFO - Processed 3100/12082 transactions
+2025-06-11 15:53:05,800 - INFO - Processed 3100/12082 transactions
+2025-06-11 15:53:05,935 - INFO - Processed 3200/12082 transactions
+2025-06-11 15:53:05,935 - INFO - Processed 3200/12082 transactions
+2025-06-11 15:53:05,935 - INFO - Processed 3200/12082 transactions
+2025-06-11 15:53:06,087 - INFO - Processed 3300/12082 transactions
+2025-06-11 15:53:06,087 - INFO - Processed 3300/12082 transactions
+2025-06-11 15:53:06,087 - INFO - Processed 3300/12082 transactions
+2025-06-11 15:53:06,263 - INFO - Processed 3400/12082 transactions
+2025-06-11 15:53:06,263 - INFO - Processed 3400/12082 transactions
+2025-06-11 15:53:06,263 - INFO - Processed 3400/12082 transactions
+2025-06-11 15:53:06,402 - INFO - Processed 3500/12082 transactions
+2025-06-11 15:53:06,402 - INFO - Processed 3500/12082 transactions
+2025-06-11 15:53:06,402 - INFO - Processed 3500/12082 transactions
+2025-06-11 15:53:06,571 - INFO - Processed 3600/12082 transactions
+2025-06-11 15:53:06,571 - INFO - Processed 3600/12082 transactions
+2025-06-11 15:53:06,571 - INFO - Processed 3600/12082 transactions
+2025-06-11 15:53:06,716 - INFO - Processed 3700/12082 transactions
+2025-06-11 15:53:06,716 - INFO - Processed 3700/12082 transactions
+2025-06-11 15:53:06,716 - INFO - Processed 3700/12082 transactions
+2025-06-11 15:53:06,850 - INFO - Processed 3800/12082 transactions
+2025-06-11 15:53:06,850 - INFO - Processed 3800/12082 transactions
+2025-06-11 15:53:06,850 - INFO - Processed 3800/12082 transactions
+2025-06-11 15:53:07,015 - INFO - Processed 3900/12082 transactions
+2025-06-11 15:53:07,015 - INFO - Processed 3900/12082 transactions
+2025-06-11 15:53:07,015 - INFO - Processed 3900/12082 transactions
+2025-06-11 15:53:07,157 - INFO - Processed 4000/12082 transactions
+2025-06-11 15:53:07,157 - INFO - Processed 4000/12082 transactions
+2025-06-11 15:53:07,157 - INFO - Processed 4000/12082 transactions
+2025-06-11 15:53:07,299 - INFO - Processed 4100/12082 transactions
+2025-06-11 15:53:07,299 - INFO - Processed 4100/12082 transactions
+2025-06-11 15:53:07,299 - INFO - Processed 4100/12082 transactions
+2025-06-11 15:53:07,414 - INFO - Processed 4200/12082 transactions
+2025-06-11 15:53:07,414 - INFO - Processed 4200/12082 transactions
+2025-06-11 15:53:07,414 - INFO - Processed 4200/12082 transactions
+2025-06-11 15:53:07,646 - INFO - Processed 4300/12082 transactions
+2025-06-11 15:53:07,646 - INFO - Processed 4300/12082 transactions
+2025-06-11 15:53:07,646 - INFO - Processed 4300/12082 transactions
+2025-06-11 15:53:07,920 - INFO - Processed 4400/12082 transactions
+2025-06-11 15:53:07,920 - INFO - Processed 4400/12082 transactions
+2025-06-11 15:53:07,920 - INFO - Processed 4400/12082 transactions
+2025-06-11 15:53:08,247 - INFO - Processed 4500/12082 transactions
+2025-06-11 15:53:08,247 - INFO - Processed 4500/12082 transactions
+2025-06-11 15:53:08,247 - INFO - Processed 4500/12082 transactions
+2025-06-11 15:53:08,486 - INFO - Processed 4600/12082 transactions
+2025-06-11 15:53:08,486 - INFO - Processed 4600/12082 transactions
+2025-06-11 15:53:08,486 - INFO - Processed 4600/12082 transactions
+2025-06-11 15:53:08,749 - INFO - Processed 4700/12082 transactions
+2025-06-11 15:53:08,749 - INFO - Processed 4700/12082 transactions
+2025-06-11 15:53:08,749 - INFO - Processed 4700/12082 transactions
+2025-06-11 15:53:08,905 - INFO - Processed 4800/12082 transactions
+2025-06-11 15:53:08,905 - INFO - Processed 4800/12082 transactions
+2025-06-11 15:53:08,905 - INFO - Processed 4800/12082 transactions
+2025-06-11 15:53:08,969 - INFO - Processed 4900/12082 transactions
+2025-06-11 15:53:08,969 - INFO - Processed 4900/12082 transactions
+2025-06-11 15:53:08,969 - INFO - Processed 4900/12082 transactions
+2025-06-11 15:53:09,158 - INFO - Processed 5000/12082 transactions
+2025-06-11 15:53:09,158 - INFO - Processed 5000/12082 transactions
+2025-06-11 15:53:09,158 - INFO - Processed 5000/12082 transactions
+2025-06-11 15:53:09,341 - INFO - Processed 5100/12082 transactions
+2025-06-11 15:53:09,341 - INFO - Processed 5100/12082 transactions
+2025-06-11 15:53:09,341 - INFO - Processed 5100/12082 transactions
+2025-06-11 15:53:09,517 - INFO - Processed 5200/12082 transactions
+2025-06-11 15:53:09,517 - INFO - Processed 5200/12082 transactions
+2025-06-11 15:53:09,517 - INFO - Processed 5200/12082 transactions
+2025-06-11 15:53:09,648 - INFO - Processed 5300/12082 transactions
+2025-06-11 15:53:09,648 - INFO - Processed 5300/12082 transactions
+2025-06-11 15:53:09,648 - INFO - Processed 5300/12082 transactions
+2025-06-11 15:53:09,753 - INFO - Processed 5400/12082 transactions
+2025-06-11 15:53:09,753 - INFO - Processed 5400/12082 transactions
+2025-06-11 15:53:09,753 - INFO - Processed 5400/12082 transactions
+2025-06-11 15:53:09,853 - INFO - Processed 5500/12082 transactions
+2025-06-11 15:53:09,853 - INFO - Processed 5500/12082 transactions
+2025-06-11 15:53:09,853 - INFO - Processed 5500/12082 transactions
+2025-06-11 15:53:09,973 - INFO - Processed 5600/12082 transactions
+2025-06-11 15:53:09,973 - INFO - Processed 5600/12082 transactions
+2025-06-11 15:53:09,973 - INFO - Processed 5600/12082 transactions
+2025-06-11 15:53:10,165 - INFO - Processed 5700/12082 transactions
+2025-06-11 15:53:10,165 - INFO - Processed 5700/12082 transactions
+2025-06-11 15:53:10,165 - INFO - Processed 5700/12082 transactions
+2025-06-11 15:53:10,241 - INFO - Processed 5800/12082 transactions
+2025-06-11 15:53:10,241 - INFO - Processed 5800/12082 transactions
+2025-06-11 15:53:10,241 - INFO - Processed 5800/12082 transactions
+2025-06-11 15:53:10,471 - INFO - Processed 5900/12082 transactions
+2025-06-11 15:53:10,471 - INFO - Processed 5900/12082 transactions
+2025-06-11 15:53:10,471 - INFO - Processed 5900/12082 transactions
+2025-06-11 15:53:10,727 - INFO - Processed 6000/12082 transactions
+2025-06-11 15:53:10,727 - INFO - Processed 6000/12082 transactions
+2025-06-11 15:53:10,727 - INFO - Processed 6000/12082 transactions
+2025-06-11 15:53:10,870 - INFO - Processed 6100/12082 transactions
+2025-06-11 15:53:10,870 - INFO - Processed 6100/12082 transactions
+2025-06-11 15:53:10,870 - INFO - Processed 6100/12082 transactions
+2025-06-11 15:53:11,005 - INFO - Processed 6200/12082 transactions
+2025-06-11 15:53:11,005 - INFO - Processed 6200/12082 transactions
+2025-06-11 15:53:11,005 - INFO - Processed 6200/12082 transactions
+2025-06-11 15:53:11,183 - INFO - Processed 6300/12082 transactions
+2025-06-11 15:53:11,183 - INFO - Processed 6300/12082 transactions
+2025-06-11 15:53:11,183 - INFO - Processed 6300/12082 transactions
+2025-06-11 15:53:11,313 - INFO - Processed 6400/12082 transactions
+2025-06-11 15:53:11,313 - INFO - Processed 6400/12082 transactions
+2025-06-11 15:53:11,313 - INFO - Processed 6400/12082 transactions
+2025-06-11 15:53:11,493 - INFO - Processed 6500/12082 transactions
+2025-06-11 15:53:11,493 - INFO - Processed 6500/12082 transactions
+2025-06-11 15:53:11,493 - INFO - Processed 6500/12082 transactions
+2025-06-11 15:53:11,632 - INFO - Processed 6600/12082 transactions
+2025-06-11 15:53:11,632 - INFO - Processed 6600/12082 transactions
+2025-06-11 15:53:11,632 - INFO - Processed 6600/12082 transactions
+2025-06-11 15:53:11,791 - INFO - Processed 6700/12082 transactions
+2025-06-11 15:53:11,791 - INFO - Processed 6700/12082 transactions
+2025-06-11 15:53:11,791 - INFO - Processed 6700/12082 transactions
+2025-06-11 15:53:11,908 - INFO - Processed 6800/12082 transactions
+2025-06-11 15:53:11,908 - INFO - Processed 6800/12082 transactions
+2025-06-11 15:53:11,908 - INFO - Processed 6800/12082 transactions
+2025-06-11 15:53:12,035 - INFO - Processed 6900/12082 transactions
+2025-06-11 15:53:12,035 - INFO - Processed 6900/12082 transactions
+2025-06-11 15:53:12,035 - INFO - Processed 6900/12082 transactions
+2025-06-11 15:53:12,207 - INFO - Processed 7000/12082 transactions
+2025-06-11 15:53:12,207 - INFO - Processed 7000/12082 transactions
+2025-06-11 15:53:12,207 - INFO - Processed 7000/12082 transactions
+2025-06-11 15:53:12,319 - INFO - Processed 7100/12082 transactions
+2025-06-11 15:53:12,319 - INFO - Processed 7100/12082 transactions
+2025-06-11 15:53:12,319 - INFO - Processed 7100/12082 transactions
+2025-06-11 15:53:12,523 - INFO - Processed 7200/12082 transactions
+2025-06-11 15:53:12,523 - INFO - Processed 7200/12082 transactions
+2025-06-11 15:53:12,523 - INFO - Processed 7200/12082 transactions
+2025-06-11 15:53:12,824 - INFO - Processed 7300/12082 transactions
+2025-06-11 15:53:12,824 - INFO - Processed 7300/12082 transactions
+2025-06-11 15:53:12,824 - INFO - Processed 7300/12082 transactions
+2025-06-11 15:53:13,011 - INFO - Processed 7400/12082 transactions
+2025-06-11 15:53:13,011 - INFO - Processed 7400/12082 transactions
+2025-06-11 15:53:13,011 - INFO - Processed 7400/12082 transactions
+2025-06-11 15:53:13,107 - INFO - Processed 7500/12082 transactions
+2025-06-11 15:53:13,107 - INFO - Processed 7500/12082 transactions
+2025-06-11 15:53:13,107 - INFO - Processed 7500/12082 transactions
+2025-06-11 15:53:13,286 - INFO - Processed 7600/12082 transactions
+2025-06-11 15:53:13,286 - INFO - Processed 7600/12082 transactions
+2025-06-11 15:53:13,286 - INFO - Processed 7600/12082 transactions
+2025-06-11 15:53:13,405 - INFO - Processed 7700/12082 transactions
+2025-06-11 15:53:13,405 - INFO - Processed 7700/12082 transactions
+2025-06-11 15:53:13,405 - INFO - Processed 7700/12082 transactions
+2025-06-11 15:53:13,620 - INFO - Processed 7800/12082 transactions
+2025-06-11 15:53:13,620 - INFO - Processed 7800/12082 transactions
+2025-06-11 15:53:13,620 - INFO - Processed 7800/12082 transactions
+2025-06-11 15:53:13,760 - INFO - Processed 7900/12082 transactions
+2025-06-11 15:53:13,760 - INFO - Processed 7900/12082 transactions
+2025-06-11 15:53:13,760 - INFO - Processed 7900/12082 transactions
+2025-06-11 15:53:13,887 - INFO - Processed 8000/12082 transactions
+2025-06-11 15:53:13,887 - INFO - Processed 8000/12082 transactions
+2025-06-11 15:53:13,887 - INFO - Processed 8000/12082 transactions
+2025-06-11 15:53:14,066 - INFO - Processed 8100/12082 transactions
+2025-06-11 15:53:14,066 - INFO - Processed 8100/12082 transactions
+2025-06-11 15:53:14,066 - INFO - Processed 8100/12082 transactions
+2025-06-11 15:53:14,207 - INFO - Processed 8200/12082 transactions
+2025-06-11 15:53:14,207 - INFO - Processed 8200/12082 transactions
+2025-06-11 15:53:14,207 - INFO - Processed 8200/12082 transactions
+2025-06-11 15:53:14,424 - INFO - Processed 8300/12082 transactions
+2025-06-11 15:53:14,424 - INFO - Processed 8300/12082 transactions
+2025-06-11 15:53:14,424 - INFO - Processed 8300/12082 transactions
+2025-06-11 15:53:14,574 - INFO - Processed 8400/12082 transactions
+2025-06-11 15:53:14,574 - INFO - Processed 8400/12082 transactions
+2025-06-11 15:53:14,574 - INFO - Processed 8400/12082 transactions
+2025-06-11 15:53:14,752 - INFO - Processed 8500/12082 transactions
+2025-06-11 15:53:14,752 - INFO - Processed 8500/12082 transactions
+2025-06-11 15:53:14,752 - INFO - Processed 8500/12082 transactions
+2025-06-11 15:53:14,946 - INFO - Processed 8600/12082 transactions
+2025-06-11 15:53:14,946 - INFO - Processed 8600/12082 transactions
+2025-06-11 15:53:14,946 - INFO - Processed 8600/12082 transactions
+2025-06-11 15:53:15,101 - INFO - Processed 8700/12082 transactions
+2025-06-11 15:53:15,101 - INFO - Processed 8700/12082 transactions
+2025-06-11 15:53:15,101 - INFO - Processed 8700/12082 transactions
+2025-06-11 15:53:15,297 - INFO - Processed 8800/12082 transactions
+2025-06-11 15:53:15,297 - INFO - Processed 8800/12082 transactions
+2025-06-11 15:53:15,297 - INFO - Processed 8800/12082 transactions
+2025-06-11 15:53:15,429 - INFO - Processed 8900/12082 transactions
+2025-06-11 15:53:15,429 - INFO - Processed 8900/12082 transactions
+2025-06-11 15:53:15,429 - INFO - Processed 8900/12082 transactions
+2025-06-11 15:53:15,675 - INFO - Processed 9000/12082 transactions
+2025-06-11 15:53:15,675 - INFO - Processed 9000/12082 transactions
+2025-06-11 15:53:15,675 - INFO - Processed 9000/12082 transactions
+2025-06-11 15:53:15,873 - INFO - Processed 9100/12082 transactions
+2025-06-11 15:53:15,873 - INFO - Processed 9100/12082 transactions
+2025-06-11 15:53:15,873 - INFO - Processed 9100/12082 transactions
+2025-06-11 15:53:16,080 - INFO - Processed 9200/12082 transactions
+2025-06-11 15:53:16,080 - INFO - Processed 9200/12082 transactions
+2025-06-11 15:53:16,080 - INFO - Processed 9200/12082 transactions
+2025-06-11 15:53:16,203 - INFO - Processed 9300/12082 transactions
+2025-06-11 15:53:16,203 - INFO - Processed 9300/12082 transactions
+2025-06-11 15:53:16,203 - INFO - Processed 9300/12082 transactions
+2025-06-11 15:53:16,331 - INFO - Processed 9400/12082 transactions
+2025-06-11 15:53:16,331 - INFO - Processed 9400/12082 transactions
+2025-06-11 15:53:16,331 - INFO - Processed 9400/12082 transactions
+2025-06-11 15:53:16,527 - INFO - Processed 9500/12082 transactions
+2025-06-11 15:53:16,527 - INFO - Processed 9500/12082 transactions
+2025-06-11 15:53:16,527 - INFO - Processed 9500/12082 transactions
+2025-06-11 15:53:16,737 - INFO - Processed 9600/12082 transactions
+2025-06-11 15:53:16,737 - INFO - Processed 9600/12082 transactions
+2025-06-11 15:53:16,737 - INFO - Processed 9600/12082 transactions
+2025-06-11 15:53:16,881 - INFO - Processed 9700/12082 transactions
+2025-06-11 15:53:16,881 - INFO - Processed 9700/12082 transactions
+2025-06-11 15:53:16,881 - INFO - Processed 9700/12082 transactions
+2025-06-11 15:53:17,123 - INFO - Processed 9800/12082 transactions
+2025-06-11 15:53:17,123 - INFO - Processed 9800/12082 transactions
+2025-06-11 15:53:17,123 - INFO - Processed 9800/12082 transactions
+2025-06-11 15:53:17,364 - INFO - Processed 9900/12082 transactions
+2025-06-11 15:53:17,364 - INFO - Processed 9900/12082 transactions
+2025-06-11 15:53:17,364 - INFO - Processed 9900/12082 transactions
+2025-06-11 15:53:17,595 - INFO - Processed 10000/12082 transactions
+2025-06-11 15:53:17,595 - INFO - Processed 10000/12082 transactions
+2025-06-11 15:53:17,595 - INFO - Processed 10000/12082 transactions
+2025-06-11 15:53:17,813 - INFO - Processed 10100/12082 transactions
+2025-06-11 15:53:17,813 - INFO - Processed 10100/12082 transactions
+2025-06-11 15:53:17,813 - INFO - Processed 10100/12082 transactions
+2025-06-11 15:53:18,003 - INFO - Processed 10200/12082 transactions
+2025-06-11 15:53:18,003 - INFO - Processed 10200/12082 transactions
+2025-06-11 15:53:18,003 - INFO - Processed 10200/12082 transactions
+2025-06-11 15:53:18,168 - INFO - Processed 10300/12082 transactions
+2025-06-11 15:53:18,168 - INFO - Processed 10300/12082 transactions
+2025-06-11 15:53:18,168 - INFO - Processed 10300/12082 transactions
+2025-06-11 15:53:18,294 - INFO - Processed 10400/12082 transactions
+2025-06-11 15:53:18,294 - INFO - Processed 10400/12082 transactions
+2025-06-11 15:53:18,294 - INFO - Processed 10400/12082 transactions
+2025-06-11 15:53:18,519 - INFO - Processed 10500/12082 transactions
+2025-06-11 15:53:18,519 - INFO - Processed 10500/12082 transactions
+2025-06-11 15:53:18,519 - INFO - Processed 10500/12082 transactions
+2025-06-11 15:53:18,746 - INFO - Processed 10600/12082 transactions
+2025-06-11 15:53:18,746 - INFO - Processed 10600/12082 transactions
+2025-06-11 15:53:18,746 - INFO - Processed 10600/12082 transactions
+2025-06-11 15:53:18,903 - INFO - Processed 10700/12082 transactions
+2025-06-11 15:53:18,903 - INFO - Processed 10700/12082 transactions
+2025-06-11 15:53:18,903 - INFO - Processed 10700/12082 transactions
+2025-06-11 15:53:19,048 - INFO - Processed 10800/12082 transactions
+2025-06-11 15:53:19,048 - INFO - Processed 10800/12082 transactions
+2025-06-11 15:53:19,048 - INFO - Processed 10800/12082 transactions
+2025-06-11 15:53:19,270 - INFO - Processed 10900/12082 transactions
+2025-06-11 15:53:19,270 - INFO - Processed 10900/12082 transactions
+2025-06-11 15:53:19,270 - INFO - Processed 10900/12082 transactions
+2025-06-11 15:53:19,374 - INFO - Processed 11000/12082 transactions
+2025-06-11 15:53:19,374 - INFO - Processed 11000/12082 transactions
+2025-06-11 15:53:19,374 - INFO - Processed 11000/12082 transactions
+2025-06-11 15:53:19,530 - INFO - Processed 11100/12082 transactions
+2025-06-11 15:53:19,530 - INFO - Processed 11100/12082 transactions
+2025-06-11 15:53:19,530 - INFO - Processed 11100/12082 transactions
+2025-06-11 15:53:19,648 - INFO - Processed 11200/12082 transactions
+2025-06-11 15:53:19,648 - INFO - Processed 11200/12082 transactions
+2025-06-11 15:53:19,648 - INFO - Processed 11200/12082 transactions
+2025-06-11 15:53:19,788 - INFO - Processed 11300/12082 transactions
+2025-06-11 15:53:19,788 - INFO - Processed 11300/12082 transactions
+2025-06-11 15:53:19,788 - INFO - Processed 11300/12082 transactions
+2025-06-11 15:53:19,921 - INFO - Processed 11400/12082 transactions
+2025-06-11 15:53:19,921 - INFO - Processed 11400/12082 transactions
+2025-06-11 15:53:19,921 - INFO - Processed 11400/12082 transactions
+2025-06-11 15:53:20,111 - INFO - Processed 11500/12082 transactions
+2025-06-11 15:53:20,111 - INFO - Processed 11500/12082 transactions
+2025-06-11 15:53:20,111 - INFO - Processed 11500/12082 transactions
+2025-06-11 15:53:20,286 - INFO - Processed 11600/12082 transactions
+2025-06-11 15:53:20,286 - INFO - Processed 11600/12082 transactions
+2025-06-11 15:53:20,286 - INFO - Processed 11600/12082 transactions
+2025-06-11 15:53:20,385 - INFO - Processed 11700/12082 transactions
+2025-06-11 15:53:20,385 - INFO - Processed 11700/12082 transactions
+2025-06-11 15:53:20,385 - INFO - Processed 11700/12082 transactions
+2025-06-11 15:53:20,464 - INFO - Processed 11800/12082 transactions
+2025-06-11 15:53:20,464 - INFO - Processed 11800/12082 transactions
+2025-06-11 15:53:20,464 - INFO - Processed 11800/12082 transactions
+2025-06-11 15:53:20,629 - INFO - Processed 11900/12082 transactions
+2025-06-11 15:53:20,629 - INFO - Processed 11900/12082 transactions
+2025-06-11 15:53:20,629 - INFO - Processed 11900/12082 transactions
+2025-06-11 15:53:20,819 - INFO - Processed 12000/12082 transactions
+2025-06-11 15:53:20,819 - INFO - Processed 12000/12082 transactions
+2025-06-11 15:53:20,819 - INFO - Processed 12000/12082 transactions
+2025-06-11 15:53:20,968 - INFO - Categorization completed in 20.04 seconds
+2025-06-11 15:53:20,968 - INFO - Categorization completed in 20.04 seconds
+2025-06-11 15:53:20,968 - INFO - Categorization completed in 20.04 seconds
+2025-06-11 15:53:20,973 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 15:53:20,973 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 15:53:20,973 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 15:53:20,974 - INFO - Total Transactions: 12082
+2025-06-11 15:53:20,974 - INFO - Total Transactions: 12082
+2025-06-11 15:53:20,974 - INFO - Total Transactions: 12082
+2025-06-11 15:53:20,975 - INFO - Categorised: 9935
+2025-06-11 15:53:20,975 - INFO - Categorised: 9935
+2025-06-11 15:53:20,975 - INFO - Categorised: 9935
+2025-06-11 15:53:20,976 - INFO - Uncategorised: 2147
+2025-06-11 15:53:20,976 - INFO - Uncategorised: 2147
+2025-06-11 15:53:20,976 - INFO - Uncategorised: 2147
+2025-06-11 15:53:20,977 - INFO - Categorisation Rate: 82.23
+2025-06-11 15:53:20,977 - INFO - Categorisation Rate: 82.23
+2025-06-11 15:53:20,977 - INFO - Categorisation Rate: 82.23
+2025-06-11 15:53:20,978 - INFO - Auto Approved: 9882
+2025-06-11 15:53:20,978 - INFO - Auto Approved: 9882
+2025-06-11 15:53:20,978 - INFO - Auto Approved: 9882
+2025-06-11 15:53:20,979 - INFO - Avg Confidence: 99.94
+2025-06-11 15:53:20,979 - INFO - Avg Confidence: 99.94
+2025-06-11 15:53:20,979 - INFO - Avg Confidence: 99.94
+2025-06-11 15:53:20,980 - INFO - High Confidence Matches: 9882
+2025-06-11 15:53:20,980 - INFO - High Confidence Matches: 9882
+2025-06-11 15:53:20,980 - INFO - High Confidence Matches: 9882
+2025-06-11 15:53:21,037 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_e647836f.csv
+2025-06-11 15:53:21,037 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_e647836f.csv
+2025-06-11 15:53:21,037 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_e647836f.csv
+2025-06-11 15:53:21,038 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 15:53:21,038 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 15:53:21,038 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 16:28:48,917 - INFO - Starting bank statement categorization process
+2025-06-11 16:28:48,917 - INFO - Starting bank statement categorization process
+2025-06-11 16:28:48,917 - INFO - Starting bank statement categorization process
+2025-06-11 16:28:48,917 - INFO - Starting bank statement categorization process
+2025-06-11 16:28:48,919 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpozgcs2p7.csv
+2025-06-11 16:28:48,919 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpozgcs2p7.csv
+2025-06-11 16:28:48,919 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpozgcs2p7.csv
+2025-06-11 16:28:48,919 - INFO - Loading rules from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpozgcs2p7.csv
+2025-06-11 16:28:48,968 - INFO - Successfully loaded 1029 rules
+2025-06-11 16:28:48,968 - INFO - Successfully loaded 1029 rules
+2025-06-11 16:28:48,968 - INFO - Successfully loaded 1029 rules
+2025-06-11 16:28:48,968 - INFO - Successfully loaded 1029 rules
+2025-06-11 16:28:48,970 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp_xpwo66m.csv
+2025-06-11 16:28:48,970 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp_xpwo66m.csv
+2025-06-11 16:28:48,970 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp_xpwo66m.csv
+2025-06-11 16:28:48,970 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp_xpwo66m.csv
+2025-06-11 16:28:48,977 - INFO - Successfully loaded 113 transactions
+2025-06-11 16:28:48,977 - INFO - Successfully loaded 113 transactions
+2025-06-11 16:28:48,977 - INFO - Successfully loaded 113 transactions
+2025-06-11 16:28:48,977 - INFO - Successfully loaded 113 transactions
+2025-06-11 16:28:48,978 - INFO - Starting transaction categorization...
+2025-06-11 16:28:48,978 - INFO - Starting transaction categorization...
+2025-06-11 16:28:48,978 - INFO - Starting transaction categorization...
+2025-06-11 16:28:48,978 - INFO - Starting transaction categorization...
+2025-06-11 16:28:49,865 - INFO - Processed 100/113 transactions
+2025-06-11 16:28:49,865 - INFO - Processed 100/113 transactions
+2025-06-11 16:28:49,865 - INFO - Processed 100/113 transactions
+2025-06-11 16:28:49,865 - INFO - Processed 100/113 transactions
+2025-06-11 16:28:49,993 - INFO - Categorization completed in 1.01 seconds
+2025-06-11 16:28:49,993 - INFO - Categorization completed in 1.01 seconds
+2025-06-11 16:28:49,993 - INFO - Categorization completed in 1.01 seconds
+2025-06-11 16:28:49,993 - INFO - Categorization completed in 1.01 seconds
+2025-06-11 16:28:49,996 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 16:28:49,996 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 16:28:49,996 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 16:28:49,996 - INFO - === CATEGORIZATION REPORT ===
+2025-06-11 16:28:49,997 - INFO - Total Transactions: 113
+2025-06-11 16:28:49,997 - INFO - Total Transactions: 113
+2025-06-11 16:28:49,997 - INFO - Total Transactions: 113
+2025-06-11 16:28:49,997 - INFO - Total Transactions: 113
+2025-06-11 16:28:49,998 - INFO - Categorised: 34
+2025-06-11 16:28:49,998 - INFO - Categorised: 34
+2025-06-11 16:28:49,998 - INFO - Categorised: 34
+2025-06-11 16:28:49,998 - INFO - Categorised: 34
+2025-06-11 16:28:49,999 - INFO - Uncategorised: 79
+2025-06-11 16:28:49,999 - INFO - Uncategorised: 79
+2025-06-11 16:28:49,999 - INFO - Uncategorised: 79
+2025-06-11 16:28:49,999 - INFO - Uncategorised: 79
+2025-06-11 16:28:50,000 - INFO - Categorisation Rate: 30.09
+2025-06-11 16:28:50,000 - INFO - Categorisation Rate: 30.09
+2025-06-11 16:28:50,000 - INFO - Categorisation Rate: 30.09
+2025-06-11 16:28:50,000 - INFO - Categorisation Rate: 30.09
+2025-06-11 16:28:50,001 - INFO - Auto Approved: 33
+2025-06-11 16:28:50,001 - INFO - Auto Approved: 33
+2025-06-11 16:28:50,001 - INFO - Auto Approved: 33
+2025-06-11 16:28:50,001 - INFO - Auto Approved: 33
+2025-06-11 16:28:50,002 - INFO - Avg Confidence: 99.73
+2025-06-11 16:28:50,002 - INFO - Avg Confidence: 99.73
+2025-06-11 16:28:50,002 - INFO - Avg Confidence: 99.73
+2025-06-11 16:28:50,002 - INFO - Avg Confidence: 99.73
+2025-06-11 16:28:50,002 - INFO - High Confidence Matches: 33
+2025-06-11 16:28:50,002 - INFO - High Confidence Matches: 33
+2025-06-11 16:28:50,002 - INFO - High Confidence Matches: 33
+2025-06-11 16:28:50,002 - INFO - High Confidence Matches: 33
+2025-06-11 16:28:50,010 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_880b4619.csv
+2025-06-11 16:28:50,010 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_880b4619.csv
+2025-06-11 16:28:50,010 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_880b4619.csv
+2025-06-11 16:28:50,010 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_880b4619.csv
+2025-06-11 16:28:50,011 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 16:28:50,011 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 16:28:50,011 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-11 16:28:50,011 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:05:27,990 - INFO - Starting bank statement categorization process
+2025-06-12 10:05:28,194 - INFO - Loading rules from rules.csv
+2025-06-12 10:05:28,390 - INFO - Successfully loaded 1827 rules
+2025-06-12 10:05:28,391 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmph0qw09a7.csv
+2025-06-12 10:05:28,468 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:05:28,469 - INFO - Starting transaction categorization...
+2025-06-12 10:05:28,999 - INFO - Processed 100/3670 transactions
+2025-06-12 10:05:29,388 - INFO - Processed 200/3670 transactions
+2025-06-12 10:05:29,656 - INFO - Processed 300/3670 transactions
+2025-06-12 10:05:29,975 - INFO - Processed 400/3670 transactions
+2025-06-12 10:05:30,235 - INFO - Processed 500/3670 transactions
+2025-06-12 10:05:30,491 - INFO - Processed 600/3670 transactions
+2025-06-12 10:05:30,830 - INFO - Processed 700/3670 transactions
+2025-06-12 10:05:31,104 - INFO - Processed 800/3670 transactions
+2025-06-12 10:05:31,392 - INFO - Processed 900/3670 transactions
+2025-06-12 10:05:31,673 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:05:31,932 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:05:32,169 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:05:32,414 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:05:32,693 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:05:32,956 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:05:33,399 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:05:33,750 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:05:34,075 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:05:34,468 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:05:34,750 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:05:35,087 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:05:35,339 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:05:35,673 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:05:36,023 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:05:36,317 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:05:36,623 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:05:37,063 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:05:37,403 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:05:37,702 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:05:38,187 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:05:38,480 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:05:38,750 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:05:39,032 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:05:39,364 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:05:39,673 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:05:39,966 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:05:40,368 - INFO - Categorization completed in 11.90 seconds
+2025-06-12 10:05:40,383 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:05:40,384 - INFO - Total Transactions: 3670
+2025-06-12 10:05:40,384 - INFO - Categorised: 2618
+2025-06-12 10:05:40,384 - INFO - Uncategorised: 1052
+2025-06-12 10:05:40,384 - INFO - Categorisation Rate: 71.34
+2025-06-12 10:05:40,384 - INFO - Auto Approved: 2571
+2025-06-12 10:05:40,385 - INFO - Avg Confidence: 99.89
+2025-06-12 10:05:40,385 - INFO - High Confidence Matches: 2571
+2025-06-12 10:05:40,437 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_447308d2.csv
+2025-06-12 10:05:40,437 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:07:21,625 - INFO - Starting bank statement categorization process
+2025-06-12 10:07:21,625 - INFO - Starting bank statement categorization process
+2025-06-12 10:07:21,626 - INFO - Loading rules from rules.csv
+2025-06-12 10:07:21,626 - INFO - Loading rules from rules.csv
+2025-06-12 10:07:21,648 - INFO - Successfully loaded 1827 rules
+2025-06-12 10:07:21,648 - INFO - Successfully loaded 1827 rules
+2025-06-12 10:07:21,649 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp2mth4rem.csv
+2025-06-12 10:07:21,649 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp2mth4rem.csv
+2025-06-12 10:07:21,678 - INFO - Successfully loaded 30 transactions
+2025-06-12 10:07:21,678 - INFO - Successfully loaded 30 transactions
+2025-06-12 10:07:21,679 - INFO - Starting transaction categorization...
+2025-06-12 10:07:21,679 - INFO - Starting transaction categorization...
+2025-06-12 10:07:22,085 - INFO - Categorization completed in 0.41 seconds
+2025-06-12 10:07:22,085 - INFO - Categorization completed in 0.41 seconds
+2025-06-12 10:07:22,087 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:07:22,087 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:07:22,088 - INFO - Total Transactions: 30
+2025-06-12 10:07:22,088 - INFO - Total Transactions: 30
+2025-06-12 10:07:22,088 - INFO - Categorised: 7
+2025-06-12 10:07:22,088 - INFO - Categorised: 7
+2025-06-12 10:07:22,088 - INFO - Uncategorised: 23
+2025-06-12 10:07:22,088 - INFO - Uncategorised: 23
+2025-06-12 10:07:22,088 - INFO - Categorisation Rate: 23.33
+2025-06-12 10:07:22,088 - INFO - Categorisation Rate: 23.33
+2025-06-12 10:07:22,089 - INFO - Auto Approved: 7
+2025-06-12 10:07:22,089 - INFO - Auto Approved: 7
+2025-06-12 10:07:22,089 - INFO - Avg Confidence: 100.0
+2025-06-12 10:07:22,089 - INFO - Avg Confidence: 100.0
+2025-06-12 10:07:22,089 - INFO - High Confidence Matches: 7
+2025-06-12 10:07:22,089 - INFO - High Confidence Matches: 7
+2025-06-12 10:07:22,092 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_36cc45ae.csv
+2025-06-12 10:07:22,092 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_36cc45ae.csv
+2025-06-12 10:07:22,093 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:07:22,093 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:08:18,502 - INFO - Starting bank statement categorization process
+2025-06-12 10:08:18,502 - INFO - Starting bank statement categorization process
+2025-06-12 10:08:18,502 - INFO - Starting bank statement categorization process
+2025-06-12 10:08:18,503 - INFO - Loading rules from rules.csv
+2025-06-12 10:08:18,503 - INFO - Loading rules from rules.csv
+2025-06-12 10:08:18,503 - INFO - Loading rules from rules.csv
+2025-06-12 10:08:18,522 - INFO - Successfully loaded 1827 rules
+2025-06-12 10:08:18,522 - INFO - Successfully loaded 1827 rules
+2025-06-12 10:08:18,522 - INFO - Successfully loaded 1827 rules
+2025-06-12 10:08:18,523 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpnggpiug9.csv
+2025-06-12 10:08:18,523 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpnggpiug9.csv
+2025-06-12 10:08:18,523 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpnggpiug9.csv
+2025-06-12 10:08:18,590 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:08:18,590 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:08:18,590 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:08:18,591 - INFO - Starting transaction categorization...
+2025-06-12 10:08:18,591 - INFO - Starting transaction categorization...
+2025-06-12 10:08:18,591 - INFO - Starting transaction categorization...
+2025-06-12 10:08:19,092 - INFO - Processed 100/3670 transactions
+2025-06-12 10:08:19,092 - INFO - Processed 100/3670 transactions
+2025-06-12 10:08:19,092 - INFO - Processed 100/3670 transactions
+2025-06-12 10:08:19,475 - INFO - Processed 200/3670 transactions
+2025-06-12 10:08:19,475 - INFO - Processed 200/3670 transactions
+2025-06-12 10:08:19,475 - INFO - Processed 200/3670 transactions
+2025-06-12 10:08:19,749 - INFO - Processed 300/3670 transactions
+2025-06-12 10:08:19,749 - INFO - Processed 300/3670 transactions
+2025-06-12 10:08:19,749 - INFO - Processed 300/3670 transactions
+2025-06-12 10:08:20,061 - INFO - Processed 400/3670 transactions
+2025-06-12 10:08:20,061 - INFO - Processed 400/3670 transactions
+2025-06-12 10:08:20,061 - INFO - Processed 400/3670 transactions
+2025-06-12 10:08:20,313 - INFO - Processed 500/3670 transactions
+2025-06-12 10:08:20,313 - INFO - Processed 500/3670 transactions
+2025-06-12 10:08:20,313 - INFO - Processed 500/3670 transactions
+2025-06-12 10:08:20,565 - INFO - Processed 600/3670 transactions
+2025-06-12 10:08:20,565 - INFO - Processed 600/3670 transactions
+2025-06-12 10:08:20,565 - INFO - Processed 600/3670 transactions
+2025-06-12 10:08:20,899 - INFO - Processed 700/3670 transactions
+2025-06-12 10:08:20,899 - INFO - Processed 700/3670 transactions
+2025-06-12 10:08:20,899 - INFO - Processed 700/3670 transactions
+2025-06-12 10:08:21,152 - INFO - Processed 800/3670 transactions
+2025-06-12 10:08:21,152 - INFO - Processed 800/3670 transactions
+2025-06-12 10:08:21,152 - INFO - Processed 800/3670 transactions
+2025-06-12 10:08:21,403 - INFO - Processed 900/3670 transactions
+2025-06-12 10:08:21,403 - INFO - Processed 900/3670 transactions
+2025-06-12 10:08:21,403 - INFO - Processed 900/3670 transactions
+2025-06-12 10:08:21,655 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:08:21,655 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:08:21,655 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:08:21,905 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:08:21,905 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:08:21,905 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:08:22,173 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:08:22,173 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:08:22,173 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:08:22,410 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:08:22,410 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:08:22,410 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:08:22,710 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:08:22,710 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:08:22,710 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:08:22,964 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:08:22,964 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:08:22,964 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:08:23,385 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:08:23,385 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:08:23,385 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:08:23,720 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:08:23,720 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:08:23,720 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:08:24,038 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:08:24,038 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:08:24,038 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:08:24,402 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:08:24,402 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:08:24,402 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:08:24,670 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:08:24,670 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:08:24,670 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:08:24,992 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:08:24,992 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:08:24,992 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:08:25,230 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:08:25,230 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:08:25,230 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:08:25,518 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:08:25,518 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:08:25,518 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:08:25,847 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:08:25,847 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:08:25,847 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:08:26,143 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:08:26,143 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:08:26,143 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:08:26,462 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:08:26,462 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:08:26,462 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:08:26,890 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:08:26,890 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:08:26,890 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:08:27,221 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:08:27,221 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:08:27,221 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:08:27,500 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:08:27,500 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:08:27,500 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:08:27,969 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:08:27,969 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:08:27,969 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:08:28,242 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:08:28,242 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:08:28,242 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:08:28,519 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:08:28,519 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:08:28,519 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:08:28,805 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:08:28,805 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:08:28,805 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:08:29,126 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:08:29,126 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:08:29,126 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:08:29,429 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:08:29,429 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:08:29,429 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:08:29,696 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:08:29,696 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:08:29,696 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:08:30,043 - INFO - Categorization completed in 11.45 seconds
+2025-06-12 10:08:30,043 - INFO - Categorization completed in 11.45 seconds
+2025-06-12 10:08:30,043 - INFO - Categorization completed in 11.45 seconds
+2025-06-12 10:08:30,046 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:08:30,046 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:08:30,046 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:08:30,047 - INFO - Total Transactions: 3670
+2025-06-12 10:08:30,047 - INFO - Total Transactions: 3670
+2025-06-12 10:08:30,047 - INFO - Total Transactions: 3670
+2025-06-12 10:08:30,047 - INFO - Categorised: 2618
+2025-06-12 10:08:30,047 - INFO - Categorised: 2618
+2025-06-12 10:08:30,047 - INFO - Categorised: 2618
+2025-06-12 10:08:30,048 - INFO - Uncategorised: 1052
+2025-06-12 10:08:30,048 - INFO - Uncategorised: 1052
+2025-06-12 10:08:30,048 - INFO - Uncategorised: 1052
+2025-06-12 10:08:30,048 - INFO - Categorisation Rate: 71.34
+2025-06-12 10:08:30,048 - INFO - Categorisation Rate: 71.34
+2025-06-12 10:08:30,048 - INFO - Categorisation Rate: 71.34
+2025-06-12 10:08:30,049 - INFO - Auto Approved: 2571
+2025-06-12 10:08:30,049 - INFO - Auto Approved: 2571
+2025-06-12 10:08:30,049 - INFO - Auto Approved: 2571
+2025-06-12 10:08:30,049 - INFO - Avg Confidence: 99.89
+2025-06-12 10:08:30,049 - INFO - Avg Confidence: 99.89
+2025-06-12 10:08:30,049 - INFO - Avg Confidence: 99.89
+2025-06-12 10:08:30,050 - INFO - High Confidence Matches: 2571
+2025-06-12 10:08:30,050 - INFO - High Confidence Matches: 2571
+2025-06-12 10:08:30,050 - INFO - High Confidence Matches: 2571
+2025-06-12 10:08:30,114 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_1b46c056.csv
+2025-06-12 10:08:30,114 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_1b46c056.csv
+2025-06-12 10:08:30,114 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_1b46c056.csv
+2025-06-12 10:08:30,114 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:08:30,114 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:08:30,114 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:13:02,192 - INFO - Starting bank statement categorization process
+2025-06-12 10:13:02,192 - INFO - Starting bank statement categorization process
+2025-06-12 10:13:02,192 - INFO - Starting bank statement categorization process
+2025-06-12 10:13:02,192 - INFO - Starting bank statement categorization process
+2025-06-12 10:13:02,193 - INFO - Loading rules from rules.csv
+2025-06-12 10:13:02,193 - INFO - Loading rules from rules.csv
+2025-06-12 10:13:02,193 - INFO - Loading rules from rules.csv
+2025-06-12 10:13:02,193 - INFO - Loading rules from rules.csv
+2025-06-12 10:13:02,226 - INFO - Successfully loaded 1899 rules
+2025-06-12 10:13:02,226 - INFO - Successfully loaded 1899 rules
+2025-06-12 10:13:02,226 - INFO - Successfully loaded 1899 rules
+2025-06-12 10:13:02,226 - INFO - Successfully loaded 1899 rules
+2025-06-12 10:13:02,228 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp8s_pmgx_.csv
+2025-06-12 10:13:02,228 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp8s_pmgx_.csv
+2025-06-12 10:13:02,228 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp8s_pmgx_.csv
+2025-06-12 10:13:02,228 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp8s_pmgx_.csv
+2025-06-12 10:13:02,301 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:13:02,301 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:13:02,301 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:13:02,301 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:13:02,302 - INFO - Starting transaction categorization...
+2025-06-12 10:13:02,302 - INFO - Starting transaction categorization...
+2025-06-12 10:13:02,302 - INFO - Starting transaction categorization...
+2025-06-12 10:13:02,302 - INFO - Starting transaction categorization...
+2025-06-12 10:13:02,910 - INFO - Processed 100/3670 transactions
+2025-06-12 10:13:02,910 - INFO - Processed 100/3670 transactions
+2025-06-12 10:13:02,910 - INFO - Processed 100/3670 transactions
+2025-06-12 10:13:02,910 - INFO - Processed 100/3670 transactions
+2025-06-12 10:13:03,366 - INFO - Processed 200/3670 transactions
+2025-06-12 10:13:03,366 - INFO - Processed 200/3670 transactions
+2025-06-12 10:13:03,366 - INFO - Processed 200/3670 transactions
+2025-06-12 10:13:03,366 - INFO - Processed 200/3670 transactions
+2025-06-12 10:13:03,661 - INFO - Processed 300/3670 transactions
+2025-06-12 10:13:03,661 - INFO - Processed 300/3670 transactions
+2025-06-12 10:13:03,661 - INFO - Processed 300/3670 transactions
+2025-06-12 10:13:03,661 - INFO - Processed 300/3670 transactions
+2025-06-12 10:13:03,983 - INFO - Processed 400/3670 transactions
+2025-06-12 10:13:03,983 - INFO - Processed 400/3670 transactions
+2025-06-12 10:13:03,983 - INFO - Processed 400/3670 transactions
+2025-06-12 10:13:03,983 - INFO - Processed 400/3670 transactions
+2025-06-12 10:13:04,277 - INFO - Processed 500/3670 transactions
+2025-06-12 10:13:04,277 - INFO - Processed 500/3670 transactions
+2025-06-12 10:13:04,277 - INFO - Processed 500/3670 transactions
+2025-06-12 10:13:04,277 - INFO - Processed 500/3670 transactions
+2025-06-12 10:13:04,555 - INFO - Processed 600/3670 transactions
+2025-06-12 10:13:04,555 - INFO - Processed 600/3670 transactions
+2025-06-12 10:13:04,555 - INFO - Processed 600/3670 transactions
+2025-06-12 10:13:04,555 - INFO - Processed 600/3670 transactions
+2025-06-12 10:13:04,916 - INFO - Processed 700/3670 transactions
+2025-06-12 10:13:04,916 - INFO - Processed 700/3670 transactions
+2025-06-12 10:13:04,916 - INFO - Processed 700/3670 transactions
+2025-06-12 10:13:04,916 - INFO - Processed 700/3670 transactions
+2025-06-12 10:13:05,177 - INFO - Processed 800/3670 transactions
+2025-06-12 10:13:05,177 - INFO - Processed 800/3670 transactions
+2025-06-12 10:13:05,177 - INFO - Processed 800/3670 transactions
+2025-06-12 10:13:05,177 - INFO - Processed 800/3670 transactions
+2025-06-12 10:13:05,427 - INFO - Processed 900/3670 transactions
+2025-06-12 10:13:05,427 - INFO - Processed 900/3670 transactions
+2025-06-12 10:13:05,427 - INFO - Processed 900/3670 transactions
+2025-06-12 10:13:05,427 - INFO - Processed 900/3670 transactions
+2025-06-12 10:13:05,697 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:13:05,697 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:13:05,697 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:13:05,697 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:13:05,980 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:13:05,980 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:13:05,980 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:13:05,980 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:13:06,207 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:13:06,207 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:13:06,207 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:13:06,207 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:13:06,444 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:13:06,444 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:13:06,444 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:13:06,444 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:13:06,753 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:13:06,753 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:13:06,753 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:13:06,753 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:13:07,029 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:13:07,029 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:13:07,029 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:13:07,029 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:13:07,519 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:13:07,519 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:13:07,519 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:13:07,519 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:13:07,883 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:13:07,883 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:13:07,883 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:13:07,883 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:13:08,222 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:13:08,222 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:13:08,222 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:13:08,222 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:13:08,621 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:13:08,621 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:13:08,621 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:13:08,621 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:13:08,911 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:13:08,911 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:13:08,911 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:13:08,911 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:13:09,266 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:13:09,266 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:13:09,266 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:13:09,266 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:13:09,512 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:13:09,512 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:13:09,512 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:13:09,512 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:13:09,801 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:13:09,801 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:13:09,801 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:13:09,801 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:13:10,193 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:13:10,193 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:13:10,193 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:13:10,193 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:13:10,545 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:13:10,545 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:13:10,545 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:13:10,545 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:13:10,862 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:13:10,862 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:13:10,862 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:13:10,862 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:13:11,368 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:13:11,368 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:13:11,368 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:13:11,368 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:13:11,761 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:13:11,761 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:13:11,761 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:13:11,761 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:13:12,074 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:13:12,074 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:13:12,074 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:13:12,074 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:13:12,568 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:13:12,568 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:13:12,568 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:13:12,568 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:13:12,862 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:13:12,862 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:13:12,862 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:13:12,862 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:13:13,159 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:13:13,159 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:13:13,159 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:13:13,159 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:13:13,457 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:13:13,457 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:13:13,457 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:13:13,457 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:13:13,800 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:13:13,800 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:13:13,800 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:13:13,800 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:13:14,136 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:13:14,136 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:13:14,136 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:13:14,136 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:13:14,432 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:13:14,432 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:13:14,432 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:13:14,432 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:13:14,823 - INFO - Categorization completed in 12.52 seconds
+2025-06-12 10:13:14,823 - INFO - Categorization completed in 12.52 seconds
+2025-06-12 10:13:14,823 - INFO - Categorization completed in 12.52 seconds
+2025-06-12 10:13:14,823 - INFO - Categorization completed in 12.52 seconds
+2025-06-12 10:13:14,826 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:13:14,826 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:13:14,826 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:13:14,826 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:13:14,827 - INFO - Total Transactions: 3670
+2025-06-12 10:13:14,827 - INFO - Total Transactions: 3670
+2025-06-12 10:13:14,827 - INFO - Total Transactions: 3670
+2025-06-12 10:13:14,827 - INFO - Total Transactions: 3670
+2025-06-12 10:13:14,827 - INFO - Categorised: 2607
+2025-06-12 10:13:14,827 - INFO - Categorised: 2607
+2025-06-12 10:13:14,827 - INFO - Categorised: 2607
+2025-06-12 10:13:14,827 - INFO - Categorised: 2607
+2025-06-12 10:13:14,828 - INFO - Uncategorised: 1063
+2025-06-12 10:13:14,828 - INFO - Uncategorised: 1063
+2025-06-12 10:13:14,828 - INFO - Uncategorised: 1063
+2025-06-12 10:13:14,828 - INFO - Uncategorised: 1063
+2025-06-12 10:13:14,829 - INFO - Categorisation Rate: 71.04
+2025-06-12 10:13:14,829 - INFO - Categorisation Rate: 71.04
+2025-06-12 10:13:14,829 - INFO - Categorisation Rate: 71.04
+2025-06-12 10:13:14,829 - INFO - Categorisation Rate: 71.04
+2025-06-12 10:13:14,829 - INFO - Auto Approved: 2560
+2025-06-12 10:13:14,829 - INFO - Auto Approved: 2560
+2025-06-12 10:13:14,829 - INFO - Auto Approved: 2560
+2025-06-12 10:13:14,829 - INFO - Auto Approved: 2560
+2025-06-12 10:13:14,830 - INFO - Avg Confidence: 99.89
+2025-06-12 10:13:14,830 - INFO - Avg Confidence: 99.89
+2025-06-12 10:13:14,830 - INFO - Avg Confidence: 99.89
+2025-06-12 10:13:14,830 - INFO - Avg Confidence: 99.89
+2025-06-12 10:13:14,831 - INFO - High Confidence Matches: 2560
+2025-06-12 10:13:14,831 - INFO - High Confidence Matches: 2560
+2025-06-12 10:13:14,831 - INFO - High Confidence Matches: 2560
+2025-06-12 10:13:14,831 - INFO - High Confidence Matches: 2560
+2025-06-12 10:13:14,860 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_32cae27c.csv
+2025-06-12 10:13:14,860 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_32cae27c.csv
+2025-06-12 10:13:14,860 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_32cae27c.csv
+2025-06-12 10:13:14,860 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\categorised_output_32cae27c.csv
+2025-06-12 10:13:14,861 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:13:14,861 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:13:14,861 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:13:14,861 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 10:59:28,170 - INFO - Starting bank statement categorization process
+2025-06-12 10:59:28,171 - INFO - Loading rules from rules_default.csv
+2025-06-12 10:59:28,226 - INFO - Successfully loaded 1899 rules
+2025-06-12 10:59:28,227 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmp8yvn34i4.csv
+2025-06-12 10:59:28,279 - INFO - Successfully loaded 3670 transactions
+2025-06-12 10:59:28,280 - INFO - Starting transaction categorization...
+2025-06-12 10:59:28,864 - INFO - Processed 100/3670 transactions
+2025-06-12 10:59:29,319 - INFO - Processed 200/3670 transactions
+2025-06-12 10:59:29,608 - INFO - Processed 300/3670 transactions
+2025-06-12 10:59:29,923 - INFO - Processed 400/3670 transactions
+2025-06-12 10:59:30,195 - INFO - Processed 500/3670 transactions
+2025-06-12 10:59:30,461 - INFO - Processed 600/3670 transactions
+2025-06-12 10:59:30,817 - INFO - Processed 700/3670 transactions
+2025-06-12 10:59:31,104 - INFO - Processed 800/3670 transactions
+2025-06-12 10:59:31,348 - INFO - Processed 900/3670 transactions
+2025-06-12 10:59:31,606 - INFO - Processed 1000/3670 transactions
+2025-06-12 10:59:31,873 - INFO - Processed 1100/3670 transactions
+2025-06-12 10:59:32,093 - INFO - Processed 1200/3670 transactions
+2025-06-12 10:59:32,345 - INFO - Processed 1300/3670 transactions
+2025-06-12 10:59:32,622 - INFO - Processed 1400/3670 transactions
+2025-06-12 10:59:32,884 - INFO - Processed 1500/3670 transactions
+2025-06-12 10:59:33,349 - INFO - Processed 1600/3670 transactions
+2025-06-12 10:59:33,693 - INFO - Processed 1700/3670 transactions
+2025-06-12 10:59:34,031 - INFO - Processed 1800/3670 transactions
+2025-06-12 10:59:34,424 - INFO - Processed 1900/3670 transactions
+2025-06-12 10:59:34,707 - INFO - Processed 2000/3670 transactions
+2025-06-12 10:59:35,032 - INFO - Processed 2100/3670 transactions
+2025-06-12 10:59:35,284 - INFO - Processed 2200/3670 transactions
+2025-06-12 10:59:35,578 - INFO - Processed 2300/3670 transactions
+2025-06-12 10:59:35,933 - INFO - Processed 2400/3670 transactions
+2025-06-12 10:59:36,236 - INFO - Processed 2500/3670 transactions
+2025-06-12 10:59:36,542 - INFO - Processed 2600/3670 transactions
+2025-06-12 10:59:37,022 - INFO - Processed 2700/3670 transactions
+2025-06-12 10:59:37,374 - INFO - Processed 2800/3670 transactions
+2025-06-12 10:59:37,662 - INFO - Processed 2900/3670 transactions
+2025-06-12 10:59:38,158 - INFO - Processed 3000/3670 transactions
+2025-06-12 10:59:38,449 - INFO - Processed 3100/3670 transactions
+2025-06-12 10:59:38,741 - INFO - Processed 3200/3670 transactions
+2025-06-12 10:59:39,031 - INFO - Processed 3300/3670 transactions
+2025-06-12 10:59:39,369 - INFO - Processed 3400/3670 transactions
+2025-06-12 10:59:39,691 - INFO - Processed 3500/3670 transactions
+2025-06-12 10:59:39,959 - INFO - Processed 3600/3670 transactions
+2025-06-12 10:59:40,324 - INFO - Categorization completed in 12.04 seconds
+2025-06-12 10:59:40,344 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 10:59:40,345 - INFO - Total Transactions: 3670
+2025-06-12 10:59:40,345 - INFO - Categorised: 2607
+2025-06-12 10:59:40,345 - INFO - Uncategorised: 1063
+2025-06-12 10:59:40,345 - INFO - Categorisation Rate: 71.04
+2025-06-12 10:59:40,346 - INFO - Auto Approved: 2560
+2025-06-12 10:59:40,346 - INFO - Avg Confidence: 99.89
+2025-06-12 10:59:40,346 - INFO - High Confidence Matches: 2560
+2025-06-12 10:59:40,385 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\MichaelHeller_ABC_YE20231010.csv
+2025-06-12 10:59:40,385 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-12 11:27:15,998 - INFO - Starting bank statement categorization process
+2025-06-12 11:27:15,999 - INFO - Loading rules from rules_accounting.csv
+2025-06-12 11:27:16,040 - INFO - Successfully loaded 1899 rules
+2025-06-12 11:27:16,041 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\tmpwh3k16od.csv
+2025-06-12 11:27:16,071 - INFO - Successfully loaded 52 transactions
+2025-06-12 11:27:16,071 - INFO - Starting transaction categorization...
+2025-06-12 11:27:16,962 - INFO - Categorization completed in 0.89 seconds
+2025-06-12 11:27:16,970 - INFO - === CATEGORIZATION REPORT ===
+2025-06-12 11:27:16,971 - INFO - Total Transactions: 52
+2025-06-12 11:27:16,972 - INFO - Categorised: 25
+2025-06-12 11:27:16,972 - INFO - Uncategorised: 27
+2025-06-12 11:27:16,972 - INFO - Categorisation Rate: 48.08
+2025-06-12 11:27:16,973 - INFO - Auto Approved: 25
+2025-06-12 11:27:16,973 - INFO - Avg Confidence: 100.0
+2025-06-12 11:27:16,973 - INFO - High Confidence Matches: 25
+2025-06-12 11:27:16,976 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\KajmaConsulting_ABCDE_YE12062025.csv
+2025-06-12 11:27:16,977 - INFO - [SUCCESS] Categorization process completed successfully
