@@ -10,11 +10,11 @@ df = pd.read_excel(
 df.columns = df.columns.str.strip()
 
 # Convert 'Amount £' to numeric
-df["Amount £"] = pd.to_numeric(df["Amount £"], errors="coerce")
+df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")
 
 # Money In / Out
-df["Money In"] = df["Amount £"].apply(lambda x: x if x > 0 else 0)
-df["Money Out"] = df["Amount £"].apply(lambda x: abs(x) if x < 0 else 0)
+df["Money In"] = df["Amount"].apply(lambda x: x if x > 0 else 0)
+df["Money Out"] = df["Amount"].apply(lambda x: abs(x) if x < 0 else 0)
 
 # Category columns — assume they start from column 4 onward (index 4)
 category_cols = df.columns[4:]  # Adjust index if needed
