@@ -166,7 +166,12 @@ if st.button("Run Categorisation"):
             st.markdown("### 📤 Download Options")
             include_diagnostics = st.checkbox("Include diagnostic columns in download", value=False)
 
-            clean_cols = [col for col in original_cols if col in editable_df.columns] + ["Category"]
+            clean_cols = [col for col in original_cols if col in editable_df.columns]
+            if "Category" in editable_df.columns:
+                clean_cols.append("Category")
+            if "Values" in editable_df.columns:
+                clean_cols.append("Values")
+
             clean_df = editable_df[clean_cols]
 
             if include_diagnostics:
@@ -178,7 +183,7 @@ if st.button("Run Categorisation"):
                 )
             else:
                 st.download_button(
-                    label="Download Clean Categorised CSV (original + Category only)",
+                    label="Download Clean Categorised CSV (Original + Category and Values only)",
                     data=clean_df.to_csv(index=False).encode("utf-8"),
                     file_name=custom_filename.replace(".csv", "_clean.csv"),
                     mime="text/csv"
