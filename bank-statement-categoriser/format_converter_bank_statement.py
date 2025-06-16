@@ -2,7 +2,7 @@ import pandas as pd  # Import the pandas library for data manipulation
 
 # Load the Excel file
 df = pd.read_excel(
-    r"C:\Users\Sopher.Intern\Downloads\Book1.xlsx",  # Path to the Excel file
+    r"C:\Users\Sopher.Intern\Downloads\payments_2024.xlsx",  # Path to the Excel file
     sheet_name="Sheet1"  # Sheet to read from
 )
 
