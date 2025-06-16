@@ -2931,3 +2931,108 @@
 2025-06-13 16:09:17,363 - INFO - High Confidence Matches: 8
 2025-06-13 16:09:17,368 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_74c5d064\23296_23296_YE31122024_74c5d064.csv
 2025-06-13 16:09:17,369 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-13 16:22:11,287 - INFO - Starting bank statement categorization process
+2025-06-13 16:22:11,288 - INFO - Loading rules from rules_accounting.csv
+2025-06-13 16:22:11,310 - INFO - Successfully loaded 1778 rules
+2025-06-13 16:22:11,311 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_e7d98e0a\tmp_vi6u3oq.csv
+2025-06-13 16:22:11,337 - INFO - Successfully loaded 345 transactions
+2025-06-13 16:22:11,338 - INFO - Starting transaction categorization...
+2025-06-13 16:22:13,136 - INFO - Processed 100/345 transactions
+2025-06-13 16:22:14,526 - INFO - Processed 200/345 transactions
+2025-06-13 16:22:16,137 - INFO - Processed 300/345 transactions
+2025-06-13 16:22:17,036 - INFO - Categorization completed in 5.70 seconds
+2025-06-13 16:22:17,044 - INFO - === CATEGORIZATION REPORT ===
+2025-06-13 16:22:17,045 - INFO - Total Transactions: 345
+2025-06-13 16:22:17,045 - INFO - Categorised: 148
+2025-06-13 16:22:17,045 - INFO - Uncategorised: 197
+2025-06-13 16:22:17,045 - INFO - Categorisation Rate: 42.9
+2025-06-13 16:22:17,045 - INFO - Auto Approved: 125
+2025-06-13 16:22:17,046 - INFO - Avg Confidence: 98.57
+2025-06-13 16:22:17,046 - INFO - High Confidence Matches: 125
+2025-06-13 16:22:17,052 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_e7d98e0a\abcde_12345_YE31122024_e7d98e0a.csv
+2025-06-13 16:22:17,052 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-13 16:27:36,423 - INFO - Starting bank statement categorization process
+2025-06-13 16:27:36,423 - INFO - Starting bank statement categorization process
+2025-06-13 16:27:36,424 - INFO - Loading rules from rules_accounting.csv
+2025-06-13 16:27:36,424 - INFO - Loading rules from rules_accounting.csv
+2025-06-13 16:27:36,497 - INFO - Successfully loaded 1778 rules
+2025-06-13 16:27:36,497 - INFO - Successfully loaded 1778 rules
+2025-06-13 16:27:36,498 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_682bcc4d\tmpamh9n9l1.csv
+2025-06-13 16:27:36,498 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_682bcc4d\tmpamh9n9l1.csv
+2025-06-13 16:27:36,525 - INFO - Successfully loaded 49 transactions
+2025-06-13 16:27:36,525 - INFO - Successfully loaded 49 transactions
+2025-06-13 16:27:36,526 - INFO - Starting transaction categorization...
+2025-06-13 16:27:36,526 - INFO - Starting transaction categorization...
+2025-06-13 16:27:38,401 - INFO - Categorization completed in 1.87 seconds
+2025-06-13 16:27:38,401 - INFO - Categorization completed in 1.87 seconds
+2025-06-13 16:27:38,402 - INFO - === CATEGORIZATION REPORT ===
+2025-06-13 16:27:38,402 - INFO - === CATEGORIZATION REPORT ===
+2025-06-13 16:27:38,403 - INFO - Total Transactions: 49
+2025-06-13 16:27:38,403 - INFO - Total Transactions: 49
+2025-06-13 16:27:38,403 - INFO - Categorised: 13
+2025-06-13 16:27:38,403 - INFO - Categorised: 13
+2025-06-13 16:27:38,404 - INFO - Uncategorised: 36
+2025-06-13 16:27:38,404 - INFO - Uncategorised: 36
+2025-06-13 16:27:38,404 - INFO - Categorisation Rate: 26.53
+2025-06-13 16:27:38,404 - INFO - Categorisation Rate: 26.53
+2025-06-13 16:27:38,404 - INFO - Auto Approved: 13
+2025-06-13 16:27:38,404 - INFO - Auto Approved: 13
+2025-06-13 16:27:38,405 - INFO - Avg Confidence: 100.0
+2025-06-13 16:27:38,405 - INFO - Avg Confidence: 100.0
+2025-06-13 16:27:38,405 - INFO - High Confidence Matches: 13
+2025-06-13 16:27:38,405 - INFO - High Confidence Matches: 13
+2025-06-13 16:27:38,408 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_682bcc4d\abcde_12345_YE31122024_682bcc4d.csv
+2025-06-13 16:27:38,408 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_682bcc4d\abcde_12345_YE31122024_682bcc4d.csv
+2025-06-13 16:27:38,408 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-13 16:27:38,408 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-13 16:29:15,018 - INFO - Starting bank statement categorization process
+2025-06-13 16:29:15,018 - INFO - Starting bank statement categorization process
+2025-06-13 16:29:15,018 - INFO - Starting bank statement categorization process
+2025-06-13 16:29:15,019 - INFO - Loading rules from rules_accounting.csv
+2025-06-13 16:29:15,019 - INFO - Loading rules from rules_accounting.csv
+2025-06-13 16:29:15,019 - INFO - Loading rules from rules_accounting.csv
+2025-06-13 16:29:15,035 - INFO - Successfully loaded 1778 rules
+2025-06-13 16:29:15,035 - INFO - Successfully loaded 1778 rules
+2025-06-13 16:29:15,035 - INFO - Successfully loaded 1778 rules
+2025-06-13 16:29:15,037 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_34214a70\tmpssy_09nd.csv
+2025-06-13 16:29:15,037 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_34214a70\tmpssy_09nd.csv
+2025-06-13 16:29:15,037 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_34214a70\tmpssy_09nd.csv
+2025-06-13 16:29:15,063 - INFO - Successfully loaded 23 transactions
+2025-06-13 16:29:15,063 - INFO - Successfully loaded 23 transactions
+2025-06-13 16:29:15,063 - INFO - Successfully loaded 23 transactions
+2025-06-13 16:29:15,076 - INFO - Starting transaction categorization...
+2025-06-13 16:29:15,076 - INFO - Starting transaction categorization...
+2025-06-13 16:29:15,076 - INFO - Starting transaction categorization...
+2025-06-13 16:29:15,342 - INFO - Categorization completed in 0.27 seconds
+2025-06-13 16:29:15,342 - INFO - Categorization completed in 0.27 seconds
+2025-06-13 16:29:15,342 - INFO - Categorization completed in 0.27 seconds
+2025-06-13 16:29:15,344 - INFO - === CATEGORIZATION REPORT ===
+2025-06-13 16:29:15,344 - INFO - === CATEGORIZATION REPORT ===
+2025-06-13 16:29:15,344 - INFO - === CATEGORIZATION REPORT ===
+2025-06-13 16:29:15,345 - INFO - Total Transactions: 23
+2025-06-13 16:29:15,345 - INFO - Total Transactions: 23
+2025-06-13 16:29:15,345 - INFO - Total Transactions: 23
+2025-06-13 16:29:15,345 - INFO - Categorised: 15
+2025-06-13 16:29:15,345 - INFO - Categorised: 15
+2025-06-13 16:29:15,345 - INFO - Categorised: 15
+2025-06-13 16:29:15,346 - INFO - Uncategorised: 8
+2025-06-13 16:29:15,346 - INFO - Uncategorised: 8
+2025-06-13 16:29:15,346 - INFO - Uncategorised: 8
+2025-06-13 16:29:15,346 - INFO - Categorisation Rate: 65.22
+2025-06-13 16:29:15,346 - INFO - Categorisation Rate: 65.22
+2025-06-13 16:29:15,346 - INFO - Categorisation Rate: 65.22
+2025-06-13 16:29:15,347 - INFO - Auto Approved: 15
+2025-06-13 16:29:15,347 - INFO - Auto Approved: 15
+2025-06-13 16:29:15,347 - INFO - Auto Approved: 15
+2025-06-13 16:29:15,347 - INFO - Avg Confidence: 100.0
+2025-06-13 16:29:15,347 - INFO - Avg Confidence: 100.0
+2025-06-13 16:29:15,347 - INFO - Avg Confidence: 100.0
+2025-06-13 16:29:15,348 - INFO - High Confidence Matches: 15
+2025-06-13 16:29:15,348 - INFO - High Confidence Matches: 15
+2025-06-13 16:29:15,348 - INFO - High Confidence Matches: 15
+2025-06-13 16:29:15,349 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_34214a70\abcde_12345_YE31122024_34214a70.csv
+2025-06-13 16:29:15,349 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_34214a70\abcde_12345_YE31122024_34214a70.csv
+2025-06-13 16:29:15,349 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_34214a70\abcde_12345_YE31122024_34214a70.csv
+2025-06-13 16:29:15,350 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-13 16:29:15,350 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-13 16:29:15,350 - INFO - [SUCCESS] Categorization process completed successfully

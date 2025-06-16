@@ -1,38 +1,40 @@
 from io import BytesIO
-import streamlit as st
-import pandas as pd
-from fuzzy_logic_improved import TransactionCategorizer, Config
-from preprocess_bank_data import extract_values_column
-import tempfile
+import streamlit as st  # Web UI framework
+import pandas as pd  # Data manipulation
+from fuzzy_logic_improved import TransactionCategorizer, Config  # Custom fuzzy matching logic
+from preprocess_bank_data import extract_values_column  # Preprocessor to compute signed transaction values
+import tempfile  # For temporary file handling
 import os
-import time
-import glob
-import uuid
+import time  # Time-based cleanup
+import glob  # File pattern matching
+import uuid  # For unique session IDs
 
-# --- Unique session ID and folder ---
+# --- Unique session ID and folder for isolation ---
 SESSION_ID = str(uuid.uuid4())[:8]
 USER_TEMP_DIR = os.path.join(tempfile.gettempdir(), f"session_{SESSION_ID}")
 os.makedirs(USER_TEMP_DIR, exist_ok=True)
 
+# --- Excel export helper ---
 def to_excel(df):
     output = BytesIO()
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
         df.to_excel(writer, index=False, sheet_name='Categorised')
     return output.getvalue()
 
+# --- Universal file reader for CSV/Excel ---
 def read_uploaded_file(file, sheet_name=None):
     if file.name.endswith(".csv"):
         return pd.read_csv(file)
     elif file.name.endswith((".xlsx", ".xls")):
-        # if sheet_name is None, default to first sheet explicitly
         return pd.read_excel(file, sheet_name=sheet_name or 0)
     else:
         raise ValueError("Unsupported file format")
 
+# --- App Layout and Title ---
 st.set_page_config(page_title="Transaction Categoriser", layout="wide")
 st.title("Bank Transaction Categorisation Tool")
 
-# --- Clean up old temporary files ---
+# --- Clean up old temp files older than 1 hour ---
 now = time.time()
 tmp_dir = tempfile.gettempdir()
 for f in os.listdir(tmp_dir):
@@ -41,12 +43,13 @@ for f in os.listdir(tmp_dir):
         try:
             os.remove(fpath)
         except:
-            pass
+            pass  # Ignore errors in cleanup
 
-# --- Rule Set Selection ---
+# --- Rule Set Section ---
 st.markdown("### Choose Rule Set")
 col1, col2 = st.columns([2, 3])
 
+# Built-in rules dropdown
 with col1:
     st.markdown("#### Built-in Rule Sets")
     available_rule_sets = sorted(
@@ -58,6 +61,7 @@ with col1:
         format_func=lambda x: x.replace("rules_", "").replace(".csv", "").replace("_", " ").title()
     )
 
+# Upload custom rules
 with col2:
     st.markdown("#### Or Drag and Drop a Custom Rules File")
     with open("rules_template.csv", "r") as template_file:
@@ -74,14 +78,14 @@ with col2:
         help="This will override the selected built-in rule set"
     )
 
-# --- Output File Naming ---
+# --- Output File Naming Inputs ---
 st.markdown("### Output File Naming")
 client_name = st.text_input("Client Name (max 100 characters):", max_chars=100)
 cch_code = st.text_input("CCH Client Code (3–10 characters):", max_chars=10)
 raw_date = st.text_input("Year End Date (DDMMYYYY)", max_chars=8, help="e.g. 31122024")
 ye_date = f"YE{raw_date[4:] + raw_date[2:4] + raw_date[0:2]}" if raw_date and raw_date.isdigit() and len(raw_date) == 8 else ""
 
-# --- Bank Transaction Upload ---
+# --- Upload Bank Transaction File ---
 st.markdown("### Upload Bank Transactions File")
 bank_file = st.file_uploader(
     "Upload your bank statement file (CSV or Excel):",
@@ -89,10 +93,11 @@ bank_file = st.file_uploader(
     key="bank"
 )
 
+# Handle multiple sheets
 sheet_to_process = None
 if bank_file is not None and bank_file.name.endswith((".xlsx", ".xls")):
     try:
-        bank_file.seek(0)  # Ensure pointer is at the beginning
+        bank_file.seek(0)
         excel_obj = pd.ExcelFile(bank_file)
         sheet_names = excel_obj.sheet_names
 
@@ -103,13 +108,14 @@ if bank_file is not None and bank_file.name.endswith((".xlsx", ".xls")):
             )
         else:
             sheet_to_process = sheet_names[0]
-        
-        bank_file.seek(0)  # Reset again for later actual reading
+
+        bank_file.seek(0)  # Reset pointer
+
     except Exception as e:
         st.error(f"Failed to read Excel file: {e}")
         st.stop()
 
-# --- Categorisation ---
+# --- Categorisation Trigger ---
 if st.button("Run Categorisation"):
     errors = []
     if not client_name.strip():
@@ -126,13 +132,16 @@ if st.button("Run Categorisation"):
             st.error(err)
         st.stop()
 
+    # Load and preprocess data
     original_df = read_uploaded_file(bank_file, sheet_name=sheet_to_process)
     preprocessed_df = extract_values_column(original_df.copy())
 
+    # Save preprocessed bank data
     with tempfile.NamedTemporaryFile(delete=False, suffix=".csv", dir=USER_TEMP_DIR) as tmp_bank:
         preprocessed_df.to_csv(tmp_bank.name, index=False)
         tmp_bank_path = tmp_bank.name
 
+    # Use uploaded rules file if provided
     if uploaded_rules_file:
         with tempfile.NamedTemporaryFile(delete=False, suffix=".csv", dir=USER_TEMP_DIR) as tmp_rules:
             tmp_rules.write(uploaded_rules_file.getvalue())
@@ -142,6 +151,7 @@ if st.button("Run Categorisation"):
         tmp_rules_path = selected_rule_set
         st.info(f"Using built-in rule set: {selected_rule_set}")
 
+    # Construct output file names
     safe_client = "".join(c for c in client_name if c.isalnum() or c in ("_", "-")).strip().replace(" ", "_")
     safe_cch = "".join(c for c in cch_code if c.isalnum()).strip().upper()
     final_date = f"YE{raw_date}"
@@ -149,12 +159,12 @@ if st.button("Run Categorisation"):
     correction_filename = f"{safe_client}_{safe_cch}_{final_date}_{SESSION_ID}_corrections.csv"
     output_path = os.path.join(USER_TEMP_DIR, custom_filename)
 
+    # Create config and run categorizer
     config = Config(
         bank_statement_file=tmp_bank_path,
         rules_file=tmp_rules_path,
         output_file=output_path
     )
-
     categorizer = TransactionCategorizer(config)
 
     with st.spinner("Processing transactions..."):
@@ -165,13 +175,14 @@ if st.button("Run Categorisation"):
             st.subheader("Categorised Transactions")
             st.dataframe(output_df)
 
+            # Store for download
             st.session_state["editable_df"] = output_df
             st.session_state["custom_filename"] = custom_filename
             st.session_state["bank_file"] = bank_file
         else:
             st.error("Something went wrong during categorisation. Check logs.")
 
-# --- Post-run download block ---
+# --- Downloads ---
 if (
     "editable_df" in st.session_state and
     "custom_filename" in st.session_state and
@@ -189,11 +200,13 @@ if (
     original_preserved_df = read_uploaded_file(bank_file, sheet_name=sheet_to_process)
     clean_export = original_preserved_df.copy()
 
+    # Add back selected columns
     if "Category" in editable_df.columns:
         clean_export["Category"] = editable_df["Category"]
     if "Values" in editable_df.columns:
         clean_export["Values"] = editable_df["Values"]
 
+    # Offer downloads
     if include_diagnostics:
         st.download_button(
             label="Download Full Categorised CSV (with diagnostics)",
