@@ -25,7 +25,6 @@ import sqlite3
 import pandas as pd
 import bcrypt
 import time
-import subprocess
 
 # === Admin Session Timeout ===
 SESSION_TIMEOUT_SECONDS = 30 * 60
@@ -127,8 +126,8 @@ def admin_login():
         pin_attempt = st.text_input("Enter Recovery PIN", type="password", key="pin_reset_input")
         if st.button("Verify PIN and Reset Credentials", key="reset_btn"):
             if verify_password(pin_attempt, creds.get("recovery_pin", "")):
-                st.session_state.clear()
                 st.session_state["force_password_reset"] = True
+                st.session_state["admin_logged_in"] = True
                 st.success("PIN verified. You may now reset your credentials.")
                 st.rerun()
             else:
