@@ -1,119 +1,238 @@
+# === IMPORTS ===
+import streamlit as st
 from io import BytesIO
-import streamlit as st  # Web UI framework
-import pandas as pd  # Data manipulation
-from fuzzy_logic_improved import TransactionCategorizer, Config  # Custom fuzzy matching logic
-from preprocess_bank_data import extract_values_column  # Preprocessor to compute signed transaction values
-import tempfile  # For temporary file handling
-import os
-import time  # Time-based cleanup
-import glob  # File pattern matching
-import uuid  # For unique session IDs
 
-# --- Unique session ID and folder for isolation ---
-SESSION_ID = str(uuid.uuid4())[:8]
-USER_TEMP_DIR = os.path.join(tempfile.gettempdir(), f"session_{SESSION_ID}")
-os.makedirs(USER_TEMP_DIR, exist_ok=True)
-
-# --- Excel export helper ---
-def to_excel(df):
-    output = BytesIO()
-    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-        df.to_excel(writer, index=False, sheet_name='Categorised')
-    return output.getvalue()
-
-# --- Universal file reader for CSV/Excel ---
-def read_uploaded_file(file, sheet_name=None):
-    if file.name.endswith(".csv"):
-        return pd.read_csv(file)
-    elif file.name.endswith((".xlsx", ".xls")):
-        return pd.read_excel(file, sheet_name=sheet_name or 0)
-    else:
-        raise ValueError("Unsupported file format")
-
-# --- App Layout and Title ---
-st.set_page_config(page_title="Transaction Categoriser", layout="wide")
-st.title("Bank Transaction Categorisation Tool")
-
-# --- Clean up old temp files older than 1 hour ---
-now = time.time()
-tmp_dir = tempfile.gettempdir()
-for f in os.listdir(tmp_dir):
-    fpath = os.path.join(tmp_dir, f)
-    if os.path.isfile(fpath) and os.path.getmtime(fpath) < now - 3600:
-        try:
-            os.remove(fpath)
-        except:
-            pass  # Ignore errors in cleanup
-
-# --- Rule Set Section ---
-st.markdown("### Choose Rule Set")
-col1, col2 = st.columns([2, 3])
-
-# Built-in rules dropdown
-with col1:
-    st.markdown("#### Built-in Rule Sets")
-    available_rule_sets = sorted(
-        f for f in glob.glob("rules_*.csv") if "template" not in f.lower()
-    )
-    selected_rule_set = st.selectbox(
-        "Select a built-in rules file:",
-        options=available_rule_sets,
-        format_func=lambda x: x.replace("rules_", "").replace(".csv", "").replace("_", " ").title()
-    )
-
-# Upload custom rules
-with col2:
-    st.markdown("#### Or Drag and Drop a Custom Rules File")
-    with open("rules_template.csv", "r") as template_file:
-        st.download_button(
-            label="Download Rules Template CSV",
-            data=template_file.read(),
-            file_name="rules_template.csv",
-            mime="text/csv"
-        )
-
-    uploaded_rules_file = st.file_uploader(
-        label="Drop your custom rules CSV here:",
-        type=["csv"],
-        help="This will override the selected built-in rule set"
-    )
-
-# --- Output File Naming Inputs ---
-st.markdown("### Output File Naming")
-client_name = st.text_input("Client Name (max 100 characters):", max_chars=100)
-cch_code = st.text_input("CCH Client Code (3–10 characters):", max_chars=10)
-raw_date = st.text_input("Year End Date (DDMMYYYY)", max_chars=8, help="e.g. 31122024")
-ye_date = f"YE{raw_date[4:] + raw_date[2:4] + raw_date[0:2]}" if raw_date and raw_date.isdigit() and len(raw_date) == 8 else ""
-
-# --- Upload Bank Transaction File ---
-st.markdown("### Upload Bank Transactions File")
-bank_file = st.file_uploader(
-    "Upload your bank statement file (CSV or Excel):",
-    type=["csv", "xlsx", "xls"],
-    key="bank"
+# Internal utility and logic modules
+from logic.utils import (
+    to_excel, read_uploaded_file, hash_password,
+    load_credentials, save_credentials
+)
+from logic.session import SESSION_ID, USER_TEMP_DIR, BACKUP_DIR
+from logic.categorisation import run_categorisation
+from ui_layout import (
+    render_sidebar,
+    render_rule_selection,
+    render_file_inputs,
+    render_file_inputs_get_bank_file_upload,
+    render_download_section
 )
 
-# Handle multiple sheets
-sheet_to_process = None
-if bank_file is not None and bank_file.name.endswith((".xlsx", ".xls")):
+from fuzzy_logic_improved import TransactionCategorizer, Config  # Fuzzy categorisation engine
+
+# Standard libraries
+import json
+import os
+import glob
+import sqlite3
+import pandas as pd
+import bcrypt
+import time
+import subprocess
+
+# === Admin Session Timeout ===
+SESSION_TIMEOUT_SECONDS = 30 * 60  # 30 minutes
+
+def enforce_session_timeout():
+    """Logs user out after period of inactivity"""
+    if "login_time" in st.session_state:
+        if time.time() - st.session_state["login_time"] > SESSION_TIMEOUT_SECONDS:
+            st.warning("Session expired due to inactivity.")
+            st.session_state.clear()
+            st.rerun()
+
+# === Admin Auth Functions ===
+def hash_password(password: str) -> str:
+    """Hashes password using bcrypt"""
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+
+def verify_password(password: str, hashed: str) -> bool:
+    """Verifies plain password against hashed password"""
     try:
-        bank_file.seek(0)
-        excel_obj = pd.ExcelFile(bank_file)
-        sheet_names = excel_obj.sheet_names
+        return bcrypt.checkpw(password.encode(), hashed.encode())
+    except Exception:
+        return False
 
-        if len(sheet_names) > 1:
-            sheet_to_process = st.selectbox(
-                "This Excel file contains multiple sheets. Select the sheet to process:",
-                sheet_names
-            )
+# Path for secure storage of credentials
+CREDENTIALS_DIR = os.path.join(os.path.dirname(__file__), ".secrets")
+CREDENTIALS_PATH = os.path.join(CREDENTIALS_DIR, "credentials.json")
+
+def load_credentials():
+    """Loads or creates admin credentials securely"""
+    if not os.path.exists(CREDENTIALS_PATH):
+        os.makedirs(CREDENTIALS_DIR, exist_ok=True)
+        default = {
+            "username": "admin",
+            "password": hash_password("password"),
+            "recovery_pin": hash_password("1234"),
+            "first_run": True
+        }
+        save_credentials(default)
+        return default
+    with open(CREDENTIALS_PATH, "r") as f:
+        return json.load(f)
+
+def save_credentials(creds):
+    """Writes credentials dictionary to file"""
+    os.makedirs(CREDENTIALS_DIR, exist_ok=True)
+    with open(CREDENTIALS_PATH, "w") as f:
+        json.dump(creds, f)
+
+def admin_login():
+    """Handles the login interface and logic for admin authentication"""
+    creds = load_credentials()
+    st.subheader("Admin Login")
+
+    # === Force reset for first run or forced flag ===
+    if (
+        st.session_state.get("admin_logged_in", False)
+        and (st.session_state.get("force_password_reset", False) or creds.get("first_run", False))
+    ):
+        st.warning("You must set a new admin username, password, and recovery PIN.")
+
+        new_username = st.text_input("New Admin Username", key="reset_username")
+        new_password = st.text_input("New Password", type="password", key="reset_password")
+        confirm_password = st.text_input("Confirm Password", type="password", key="reset_confirm")
+        new_pin = st.text_input("Set Recovery PIN (digits only)", type="password", key="reset_pin")
+
+        if st.button("Update Credentials", key="update_creds_btn"):
+            if not new_username or not new_password or not new_pin:
+                st.error("Fields cannot be empty.")
+            elif new_password != confirm_password:
+                st.error("Passwords do not match.")
+            elif not new_pin.isdigit() or len(new_pin) < 4:
+                st.error("PIN must be numeric and at least 4 digits.")
+            else:
+                save_credentials({
+                    "username": new_username,
+                    "password": hash_password(new_password),
+                    "recovery_pin": hash_password(new_pin),
+                    "first_run": False
+                })
+                st.success("Credentials updated. Please log in again.")
+                st.session_state.clear()
+                st.rerun()
+        return
+
+    # === Regular Login ===
+    username = st.text_input("Username", key="login_username_input")
+    password = st.text_input("Password", type="password", key="login_password_input")
+
+    if st.button("Login", key="login_btn"):
+        if username == creds["username"] and verify_password(password, creds["password"]):
+            # Upgrade legacy passwords to bcrypt if needed
+            if not creds["password"].startswith("$2b$"):
+                creds["password"] = hash_password(password)
+                save_credentials(creds)
+                st.info("Your password has been upgraded to a more secure format.")
+            st.session_state["admin_logged_in"] = True
+            st.session_state["login_time"] = time.time()
+            if creds.get("first_run", False):
+                st.session_state["force_password_reset"] = True
+            st.rerun()
         else:
-            sheet_to_process = sheet_names[0]
+            st.error("Invalid credentials")
 
-        bank_file.seek(0)  # Reset pointer
+    # === Recovery via PIN ===
+    with st.expander("Forgot Password?"):
+        pin_attempt = st.text_input("Enter Recovery PIN", type="password", key="pin_reset_input")
+        if st.button("Verify PIN and Reset Credentials", key="reset_btn"):
+            if verify_password(pin_attempt, creds.get("recovery_pin", "")):
+                st.session_state.clear()
+                st.session_state["force_password_reset"] = True
+                st.success("PIN verified. You may now reset your credentials.")
+                st.rerun()
+            else:
+                st.error("Incorrect PIN.")
 
-    except Exception as e:
-        st.error(f"Failed to read Excel file: {e}")
-        st.stop()
+# === Admin Dashboard ===
+def show_admin_dashboard():
+    """Admin interface for managing rule databases and uploading rules"""
+    st.subheader("Admin Dashboard")
+
+    if st.button("Log Out", key="admin_logout_btn"):
+        st.session_state.clear()
+        st.rerun()
+
+    # --- DB Selection and Upload ---
+    db_files = sorted(glob.glob("rules_*.db"))
+    if not db_files:
+        st.warning("No DB files found.")
+        return
+
+    selected_db = st.selectbox("Select DB to manage:", db_files)
+    uploaded_csv = st.file_uploader("Upload CSV to import", type=["csv"])
+
+    if uploaded_csv:
+        try:
+            df_new = pd.read_csv(uploaded_csv)
+            df_new.columns = df_new.columns.str.lower().str.strip()
+            if not {"description", "category"} <= set(df_new.columns):
+                st.error("CSV must have 'description' and 'category' columns")
+            else:
+                conn = sqlite3.connect(selected_db)
+                try:
+                    df_existing = pd.read_sql("SELECT description, category FROM rules", conn)
+                except Exception:
+                    df_existing = pd.DataFrame(columns=["description", "category"])
+
+                df_new = df_new[["description", "category"]].dropna()
+                df_existing = df_existing[["description", "category"]].dropna()
+                df_combined = pd.concat([df_existing, df_new], ignore_index=True).drop_duplicates()
+                conn.execute("DROP TABLE IF EXISTS rules")
+                df_combined.to_sql("rules", conn, index=False)
+                conn.close()
+
+                st.success(f"Imported {len(df_new)} new rows. Final total: {len(df_combined)} rows.")
+        except Exception as e:
+            st.error(f"Failed to import CSV: {e}")
+
+    # --- Purge selected DB and back it up ---
+    if st.button("Purge Selected DB"):
+        conn = sqlite3.connect(selected_db)
+        df = pd.read_sql("SELECT * FROM rules", conn)
+        csv_name = os.path.join(BACKUP_DIR, os.path.basename(selected_db).replace(".db", ".csv"))
+        df.to_csv(csv_name, index=False)
+        conn.execute("DELETE FROM rules")
+        conn.commit()
+        conn.close()
+        st.success(f"Purged and backed up {selected_db}")
+
+    # --- Purge all DBs and back them up ---
+    if st.button("Purge All DBs"):
+        for db in db_files:
+            conn = sqlite3.connect(db)
+            df = pd.read_sql("SELECT * FROM rules", conn)
+            csv_name = os.path.join(BACKUP_DIR, os.path.basename(db).replace(".db", ".csv"))
+            df.to_csv(csv_name, index=False)
+            conn.execute("DELETE FROM rules")
+            conn.commit()
+            conn.close()
+        st.success("All DBs purged and backed up.")
+
+# === STREAMLIT PAGE CONFIG ===
+st.set_page_config(page_title="Transaction Categorisation", layout="wide")
+
+# === ROUTING: Admin Pages ===
+page = render_sidebar()
+
+if page == "Admin Dashboard":
+    if st.session_state.get("admin_logged_in", False):
+        enforce_session_timeout()
+        if st.session_state.get("force_password_reset", False):
+            admin_login()
+        else:
+            show_admin_dashboard()
+    else:
+        admin_login()
+    st.stop()
+
+# === MAIN USER DASHBOARD ===
+st.title("Bank Transaction Categorisation Tool")
+
+# --- User input layout ---
+selected_rule_label, selected_rule_db, uploaded_rules_file = render_rule_selection()
+client_name, cch_code, raw_date, ye_date = render_file_inputs()
+bank_file, sheet_to_process = render_file_inputs_get_bank_file_upload()
 
 # --- Categorisation Trigger ---
 if st.button("Run Categorisation"):
@@ -132,104 +251,39 @@ if st.button("Run Categorisation"):
             st.error(err)
         st.stop()
 
-    # Load and preprocess data
-    original_df = read_uploaded_file(bank_file, sheet_name=sheet_to_process)
-    preprocessed_df = extract_values_column(original_df.copy())
-
-    # Save preprocessed bank data
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".csv", dir=USER_TEMP_DIR) as tmp_bank:
-        preprocessed_df.to_csv(tmp_bank.name, index=False)
-        tmp_bank_path = tmp_bank.name
-
-    # Use uploaded rules file if provided
-    if uploaded_rules_file:
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".csv", dir=USER_TEMP_DIR) as tmp_rules:
-            tmp_rules.write(uploaded_rules_file.getvalue())
-            tmp_rules_path = tmp_rules.name
-        st.success("Using uploaded custom rules file.")
-    else:
-        tmp_rules_path = selected_rule_set
-        st.info(f"Using built-in rule set: {selected_rule_set}")
-
-    # Construct output file names
-    safe_client = "".join(c for c in client_name if c.isalnum() or c in ("_", "-")).strip().replace(" ", "_")
-    safe_cch = "".join(c for c in cch_code if c.isalnum()).strip().upper()
-    final_date = f"YE{raw_date}"
-    custom_filename = f"{safe_client}_{safe_cch}_{final_date}_{SESSION_ID}.csv"
-    correction_filename = f"{safe_client}_{safe_cch}_{final_date}_{SESSION_ID}_corrections.csv"
-    output_path = os.path.join(USER_TEMP_DIR, custom_filename)
-
-    # Create config and run categorizer
-    config = Config(
-        bank_statement_file=tmp_bank_path,
-        rules_file=tmp_rules_path,
-        output_file=output_path
-    )
-    categorizer = TransactionCategorizer(config)
-
     with st.spinner("Processing transactions..."):
-        if categorizer.run_categorization():
-            output_df = pd.read_csv(output_path)
-            st.success("Categorisation completed successfully!")
+        result = run_categorisation(
+            client_name=client_name,
+            cch_code=cch_code,
+            raw_date=raw_date,
+            bank_file=bank_file,
+            sheet_to_process=sheet_to_process,
+            rules_file=uploaded_rules_file,
+            built_in_db_path=selected_rule_db,
+            session_id=SESSION_ID,
+            user_temp_dir=USER_TEMP_DIR
+        )
 
-            st.subheader("Categorised Transactions")
-            st.dataframe(output_df)
+    if result.success:
+        output_df = result.output_df
+        st.success("Categorisation completed successfully!")
+        st.dataframe(output_df)
+        st.session_state["editable_df"] = output_df
+        st.session_state["custom_filename"] = result.custom_filename
+        st.session_state["bank_file"] = bank_file
+        st.session_state["sheet_to_process"] = sheet_to_process
+    else:
+        st.error("Something went wrong during categorisation. Check logs.")
 
-            # Store for download
-            st.session_state["editable_df"] = output_df
-            st.session_state["custom_filename"] = custom_filename
-            st.session_state["bank_file"] = bank_file
-        else:
-            st.error("Something went wrong during categorisation. Check logs.")
-
-# --- Downloads ---
+# --- Download section for categorised data ---
 if (
     "editable_df" in st.session_state and
     "custom_filename" in st.session_state and
-    "bank_file" in st.session_state and
-    isinstance(st.session_state["bank_file"], (BytesIO, st.runtime.uploaded_file_manager.UploadedFile))
-    ):
-    st.markdown("### Download Options")
-    include_diagnostics = st.checkbox("Include diagnostic columns in download", value=False)
-
-    editable_df = st.session_state["editable_df"]
-    custom_filename = st.session_state["custom_filename"]
-    bank_file = st.session_state["bank_file"]
-
-    bank_file.seek(0)
-    original_preserved_df = read_uploaded_file(bank_file, sheet_name=sheet_to_process)
-    clean_export = original_preserved_df.copy()
-
-    # Add back selected columns
-    if "Category" in editable_df.columns:
-        clean_export["Category"] = editable_df["Category"]
-    if "Values" in editable_df.columns:
-        clean_export["Values"] = editable_df["Values"]
-
-    # Offer downloads
-    if include_diagnostics:
-        st.download_button(
-            label="Download Full Categorised CSV (with diagnostics)",
-            data=editable_df.to_csv(index=False).encode("utf-8"),
-            file_name=custom_filename,
-            mime="text/csv"
-        )
-        st.download_button(
-            label="Download Full Categorised Excel (with diagnostics)",
-            data=to_excel(editable_df),
-            file_name=custom_filename.replace(".csv", ".xlsx"),
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
-    else:
-        st.download_button(
-            label="Download Clean Categorised CSV (Original + Category and Values only)",
-            data=clean_export.to_csv(index=False).encode("utf-8"),
-            file_name=custom_filename.replace(".csv", "_clean.csv"),
-            mime="text/csv"
-        )
-        st.download_button(
-            label="Download Clean Categorised Excel (Original + Category and Values only)",
-            data=to_excel(clean_export),
-            file_name=custom_filename.replace(".csv", "_clean.xlsx"),
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
+    "bank_file" in st.session_state
+):
+    render_download_section(
+        st.session_state["editable_df"],
+        st.session_state["custom_filename"],
+        st.session_state["bank_file"],
+        st.session_state.get("sheet_to_process")
+    )
