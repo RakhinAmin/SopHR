@@ -1,15 +1,23 @@
 # === IMPORTS ===
+import sqlite3
 import os, tempfile, pandas as pd  # Standard libraries for file handling and data processing
 from fuzzy_logic_improved import TransactionCategorizer, Config  # Custom logic for transaction categorisation
 from preprocess_bank_data import extract_values_column  # Preprocessing utility for extracting transaction descriptions
 from .utils import read_uploaded_file  # Helper to read uploaded Excel or CSV files
+from collections import namedtuple
 
-def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch_code, raw_date, user_temp_dir, session_id):
+CategorisationResult = namedtuple("CategorisationResult", ["success", "output_df", "custom_filename", "original_df", "report"])
+
+def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch_code, raw_date, user_temp_dir, session_id, built_in_db_path=None):
     # Load the uploaded bank file and extract the relevant sheet
     original_df = read_uploaded_file(bank_file, sheet_name=sheet_to_process)
 
     # Preprocess the data to extract key values (e.g., transaction descriptions)
     preprocessed_df = extract_values_column(original_df.copy())
+
+    if "Description" not in preprocessed_df.columns:
+        print("[ERROR] Missing 'Description' column in processed data.")
+        return CategorisationResult(False, pd.DataFrame(), custom_filename, original_df)
 
     # Write the preprocessed dataframe to a temporary CSV file
     with tempfile.NamedTemporaryFile(delete=False, suffix=".csv", dir=user_temp_dir) as tmp_bank:
@@ -32,7 +40,17 @@ def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch
 
     # Instantiate the categoriser with the config and run the categorisation process
     categorizer = TransactionCategorizer(config)
-    success = categorizer.run_categorization()
+    db_conn = None
+    if not rules_path and built_in_db_path:
+        db_conn = sqlite3.connect(built_in_db_path)
+    success = categorizer.run_categorization(db_conn=db_conn)
+    if db_conn:
+        db_conn.close()
+
 
     # Return status, output file path, filename, and original (unprocessed) dataframe
-    return success, output_path, custom_filename, original_df
+    output_df = pd.read_csv(output_path)
+
+    report = categorizer.generate_report(output_df)
+
+    return CategorisationResult(success, output_df, custom_filename, original_df, report)

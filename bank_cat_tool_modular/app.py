@@ -24,6 +24,7 @@ import glob
 import sqlite3
 import pandas as pd
 import bcrypt
+import tempfile
 import time
 
 # === Admin Session Timeout ===
@@ -219,6 +220,11 @@ client_name, cch_code, raw_date, ye_date = render_file_inputs()
 bank_file, sheet_to_process = render_file_inputs_get_bank_file_upload()
 
 if st.button("Run Categorisation"):
+    st.session_state["trigger_categorisation"] = True
+
+if st.session_state.get("trigger_categorisation", False):
+    st.session_state["trigger_categorisation"] = False  # reset flag
+
     errors = []
     if not client_name.strip():
         errors.append("Client Name is required.")
@@ -233,6 +239,19 @@ if st.button("Run Categorisation"):
         for err in errors:
             st.error(err)
         st.stop()
+    
+    # === NEW: Require rules from file or db ===
+    if not uploaded_rules_file and not selected_rule_db:
+        st.error("You must either upload a rules CSV file or select a built-in rule database.")
+        st.stop()
+
+    # Upload rule file handling
+    tmp_uploaded_rules_path = None
+    if uploaded_rules_file:
+        uploaded_rules_file.seek(0)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".csv", dir=USER_TEMP_DIR) as tmp_file:
+            tmp_file.write(uploaded_rules_file.read())
+            tmp_uploaded_rules_path = tmp_file.name
 
     with st.spinner("Processing transactions..."):
         result = run_categorisation(
@@ -241,28 +260,39 @@ if st.button("Run Categorisation"):
             raw_date=raw_date,
             bank_file=bank_file,
             sheet_to_process=sheet_to_process,
-            rules_file=uploaded_rules_file,
+            rules_path=tmp_uploaded_rules_path,
             built_in_db_path=selected_rule_db,
             session_id=SESSION_ID,
             user_temp_dir=USER_TEMP_DIR
         )
 
-    if result.success:
-        output_df = result.output_df
-        st.success("Categorisation completed successfully!")
-        st.dataframe(output_df)
-        st.session_state["editable_df"] = output_df
-        st.session_state["custom_filename"] = result.custom_filename
-        st.session_state["bank_file"] = bank_file
-        st.session_state["sheet_to_process"] = sheet_to_process
-    else:
-        st.error("Something went wrong during categorisation. Check logs.")
+    if not result.success:
+        st.error("Categorisation failed. Make sure your bank file includes a 'Description' column.")
+        st.stop()
 
-if (
-    "editable_df" in st.session_state and
-    "custom_filename" in st.session_state and
-    "bank_file" in st.session_state
-):
+    st.success("Categorisation completed successfully!")
+    st.dataframe(result.output_df)
+
+    st.markdown("### Categorisation Summary")
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric("Total Transactions", result.report["total_transactions"])
+    col2.metric("Categorised", result.report["categorised"])
+    col3.metric("Uncategorised", result.report["uncategorised"])
+    col4.metric("Categorisation Rate", f"{result.report['categorisation_rate']}%")
+
+    col1.metric("Auto-Approved", result.report["auto_approved"])
+    col2.metric("Avg Confidence", f"{result.report['avg_confidence']}%")
+    col3.metric("High Confidence Matches", result.report["high_confidence_matches"])
+
+    # Save results to session for download
+    st.session_state["editable_df"] = result.output_df
+    st.session_state["custom_filename"] = result.custom_filename
+    st.session_state["bank_file"] = bank_file
+    st.session_state["sheet_to_process"] = sheet_to_process
+
+# === Render Download Section ===
+if all(k in st.session_state for k in ["editable_df", "custom_filename", "bank_file"]):
     render_download_section(
         st.session_state["editable_df"],
         st.session_state["custom_filename"],

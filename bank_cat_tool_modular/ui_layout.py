@@ -60,6 +60,16 @@ def render_file_inputs_get_bank_file_upload():
         key="bank"
     )
 
+    if bank_file and bank_file.name.endswith(".csv"):
+        try:
+            bank_file.seek(0)
+            df_preview = pd.read_csv(bank_file, nrows=5)
+            if "Description" not in df_preview.columns:
+                st.warning("This file is missing a 'Description' column. Categorisation may fail.")
+            bank_file.seek(0)
+        except Exception as e:
+            st.warning(f"Unable to preview file: {e}")
+
     sheet_to_process = None
     if bank_file and bank_file.name.endswith((".xlsx", ".xls")):
         try:
@@ -71,10 +81,18 @@ def render_file_inputs_get_bank_file_upload():
             else:
                 sheet_to_process = sheet_names[0]
             bank_file.seek(0)
+
+            # === NEW: Preview Excel sheet and warn if Description column missing ===
+            df_preview = pd.read_excel(bank_file, sheet_name=sheet_to_process, nrows=5)
+            if "Description" not in df_preview.columns:
+                st.warning("This Excel sheet is missing a 'Description' column. Categorisation may fail.")
+            bank_file.seek(0)
+
         except Exception as e:
             st.error(f"Failed to read Excel file: {e}")
             st.stop()
     return bank_file, sheet_to_process
+
 
 def render_download_section(editable_df, custom_filename, bank_file, sheet_to_process):
     st.markdown("### Download Options")

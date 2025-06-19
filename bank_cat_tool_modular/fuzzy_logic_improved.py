@@ -26,21 +26,25 @@ class Config:
 
 # === LOGGING SETUP ===
 def setup_logging():
-    """Configure logging for the application"""
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')  # Format for logs
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
 
-    console_handler = logging.StreamHandler()  # Logs to stdout
-    console_handler.setFormatter(formatter)  # Attach formatter to console logs
+    # Clear existing handlers to avoid duplicates
+    while logger.hasHandlers():
+        logger.removeHandler(logger.handlers[0])
 
-    file_handler = logging.FileHandler('categorizer.log', encoding='utf-8')  # Log file handler
-    file_handler.setFormatter(formatter)  # Attach formatter to file logs
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
-    logger = logging.getLogger(__name__)  # Get logger instance
-    logger.setLevel(logging.INFO)  # Set logging level
-    logger.addHandler(console_handler)  # Add console handler
-    logger.addHandler(file_handler)  # Add file handler
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
 
-    return logger  # Return configured logger
+    file_handler = logging.FileHandler('categorizer.log', encoding='utf-8')
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(console_handler)
+    logger.addHandler(file_handler)
+
+    return logger
 
 # === ENHANCED CLEANING FUNCTIONS ===
 def enhanced_clean_description(text: str) -> str:
