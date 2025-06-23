@@ -279,7 +279,17 @@ if st.session_state.get("trigger_categorisation", False):
     col1.metric("Total Transactions", result.report["total_transactions"])
     col2.metric("Categorised", result.report["categorised"])
     col3.metric("Uncategorised", result.report["uncategorised"])
-    col4.metric("Categorisation Rate", f"{result.report['categorisation_rate']}%")
+    rate = result.report["categorisation_rate"]
+    rate_colour = "red" if rate < 50 else "black"
+    col4.markdown(
+        f"""
+        <div style='text-align: center;'>
+            <span style='font-weight: 600;'>Categorisation Rate</span><br>
+            <span style='font-size: 2em; color: {rate_colour};'>{rate:.2f}%</span>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     col1.metric("Auto-Approved", result.report["auto_approved"])
     col2.metric("Avg Confidence", f"{result.report['avg_confidence']}%")

@@ -1063,3 +1063,88 @@ delete_url: "/_stcore/upload_file/63ed5806-aa17-47b5-a7b5-a7fef1fecd15/41de984d-
 2025-06-19 15:44:11,841 - INFO - High Confidence Matches: 420
 2025-06-19 15:44:11,847 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_dd13b17b\abcde_ABCDE_YE12345678_dd13b17b.csv
 2025-06-19 15:44:11,847 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-20 11:21:11,703 - INFO - Starting bank statement categorization process
+2025-06-20 11:21:11,704 - INFO - Loading rules from CSV file: C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmpk81vm1rj.csv
+2025-06-20 11:21:11,743 - INFO - Loaded 268 categorisation rules.
+2025-06-20 11:21:11,743 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmpbx78t3qf.csv
+2025-06-20 11:21:11,766 - INFO - Successfully loaded 73 transactions
+2025-06-20 11:21:11,767 - INFO - Starting transaction categorization...
+2025-06-20 11:21:11,881 - INFO - Categorization completed in 0.11 seconds
+2025-06-20 11:21:11,887 - INFO - === CATEGORIZATION REPORT ===
+2025-06-20 11:21:11,887 - INFO - Total Transactions: 73
+2025-06-20 11:21:11,887 - INFO - Categorised: 36
+2025-06-20 11:21:11,888 - INFO - Uncategorised: 37
+2025-06-20 11:21:11,888 - INFO - Categorisation Rate: 49.32
+2025-06-20 11:21:11,888 - INFO - Auto Approved: 31
+2025-06-20 11:21:11,888 - INFO - Avg Confidence: 98.13
+2025-06-20 11:21:11,889 - INFO - High Confidence Matches: 31
+2025-06-20 11:21:11,891 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\EMATEXTILESLIMITED_12345_YE31012024_2652f42f.csv
+2025-06-20 11:21:11,892 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-20 11:34:44,883 - INFO - Starting bank statement categorization process
+2025-06-20 11:34:44,883 - INFO - Loading rules from CSV file: C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmpk_3vkn0h.csv
+2025-06-20 11:34:44,915 - INFO - Loaded 268 categorisation rules.
+2025-06-20 11:34:44,915 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmph9vqtmyn.csv
+2025-06-20 11:34:44,931 - INFO - Successfully loaded 73 transactions
+2025-06-20 11:34:44,931 - INFO - Starting transaction categorization...
+2025-06-20 11:34:45,048 - INFO - Categorization completed in 0.12 seconds
+2025-06-20 11:34:45,048 - INFO - === CATEGORIZATION REPORT ===
+2025-06-20 11:34:45,048 - INFO - Total Transactions: 73
+2025-06-20 11:34:45,048 - INFO - Categorised: 36
+2025-06-20 11:34:45,048 - INFO - Uncategorised: 37
+2025-06-20 11:34:45,048 - INFO - Categorisation Rate: 49.32
+2025-06-20 11:34:45,048 - INFO - Auto Approved: 31
+2025-06-20 11:34:45,048 - INFO - Avg Confidence: 98.13
+2025-06-20 11:34:45,048 - INFO - High Confidence Matches: 31
+2025-06-20 11:34:45,064 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\EMATEXTILESLIMITED_12345_YE31012024_2652f42f.csv
+2025-06-20 11:34:45,064 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-20 11:38:56,499 - INFO - Starting bank statement categorization process
+2025-06-20 11:38:56,504 - INFO - Loading rules from CSV file: C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmp7bpprp3a.csv
+2025-06-20 11:38:56,570 - INFO - Loaded 268 categorisation rules.
+2025-06-20 11:38:56,570 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmpyvup66fo.csv
+2025-06-20 11:38:56,587 - INFO - Successfully loaded 96 transactions
+2025-06-20 11:38:56,587 - INFO - Starting transaction categorization...
+2025-06-20 11:38:56,871 - INFO - Categorization completed in 0.28 seconds
+2025-06-20 11:38:56,871 - INFO - === CATEGORIZATION REPORT ===
+2025-06-20 11:38:56,871 - INFO - Total Transactions: 96
+2025-06-20 11:38:56,871 - INFO - Categorised: 43
+2025-06-20 11:38:56,871 - INFO - Uncategorised: 53
+2025-06-20 11:38:56,871 - INFO - Categorisation Rate: 44.79
+2025-06-20 11:38:56,871 - INFO - Auto Approved: 29
+2025-06-20 11:38:56,871 - INFO - Avg Confidence: 96.65
+2025-06-20 11:38:56,871 - INFO - High Confidence Matches: 29
+2025-06-20 11:38:56,886 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\EMATEXTILESLIMITED_12345_YE31012024_2652f42f.csv
+2025-06-20 11:38:56,887 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-20 11:46:38,674 - INFO - Starting bank statement categorization process
+2025-06-20 11:46:38,674 - INFO - Loading rules from CSV file: C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmphp9ufbr9.csv
+2025-06-20 11:46:38,705 - INFO - Loaded 268 categorisation rules.
+2025-06-20 11:46:38,705 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmpct2mb2kt.csv
+2025-06-20 11:46:38,716 - INFO - Successfully loaded 63 transactions
+2025-06-20 11:46:38,716 - INFO - Starting transaction categorization...
+2025-06-20 11:46:38,850 - INFO - Categorization completed in 0.13 seconds
+2025-06-20 11:46:38,865 - INFO - === CATEGORIZATION REPORT ===
+2025-06-20 11:46:38,865 - INFO - Total Transactions: 63
+2025-06-20 11:46:38,867 - INFO - Categorised: 30
+2025-06-20 11:46:38,868 - INFO - Uncategorised: 33
+2025-06-20 11:46:38,868 - INFO - Categorisation Rate: 47.62
+2025-06-20 11:46:38,868 - INFO - Auto Approved: 23
+2025-06-20 11:46:38,868 - INFO - Avg Confidence: 97.81
+2025-06-20 11:46:38,868 - INFO - High Confidence Matches: 23
+2025-06-20 11:46:38,870 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\EMATEXTILESLIMITED_12345_YE31012024_2652f42f.csv
+2025-06-20 11:46:38,870 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-20 14:54:47,170 - INFO - Starting bank statement categorization process
+2025-06-20 14:54:47,170 - INFO - Loading rules from CSV file: C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmpdrx3_6tt.csv
+2025-06-20 14:54:47,220 - INFO - Loaded 273 categorisation rules.
+2025-06-20 14:54:47,220 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\tmph9p56etf.csv
+2025-06-20 14:54:47,237 - INFO - Successfully loaded 63 transactions
+2025-06-20 14:54:47,237 - INFO - Starting transaction categorization...
+2025-06-20 14:54:47,303 - INFO - Categorization completed in 0.07 seconds
+2025-06-20 14:54:47,303 - INFO - === CATEGORIZATION REPORT ===
+2025-06-20 14:54:47,303 - INFO - Total Transactions: 63
+2025-06-20 14:54:47,303 - INFO - Categorised: 43
+2025-06-20 14:54:47,303 - INFO - Uncategorised: 20
+2025-06-20 14:54:47,303 - INFO - Categorisation Rate: 68.25
+2025-06-20 14:54:47,303 - INFO - Auto Approved: 41
+2025-06-20 14:54:47,303 - INFO - Avg Confidence: 99.63
+2025-06-20 14:54:47,317 - INFO - High Confidence Matches: 41
+2025-06-20 14:54:47,320 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_2652f42f\EMATEXTILESLIMITED_12345_YE31012024_2652f42f.csv
+2025-06-20 14:54:47,320 - INFO - [SUCCESS] Categorization process completed successfully

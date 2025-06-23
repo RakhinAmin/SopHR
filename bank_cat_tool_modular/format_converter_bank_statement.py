@@ -1,31 +1,49 @@
-import pandas as pd  # Import the pandas library for data manipulation
+import pandas as pd
 
-# Load the Excel file
-df = pd.read_excel(
-    r"C:\Users\Sopher.Intern\Downloads\payments_2024.xlsx",  # Path to the Excel file
-    sheet_name="Sheet1"  # Sheet to read from
-)
+# === CONFIGURATION ===
+file_path = r"C:\Users\Sopher.Intern\Downloads\cleanup.xlsx"
+sheet = "Sheet1"
+category_start_index = 11  # Adjust as needed
+output_path = r"C:\Users\Sopher.Intern\Downloads\description_category_output.xlsx"
 
-# Clean headers
-df.columns = df.columns.str.strip()  # Remove leading/trailing whitespace from column names
+# === DEDUPLICATE FUNCTION ===
+def deduplicate_columns(columns):
+    seen = {}
+    new_columns = []
+    for col in columns:
+        col_clean = str(col).strip()
+        if col_clean in seen:
+            seen[col_clean] += 1
+            new_columns.append(f"{col_clean}.{seen[col_clean]}")
+        else:
+            seen[col_clean] = 0
+            new_columns.append(col_clean)
+    return new_columns
 
-# Convert 'Amount £' to numeric
-df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce")  # Force conversion; invalid entries become NaN
+# === LOAD & CLEAN DATA ===
+df = pd.read_excel(file_path, sheet_name=sheet)
+df.columns = deduplicate_columns(df.columns)
 
-# Money In / Out
-df["Money In"] = df["Amount"].apply(lambda x: x if x > 0 else 0)  # Keep positive amounts as 'Money In'
-df["Money Out"] = df["Amount"].apply(lambda x: abs(x) if x < 0 else 0)  # Take absolute of negatives as 'Money Out'
+# === GET CATEGORY COLUMNS ===
+category_cols = df.columns[category_start_index:]
 
-# Category columns — assume they start from column 4 onward (index 4)
-category_cols = df.columns[4:]  # Slice to get all possible category columns (adjust if structure changes)
+# === ASSIGN MULTIPLE CATEGORIES IF MULTIPLE NON-NULL VALUES ===
+def find_categories(row):
+    matched = [col for col in category_cols if pd.notna(row[col])]
+    if not matched:
+        return ""
+    elif len(matched) == 1:
+        return matched[0]
+    else:
+        return " and ".join(matched)  # Use Oxford-style 'X and Y', not CSV
 
-# Get category as the name of the column with non-null value
-df["Category"] = df[category_cols].notna().idxmax(axis=1)  # Find first column with a non-null value across category columns
+df["Category"] = df.apply(find_categories, axis=1)
 
-# Final format
-final_df = df[["Date", "Money In", "Money Out", "Description", "Category"]]  # Rearrange selected columns in output
+# === FINAL OUTPUT ===
+result_df = df[["Description", "Category"]].copy()
+# Optional: keep rows only with category
+# result_df = result_df[result_df["Category"] != ""]
 
-# Save
-output_path = r"C:\Users\Sopher.Intern\Downloads\cleaned_output.xlsx"  # Path to save cleaned file
-final_df.to_excel(output_path, index=False)  # Write to Excel without row index
-print(f"✅ Saved to: {output_path}")  # Confirmation message
+# === SAVE ===
+result_df.to_excel(output_path, index=False)
+print(f"✅ Multi-category output saved to: {output_path}")
