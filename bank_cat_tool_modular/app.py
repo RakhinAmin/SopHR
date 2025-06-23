@@ -1,5 +1,9 @@
 # === app.py ===
 import streamlit as st
+
+# === STREAMLIT LAYOUT ===
+st.set_page_config(page_title="Transaction Categorisation", layout="wide")
+
 from io import BytesIO
 
 from logic.utils import (
@@ -26,6 +30,10 @@ import pandas as pd
 import bcrypt
 import tempfile
 import time
+
+# === SECURE DEFAULT HASHES (pre-generated, NOT plaintext) ===
+DEFAULT_HASHED_PASSWORD = "$2b$12$mg9gXX9ddxfwI7p6nKQRe.idw6We11jCJ6mxQNnjS0bzwtca6zVT2"  # 'password'
+DEFAULT_HASHED_PIN = "$2b$12$pvtnsxmS3atyJGYsTu0kGOi4K2h/xhZkhzZyPF3pV3N14EHtTLCD2"       # '1234'
 
 # === Admin Session Timeout ===
 SESSION_TIMEOUT_SECONDS = 30 * 60
@@ -55,8 +63,8 @@ def load_credentials():
         os.makedirs(CREDENTIALS_DIR, exist_ok=True)
         default = {
             "username": "admin",
-            "password": hash_password("password"),
-            "recovery_pin": hash_password("1234"),
+            "password": DEFAULT_HASHED_PASSWORD,  # ← Already hashed
+            "recovery_pin": DEFAULT_HASHED_PIN,   # ← Already hashed
             "first_run": True
         }
         save_credentials(default)
@@ -195,8 +203,55 @@ def show_admin_dashboard():
             conn.close()
         st.success("All DBs purged and backed up.")
 
-# === STREAMLIT LAYOUT ===
-st.set_page_config(page_title="Transaction Categorisation", layout="wide")
+st.markdown("""
+<style>
+/* 1. Reduce gap between label and help icon */
+label > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 4px !important;
+}
+
+/* 2. Shrink help icon */
+svg[data-testid="icon-help"] {
+    width: 14px !important;
+    height: 14px !important;
+    margin-left: 2px !important;
+    margin-top: 0 !important;
+}
+
+/* 3. Tighten vertical spacing too (optional) */
+[data-testid="stTextInput"] {
+    margin-bottom: 1rem;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+/* Reduce top margin of all Streamlit input fields */
+.block-container .stTextInput {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Optional: tighten all field spacing globally */
+div[data-testid="stTextInput"] {
+    margin-top: -6px !important;
+    margin-bottom: 10px !important;
+}
+</style>
+
+<style>
+/* Make all buttons golden on hover */
+button:hover {
+    background-color: #d4af37 !important;  /* gold */
+    color: white !important;
+    border: none !important;
+    transition: background-color 0.3s ease;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # === ROUTING ===
 page = render_sidebar()
@@ -206,14 +261,16 @@ if page == "Admin Dashboard":
         enforce_session_timeout()
         if st.session_state.get("force_password_reset", False):
             admin_login()
+            st.stop()
         else:
             show_admin_dashboard()
+            st.stop()
     else:
         admin_login()
-    st.stop()
+        st.stop()
 
 # === MAIN USER DASHBOARD ===
-st.title("Bank Transaction Categorisation Tool")
+st.title("Bank Analysis Tool")
 
 selected_rule_label, selected_rule_db, uploaded_rules_file = render_rule_selection()
 client_name, cch_code, raw_date, ye_date = render_file_inputs()

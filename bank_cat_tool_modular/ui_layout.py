@@ -2,33 +2,76 @@ import streamlit as st
 import glob
 import os
 import pandas as pd
-from logic.utils import to_excel, read_uploaded_file
+from logic.utils import inline_text_input_with_help, to_excel, read_uploaded_file, inline_label_with_help
 
 def render_sidebar():
     return st.sidebar.selectbox("Navigate", ["User Dashboard", "Admin Dashboard"])
 
 def render_admin_login():
     st.warning("You must set a new admin username and password.")
-    st.text_input("Username", key="login_username_input")
-    st.text_input("Password", type="password", key="login_password_input")
+    st.text_input("Admin Username", key="login_username_input", label_visibility="collapsed")
+    st.text_input("Admin Password", type="password", key="login_password_input", label_visibility="collapsed")
 
 def render_admin_dashboard():
     st.subheader("Admin Dashboard")
     st.info("This is just a placeholder. Logic should be placed inside `show_admin_dashboard` in app.py")
 
+from logic.utils import load_icon_base64  # Make sure this is in your imports
+
 def render_rule_selection():
     st.markdown("### Choose Rule Set")
-    col1, col2 = st.columns([2, 3])
+
+    col1, col_or, col2 = st.columns([2.5, 0.5, 2.5])
 
     with col1:
-        st.markdown("#### Built-in Rule Sets (from DB)")
+        st.markdown("#### Built-in Rule Sets")
         available_rule_dbs = sorted(glob.glob("rules_*.db"))
-        db_choices = {os.path.basename(f).replace("rules_", "").replace(".db", "").title(): f for f in available_rule_dbs}
+        db_choices = {
+            os.path.basename(f).replace("rules_", "").replace(".db", "").title(): f
+            for f in available_rule_dbs
+        }
         selected_rule_label = st.selectbox("Select a built-in ruleset:", options=list(db_choices.keys()))
         selected_rule_db = db_choices[selected_rule_label]
 
+        st.markdown("<div style='height: 140px;'></div>", unsafe_allow_html=True)
+
+    with col_or:
+        st.markdown("<div style='text-align: center; font-weight: bold; font-size: 18px; padding-top: 60px;'>OR</div>",
+                    unsafe_allow_html=True)
+
     with col2:
-        st.markdown("#### Or Drag and Drop a Custom Rules File")
+        st.markdown("#### Custom Rules File")
+
+        # Use your PNG icon from root
+        icon_data_uri = load_icon_base64("help.png")
+
+        st.markdown(f"""
+        <style>
+        .custom-help-label {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }}
+        .custom-help-label img {{
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }}
+        </style>
+        <div class="custom-help-label">
+            <span>Drop your custom rules CSV here:</span>
+            <img src="{icon_data_uri}" title="This will override the selected built-in rule set" />
+        </div>
+        """, unsafe_allow_html=True)
+
+        uploaded_rules_file = st.file_uploader(
+            label=" ",  # Empty to suppress default label warning
+            type=["csv"],
+            key="custom_rules_file"
+        )
+
         with open("rules_template.csv", "r") as template_file:
             st.download_button(
                 label="Download Rules Template CSV",
@@ -37,20 +80,45 @@ def render_rule_selection():
                 mime="text/csv"
             )
 
-        uploaded_rules_file = st.file_uploader(
-            label="Drop your custom rules CSV here:",
-            type=["csv"],
-            help="This will override the selected built-in rule set"
-        )
-
     return selected_rule_label, selected_rule_db, uploaded_rules_file
 
 def render_file_inputs():
-    st.markdown("### Output File Naming")
-    client_name = st.text_input("Client Name (max 100 characters):", max_chars=100)
-    cch_code = st.text_input("CCH Client Code (3–10 characters):", max_chars=10)
-    raw_date = st.text_input("Year End Date (DDMMYYYY)", max_chars=8, help="e.g. 31122024")
-    ye_date = f"YE{raw_date[4:] + raw_date[2:4] + raw_date[0:2]}" if raw_date and raw_date.isdigit() and len(raw_date) == 8 else ""
+    st.markdown("### Client Details (Mandatory)")
+
+    st.markdown("<div style='height: 6px;'></div>", unsafe_allow_html=True)
+    inline_label_with_help("Client Name:", "Maximum 100 characters")
+    st.markdown("<div style='height: 6px;'></div>", unsafe_allow_html=True)
+    client_name = st.text_input(
+        label="Client Name", 
+        key="client_name_input", 
+        max_chars=100, 
+        label_visibility="collapsed"
+    )
+
+    inline_label_with_help("CCH Client Code:", "3–10 characters (e.g. 123XYZ)")
+    st.markdown("<div style='height: 6px;'></div>", unsafe_allow_html=True)
+    cch_code = st.text_input(
+        label="CCH Client Code", 
+        key="cch_code_input", 
+        max_chars=10, 
+        label_visibility="collapsed"
+    )
+
+    inline_label_with_help("Year End Date (DDMMYYYY):", "e.g. 31122024")
+    st.markdown("<div style='height: 6px;'></div>", unsafe_allow_html=True)
+    raw_date = st.text_input(
+        label="Year End Date", 
+        key="raw_date_input", 
+        max_chars=8, 
+        label_visibility="collapsed"
+    )
+
+    ye_date = (
+        f"YE{raw_date[4:] + raw_date[2:4] + raw_date[0:2]}"
+        if raw_date and raw_date.isdigit() and len(raw_date) == 8
+        else ""
+    )
+
     return client_name, cch_code, raw_date, ye_date
 
 def render_file_inputs_get_bank_file_upload():

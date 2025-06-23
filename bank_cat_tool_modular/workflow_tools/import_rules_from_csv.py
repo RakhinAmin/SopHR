@@ -14,5 +14,5 @@ def import_csv_to_db(csv_path: str, db_name: str):
 
 # Usage
 if __name__ == "__main__":
-    import_csv_to_db("rules_accounting.csv", "rules_accounting")
-    #import_csv_to_db("rules_tax.csv", "rules_tax")
+    #import_csv_to_db("rules_accounting.csv", "rules_accounting")
+    import_csv_to_db(r"C:\Users\Sopher.Intern\Documents\SopHR\bank_cat_tool_modular\rules_tax.csv", "rules_tax")

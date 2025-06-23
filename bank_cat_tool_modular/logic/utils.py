@@ -56,3 +56,52 @@ def save_credentials(creds):
     """
     with open("credentials.json", "w") as f:
         json.dump(creds, f)
+
+import streamlit as st
+
+import base64
+
+def load_icon_base64(path: str) -> str:
+    """Load a local PNG icon and convert it to a base64 data URI."""
+    with open(path, "rb") as img_file:
+        encoded = base64.b64encode(img_file.read()).decode("utf-8")
+        return f"data:image/png;base64,{encoded}"
+
+def inline_label_with_help(label: str, help_text: str):
+    icon_data_uri = load_icon_base64("help.png")  # adjust if needed
+
+    st.markdown(f"""
+    <div style="display: flex; align-items: center; gap: 6px; font-weight: 400; margin-bottom: -2px;">
+        <span>{label}</span>
+        <div title="{help_text}" style="padding: 8px; border-radius: 6px; cursor: help; display: flex; align-items: center; justify-content: center;">
+            <img src="{icon_data_uri}"
+                 width="20" height="20"
+                 style="pointer-events: none;" />
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+def inline_text_input_with_help(label: str, help_text: str, key: str, max_chars=None):
+    st.markdown(f"""
+        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: -8px;">
+            <span style="font-weight: 400;">{label}</span>
+            <span style="cursor: help;" title="{help_text}">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"
+                    fill="none" stroke="#6c757d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12" y2="8"/>
+                </svg>
+            </span>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Use a non-empty hidden label to suppress Streamlit warnings
+    return st.text_input(
+        label="hidden_label_for_accessibility",
+        label_visibility="collapsed",
+        key=key,
+        max_chars=max_chars
+    )
+    
