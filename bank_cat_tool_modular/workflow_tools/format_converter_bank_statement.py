@@ -3,7 +3,7 @@ import pandas as pd
 # === CONFIGURATION ===
 file_path = r"C:\Users\Sopher.Intern\Downloads\cleanup.xlsx"
 sheet = "Sheet1"
-category_start_index = 11  # Adjust as needed
+category_start_index = 7  # Adjust as needed
 output_path = r"C:\Users\Sopher.Intern\Downloads\description_category_output.xlsx"
 
 # === DEDUPLICATE FUNCTION ===
