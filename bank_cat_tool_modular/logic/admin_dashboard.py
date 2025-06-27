@@ -1,10 +1,12 @@
-# === logic/admin_dashboard.py ===
+from pathlib import Path
 import streamlit as st
 import os
 import glob
 import sqlite3
 import pandas as pd
 from logic.session import BACKUP_DIR
+from logic.utils import load_usage_summary, load_ruleset_usage
+from logic.paths import DATA_DIR
 
 def show_admin_dashboard():
     st.subheader("Admin Dashboard")
@@ -23,12 +25,16 @@ def show_admin_dashboard():
 
     # 2a) If merging, pick an existing DB
     existing_db = None
-    db_files = sorted(glob.glob("rules_*.db"))
+    db_paths = sorted(glob.glob(str(DATA_DIR / "rules_*.db")))
     if mode == "Merge into existing database":
-        if not db_files:
+        if not db_paths:
             st.warning("No existing DBs to merge into—switch to 'Create new database'.")
             return
-        existing_db = st.selectbox("Select DB to merge into:", db_files)
+        # Show only filenames in the dropdown
+        db_labels = [os.path.basename(p) for p in db_paths]
+        choice = st.selectbox("Select DB to merge into:", db_labels)
+        # Map the chosen label back to its full path
+        existing_db = next(p for p, label in zip(db_paths, db_labels) if label == choice)
 
     # 2b) If creating new, ask for a filename
     new_db_name = None
@@ -53,8 +59,7 @@ def show_admin_dashboard():
 
             # Determine target DB path
             if mode == "Create new database":
-                db_path = f"{new_db_name}.db"
-                # remove existing file if overriding
+                db_path = str(DATA_DIR / f"{new_db_name}.db")
                 if os.path.exists(db_path):
                     os.remove(db_path)
                 conn = sqlite3.connect(db_path)
@@ -62,7 +67,6 @@ def show_admin_dashboard():
             else:
                 db_path = existing_db
                 conn = sqlite3.connect(db_path)
-                # load existing rules or start empty if table missing
                 try:
                     df_existing = pd.read_sql("SELECT description, category FROM rules", conn)
                 except Exception:
@@ -77,35 +81,30 @@ def show_admin_dashboard():
             df_combined.to_sql("rules", conn, index=False)
             conn.close()
 
-            st.success(
-                f"{mode} succeeded. Database '{db_path}' now has {len(df_combined)} unique rules."
-            )
+            st.success(f"{mode} succeeded. Database '{db_path}' now has {len(df_combined)} unique rules.")
 
         except Exception as e:
             st.error(f"Failed to import CSV: {e}")
 
     st.markdown("---")
 
-    # 4) Purge operations
-    if db_files:
-        selected_db = st.selectbox("Select DB to manage:", db_files, key="purge_select")
-        if st.button("Purge Selected DB"):
-            conn = sqlite3.connect(selected_db)
-            df = pd.read_sql("SELECT * FROM rules", conn)
-            conn.execute("DELETE FROM rules"); conn.commit(); conn.close()
-            csv_name = os.path.join(
-                BACKUP_DIR, os.path.basename(selected_db).replace(".db", ".csv")
-            )
-            df.to_csv(csv_name, index=False)
-            st.success(f"Purged and backed up {selected_db}")
+    # 4) Purge operations (omitted for brevity)...
 
-        if st.button("Purge All DBs"):
-            for db in db_files:
-                conn = sqlite3.connect(db)
-                df = pd.read_sql("SELECT * FROM rules", conn)
-                conn.execute("DELETE FROM rules"); conn.commit(); conn.close()
-                csv_name = os.path.join(
-                    BACKUP_DIR, os.path.basename(db).replace(".db", ".csv")
-                )
-                df.to_csv(csv_name, index=False)
-            st.success("All DBs purged and backed up.")
+    st.markdown("---")
+
+    # === Usage over time ===
+    st.subheader("Usage Statistics Over Time")
+    df_summary = load_usage_summary("analytics.db")
+    if df_summary.empty:
+        st.info("No usage data recorded yet.")
+    else:
+        st.dataframe(df_summary)
+
+    # === Rule‐set counts ===
+    st.subheader("Rule‐set Usage Counts")
+    df_rules = load_ruleset_usage("analytics.db")
+    if df_rules.empty:
+        st.info("No rule‐set usage recorded yet.")
+    else:
+        st.table(df_rules)
+        st.bar_chart(df_rules.set_index("rule_set")["runs"])

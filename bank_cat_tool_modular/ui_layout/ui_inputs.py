@@ -3,6 +3,7 @@ import glob
 import os
 import pandas as pd
 from logic.utils import inline_text_input_with_help, to_excel, read_uploaded_file, inline_label_with_help
+from logic.paths import DATA_DIR
 
 def render_sidebar():
     return st.sidebar.selectbox("Navigate", ["User Dashboard", "Admin Dashboard"])
@@ -57,7 +58,7 @@ def render_rule_selection():
 
     with col1:
         st.markdown("#### Built-in Rule Sets")
-        available_rule_dbs = sorted(glob.glob("rules_*.db"))
+        available_rule_dbs = sorted(glob.glob(str(DATA_DIR / "rules_*.db")))
         db_choices = {
             os.path.basename(f).replace("rules_", "").replace(".db", "").title(): f
             for f in available_rule_dbs
@@ -98,7 +99,8 @@ def render_rule_selection():
         </div>
         """, unsafe_allow_html=True)
 
-        with open("rules_template.csv", "r") as template_file:
+        template_path = DATA_DIR / "rules_template.csv"
+        with open(template_path, "r") as template_file:
             st.download_button(
                 label="Download Rules Template CSV",
                 data=template_file.read(),

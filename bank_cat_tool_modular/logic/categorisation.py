@@ -5,10 +5,32 @@ from fuzzy_logic_improved import TransactionCategorizer, Config  # Custom logic 
 from preprocess_bank_data import extract_values_column  # Preprocessing utility for extracting transaction descriptions
 from .utils import read_uploaded_file  # Helper to read uploaded Excel or CSV files
 from collections import namedtuple
+import datetime
+from logic.paths import DATA_DIR
+
+def ensure_analytics_table(db_path: str = "analytics.db"):
+    with sqlite3.connect(db_path) as conn:
+        conn.execute("""
+        CREATE TABLE IF NOT EXISTS usage_stats (
+            id                          INTEGER PRIMARY KEY AUTOINCREMENT,
+            session_id                  TEXT,
+            run_at                      TEXT,
+            rule_set                    TEXT,
+            custom_rules                INTEGER,
+            use_tax_rules               INTEGER,
+            total_transactions          INTEGER,
+            categorised_transactions    INTEGER,
+            uncategorised_transactions  INTEGER,
+            auto_approved_count         INTEGER,
+            avg_confidence              REAL
+        )
+        """)
 
 CategorisationResult = namedtuple("CategorisationResult", ["success", "output_df", "custom_filename", "original_df", "report"])
 
-def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch_code, raw_date, user_temp_dir, session_id, built_in_db_path=None):
+def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch_code, raw_date, user_temp_dir, session_id, built_in_db_path=None, use_tax_rules: bool = False, refund_edge_cases_path: str = "refund_edge_cases.csv"):
+    ensure_analytics_table("analytics.db")
+    
     # Load the uploaded bank file and extract the relevant sheet
     original_df = read_uploaded_file(bank_file, sheet_name=sheet_to_process)
 
@@ -33,9 +55,12 @@ def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch
 
     # Create configuration for the categorisation process
     config = Config(
-        bank_statement_file=tmp_bank_path,
-        rules_file=rules_path,
-        output_file=output_path
+        bank_statement_file      = tmp_bank_path,
+        rules_file               = rules_path,
+        output_file              = output_path,
+        use_tax_rules          = use_tax_rules,
+        refund_edge_cases_file = refund_edge_cases_path or str(DATA_DIR / "refund_edge_cases.csv"),
+        directional_file       = str(DATA_DIR / "directional_merchants.csv"),
     )
 
     # Instantiate the categoriser with the config and run the categorisation process
@@ -52,5 +77,38 @@ def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch
     output_df = pd.read_csv(output_path)
 
     report = categorizer.generate_report(output_df)
+
+# Inside your run_categorisation function, after you've computed `report`:
+    # Determine which ruleset was used
+    rule_set = (
+        "custom"
+        if rules_path
+        else ("tax" if use_tax_rules else "accounting")
+    )
+
+    # Ensure analytics table exists
+    ensure_analytics_table("analytics.db")
+
+    # Insert the usage stats with proper Python-native types
+    with sqlite3.connect("analytics.db") as conn:
+        conn.execute("""
+            INSERT INTO usage_stats (
+                session_id, run_at, rule_set, custom_rules,
+                use_tax_rules, total_transactions,
+                categorised_transactions, uncategorised_transactions,
+                auto_approved_count, avg_confidence
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            session_id,
+            datetime.datetime.utcnow().isoformat(),
+            rule_set,
+            int(bool(rules_path)),                 # 0 or 1
+            int(use_tax_rules),                    # 0 or 1
+            int(report["total_transactions"]),     # cast to int
+            int(report["categorised"]),            # cast to int
+            int(report["uncategorised"]),          # cast to int
+            int(report["auto_approved"]),          # cast to int
+            float(report["avg_confidence"])        # cast to float
+        ))
 
     return CategorisationResult(success, output_df, custom_filename, original_df, report)

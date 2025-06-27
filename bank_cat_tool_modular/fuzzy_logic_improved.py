@@ -1,4 +1,5 @@
 # === IMPORTS ===
+from logging import config
 import pandas as pd  # Data manipulation library
 from rapidfuzz import process, fuzz  # Fast fuzzy string matching
 import re  # Regular expressions for text cleaning
@@ -6,6 +7,7 @@ import sys  # Used for exiting with success/failure status
 import logging  # Logging infrastructure
 from functools import lru_cache  # For memoization of match function
 from dataclasses import dataclass  # For clean configuration structure
+from logic.paths import DATA_DIR
 from typing import Tuple, List, Dict, Optional  # Type annotations
 import time  # Measuring execution time
 from pathlib import Path  # Path utilities for file existence checking
@@ -23,6 +25,9 @@ class Config:
     auto_approve_threshold: int = 95  # Score to auto-approve a match
     chunk_size: int = 1000  # Unused, potentially for batch processing
     cache_size: int = 1000  # Unused, default cache size (for lru_cache)
+    directional_file: str = str(DATA_DIR / "directional_merchants.csv")
+    use_tax_rules: bool = False        # whether to apply “Refund:” logic
+    refund_edge_cases_file: str = str(DATA_DIR / "refund_edge_cases.csv")
 
 # === LOGGING SETUP ===
 def setup_logging():
@@ -79,6 +84,24 @@ class TransactionCategorizer:
         self.rule_map: Dict[str, str] = {}
         self.rule_keys: List[str] = []
         self._match_cache = {}
+
+        try:
+            dm = pd.read_csv(self.config.directional_file)
+            dm = dm.dropna(subset=["description_clean"])
+            self.directional = set(dm["description_clean"].astype(str))
+            self.logger.info(f"Loaded {len(self.directional)} directional merchants")
+        except Exception as e:
+            self.directional = set()
+            self.logger.warning(f"Could not load directional merchants: {e}")
+
+        try:
+            ec = pd.read_csv(self.config.refund_edge_cases_file)
+            ec = ec.dropna(subset=["description_clean"])
+            self.refund_edge_cases = set(ec["description_clean"].astype(str))
+            self.logger.info(f"Loaded {len(self.refund_edge_cases)} refund edge-cases")
+        except Exception as e:
+            self.refund_edge_cases = set()
+            self.logger.warning(f"Could not load refund edge-cases: {e}")
 
     def load_rules(self, rules_file: str = None, db_conn=None, table_name: str = "rules") -> bool:
         try:
@@ -188,30 +211,82 @@ class TransactionCategorizer:
     def should_auto_approve(self, category: str, score: float) -> bool:
         return (score >= self.config.auto_approve_threshold and category != "Uncategorised")
 
+    POSITIVE_COLS = {"credit", "paid in", "money in", "inflow"}
+    NEGATIVE_COLS = {"debit",  "paid out","money out","outflow"}
+
+    def _get_signed_value(self, row: pd.Series) -> float:
+        """
+        Look through all columns in `row`, match case-insensitively
+        against POSITIVE_COLS / NEGATIVE_COLS, and return a signed float.
+        """
+        for col, val in row.items():
+            if pd.isnull(val):
+                continue
+            key = col.lower().strip()
+            if key in self.POSITIVE_COLS:
+                return abs(float(val))
+            if key in self.NEGATIVE_COLS:
+                return -abs(float(val))
+
+        # fallback: any column named 'amount' (case-insensitive)
+        for col, val in row.items():
+            if pd.isnull(val):
+                continue
+            if col.lower().strip() == "amount":
+                return float(val)
+
+        return 0.0
+
     def categorize_transactions(self, bank_df: pd.DataFrame) -> pd.DataFrame:
         self.logger.info("Starting transaction categorization...")
         start_time = time.time()
 
-        categories = []
-        match_scores = []
-        matched_rules = []
-        auto_approved = []
+        categories      = []
+        match_scores    = []
+        matched_rules   = []
+        auto_approved   = []
         suggestion_cols = [[] for _ in range(self.config.num_suggestions)]
+        values_list     = []
 
-        total_transactions = len(bank_df)
+        total = len(bank_df)
         processed = 0
 
         try:
-            for idx, row in bank_df.iterrows():
-                desc = row["Description"]
-                category, score, matched_rule = self.get_best_match(desc)
+            for _, row in bank_df.iterrows():
+                # 1) Read and clean description
+                desc       = row["Description"]
+                desc_clean = enhanced_clean_description(desc)
 
+                # 2) Compute signed value
+                value = self._get_signed_value(row)
+
+                # 3) Fuzzy-match
+                base_cat, score, matched_rule = self.get_best_match(desc)
+
+                # 4) Prefix logic – only in tax‐mode with a built-in directional merchant
+                if self.config.use_tax_rules and matched_rule in self.directional:
+                    if value < 0:
+                        # always prefix debits as Expense in tax mode
+                        category = f"Expense: {base_cat}"
+                    elif matched_rule not in self.refund_edge_cases:
+                        # in tax mode, credits → Refund (unless edge‐case)
+                        category = f"Refund: {base_cat}"
+                    else:
+                        # credits but this is an edge‐case merchant
+                        category = f"Income: {base_cat}"
+                else:
+                    # accounting mode or custom rules or non‐directional merchants: no prefix
+                    category = base_cat
+
+                # 5) Collect results
                 categories.append(category)
                 match_scores.append(round(score, 2))
                 matched_rules.append(matched_rule)
-                auto_approved.append(self.should_auto_approve(category, score))
+                auto_approved.append(self.should_auto_approve(base_cat, score))
+                values_list.append(value)
 
-                if category == "Uncategorised":
+                # 6) Suggestions (unchanged)
+                if base_cat == "Uncategorised":
                     suggestions, confidences = self.get_top_suggestions(desc)
                     for i, (sugg, conf) in enumerate(zip(suggestions, confidences)):
                         suggestion_cols[i].append(f"{sugg} ({conf}%)")
@@ -221,20 +296,21 @@ class TransactionCategorizer:
 
                 processed += 1
                 if processed % 100 == 0:
-                    self.logger.info(f"Processed {processed}/{total_transactions} transactions")
+                    self.logger.info(f"Processed {processed}/{total} transactions")
 
-            bank_df = bank_df.copy()
-            bank_df["Category"] = categories
-            bank_df["Match_Score"] = match_scores
-            bank_df["Matched_Rule"] = matched_rules
-            bank_df["Auto_Approved"] = auto_approved
-
+            # 7) Assemble output
+            out = bank_df.copy()
+            out["Category"]      = categories
+            out["Match_Score"]   = match_scores
+            out["Matched_Rule"]  = matched_rules
+            out["Values"]        = values_list
+            out["Auto_Approved"] = auto_approved
             for i in range(self.config.num_suggestions):
-                bank_df[f"Suggestion_{i+1}"] = suggestion_cols[i]
+                out[f"Suggestion_{i+1}"] = suggestion_cols[i]
 
-            elapsed_time = time.time() - start_time
-            self.logger.info(f"Categorization completed in {elapsed_time:.2f} seconds")
-            return bank_df
+            elapsed = time.time() - start_time
+            self.logger.info(f"Categorization completed in {elapsed:.2f} seconds")
+            return out
 
         except Exception as e:
             self.logger.error(f"Error during categorization: {e}")

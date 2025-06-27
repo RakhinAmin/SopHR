@@ -10,7 +10,7 @@ from ui_layout.ui_inputs import (
 )
 from ui_layout.styles import apply_custom_styles
 import tempfile
-
+from logic.paths import DATA_DIR
 
 def route_page():
     apply_custom_styles()
@@ -41,6 +41,9 @@ def route_page():
     st.markdown("<h1 style='margin-top:4px;'>Bank Analysis Tool</h1>", unsafe_allow_html=True)
 
     selected_rule_label, selected_rule_db, uploaded_rules_file = render_rule_selection()
+    # Turn on tax/refund logic when “Built-in: Tax” is chosen
+    # If the DB file name contains “tax”
+    use_tax = "tax" in selected_rule_db.lower()
     client_name, cch_code, raw_date, ye_date = render_file_inputs()
     bank_file, sheet_to_process = render_file_inputs_get_bank_file_upload()
 
@@ -69,6 +72,9 @@ def route_page():
             st.error("You must either upload a rules CSV file or select a built-in rule database.")
             st.stop()
 
+                # … after validating inputs …
+
+        # Handle optional custom rules file
         tmp_uploaded_rules_path = None
         if uploaded_rules_file:
             uploaded_rules_file.seek(0)
@@ -76,6 +82,7 @@ def route_page():
                 tmp_file.write(uploaded_rules_file.read())
                 tmp_uploaded_rules_path = tmp_file.name
 
+        # === PROCESS CATEGORISATION FOR BOTH BUILT-IN AND CUSTOM ===
         with st.spinner("Processing transactions..."):
             result = run_categorisation(
                 client_name=client_name,
@@ -83,15 +90,20 @@ def route_page():
                 raw_date=raw_date,
                 bank_file=bank_file,
                 sheet_to_process=sheet_to_process,
-                rules_path=tmp_uploaded_rules_path,
-                built_in_db_path=selected_rule_db,
+                rules_path=tmp_uploaded_rules_path,      # may be None
+                built_in_db_path=selected_rule_db, 
+                use_tax_rules=use_tax,
+                refund_edge_cases_path=str(DATA_DIR / "refund_edge_cases.csv"),
                 session_id=SESSION_ID,
-                user_temp_dir=USER_TEMP_DIR
+                user_temp_dir=USER_TEMP_DIR,
             )
 
+        # Now result is always defined
         if not result.success:
             st.error("Categorisation failed. Make sure your bank file includes a 'Description' column.")
             st.stop()
+
+        # … display results …
 
         st.success("Categorisation completed successfully!")
         st.dataframe(result.output_df)

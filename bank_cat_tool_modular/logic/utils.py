@@ -3,6 +3,7 @@ from io import BytesIO  # For handling in-memory byte streams
 import hashlib  # For password hashing
 import json  # For reading and writing JSON files
 import os  # For file system operations
+import sqlite3
 
 # --- Convert DataFrame to Excel bytes ---
 def to_excel(df):
@@ -104,4 +105,39 @@ def inline_text_input_with_help(label: str, help_text: str, key: str, max_chars=
         key=key,
         max_chars=max_chars
     )
-    
+
+def load_usage_summary(db_path: str = "analytics.db") -> pd.DataFrame:
+    df = pd.read_sql_query("SELECT * FROM usage_stats", sqlite3.connect(db_path))
+    if df.empty:
+        return df
+
+    # Ensure numeric
+    for col in ["total_transactions", "categorised_transactions", "uncategorised_transactions", "auto_approved_count", "avg_confidence"]:
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+    df["run_date"] = pd.to_datetime(df["run_at"]).dt.date
+    return (
+        df.groupby("run_date")
+          .agg(
+            runs=("id", "count"),
+            total_transactions=("total_transactions", "sum"),
+            categorised_transactions=("categorised_transactions", "sum"),
+            auto_approved_count=("auto_approved_count", "sum"),
+            avg_confidence=("avg_confidence", "mean")
+          )
+          .reset_index()
+    )
+
+
+def load_ruleset_usage(db_path: str = "analytics.db") -> pd.DataFrame:
+    """
+    Returns a DataFrame with columns:
+      rule_set, runs
+    """
+    with sqlite3.connect(db_path) as conn:
+        df = pd.read_sql_query(
+            "SELECT rule_set, COUNT(*) AS runs FROM usage_stats GROUP BY rule_set",
+            conn
+        )
+    return df
+
