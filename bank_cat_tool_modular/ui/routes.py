@@ -44,6 +44,15 @@ def route_page():
     # Turn on tax/refund logic when “Built-in: Tax” is chosen
     # If the DB file name contains “tax”
     use_tax = "tax" in selected_rule_db.lower()
+    # Ask for the employee’s name
+    employee_name = st.text_input(
+        "Your name (for usage tracking)",
+        key="employee_name_input"
+    )
+    if not employee_name.strip():
+        st.warning("Please enter your name to continue.")
+        st.stop()
+
     client_name, cch_code, raw_date, ye_date = render_file_inputs()
     bank_file, sheet_to_process = render_file_inputs_get_bank_file_upload()
 
@@ -85,6 +94,7 @@ def route_page():
         # === PROCESS CATEGORISATION FOR BOTH BUILT-IN AND CUSTOM ===
         with st.spinner("Processing transactions..."):
             result = run_categorisation(
+                employee_name=employee_name,
                 client_name=client_name,
                 cch_code=cch_code,
                 raw_date=raw_date,

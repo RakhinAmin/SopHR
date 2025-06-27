@@ -14,6 +14,7 @@ def ensure_analytics_table(db_path: str = "analytics.db"):
         CREATE TABLE IF NOT EXISTS usage_stats (
             id                          INTEGER PRIMARY KEY AUTOINCREMENT,
             session_id                  TEXT,
+            employee_name               TEXT,
             run_at                      TEXT,
             rule_set                    TEXT,
             custom_rules                INTEGER,
@@ -28,7 +29,7 @@ def ensure_analytics_table(db_path: str = "analytics.db"):
 
 CategorisationResult = namedtuple("CategorisationResult", ["success", "output_df", "custom_filename", "original_df", "report"])
 
-def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch_code, raw_date, user_temp_dir, session_id, built_in_db_path=None, use_tax_rules: bool = False, refund_edge_cases_path: str = "refund_edge_cases.csv"):
+def run_categorisation(employee_name: str, bank_file, sheet_to_process, rules_path, client_name, cch_code, raw_date, user_temp_dir, session_id, built_in_db_path=None, use_tax_rules: bool = False, refund_edge_cases_path: str = "refund_edge_cases.csv"):
     ensure_analytics_table("analytics.db")
     
     # Load the uploaded bank file and extract the relevant sheet
@@ -93,22 +94,23 @@ def run_categorisation(bank_file, sheet_to_process, rules_path, client_name, cch
     with sqlite3.connect("analytics.db") as conn:
         conn.execute("""
             INSERT INTO usage_stats (
-                session_id, run_at, rule_set, custom_rules,
+                session_id, employee_name, run_at, rule_set, custom_rules,
                 use_tax_rules, total_transactions,
                 categorised_transactions, uncategorised_transactions,
                 auto_approved_count, avg_confidence
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             session_id,
+            employee_name,                       # ← new
             datetime.datetime.utcnow().isoformat(),
             rule_set,
-            int(bool(rules_path)),                 # 0 or 1
-            int(use_tax_rules),                    # 0 or 1
-            int(report["total_transactions"]),     # cast to int
-            int(report["categorised"]),            # cast to int
-            int(report["uncategorised"]),          # cast to int
-            int(report["auto_approved"]),          # cast to int
-            float(report["avg_confidence"])        # cast to float
+            int(bool(rules_path)),
+            int(use_tax_rules),
+            int(report["total_transactions"]),
+            int(report["categorised"]),
+            int(report["uncategorised"]),
+            int(report["auto_approved"]),
+            float(report["avg_confidence"])
         ))
 
     return CategorisationResult(success, output_df, custom_filename, original_df, report)

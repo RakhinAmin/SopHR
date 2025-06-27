@@ -1546,3 +1546,60 @@
 2025-06-27 14:48:09,417 - INFO - High Confidence Matches: 6
 2025-06-27 14:48:09,433 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_3dc054d8\1234_1234_YE12345678_3dc054d8.csv
 2025-06-27 14:48:09,434 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-27 15:05:06,748 - INFO - Loaded 4 directional merchants
+2025-06-27 15:05:06,766 - INFO - Loaded 1 refund edge-cases
+2025-06-27 15:05:06,770 - INFO - Starting bank statement categorization process
+2025-06-27 15:05:06,770 - INFO - Loading rules from database...
+2025-06-27 15:05:06,791 - INFO - Loaded 1899 categorisation rules.
+2025-06-27 15:05:06,791 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_49e4970d\tmpvza_0qdl.csv
+2025-06-27 15:05:06,815 - INFO - Successfully loaded 10 transactions
+2025-06-27 15:05:06,815 - INFO - Starting transaction categorization...
+2025-06-27 15:05:06,906 - INFO - Categorization completed in 0.09 seconds
+2025-06-27 15:05:06,910 - INFO - === CATEGORIZATION REPORT ===
+2025-06-27 15:05:06,911 - INFO - Total Transactions: 10
+2025-06-27 15:05:06,911 - INFO - Categorised: 6
+2025-06-27 15:05:06,911 - INFO - Uncategorised: 4
+2025-06-27 15:05:06,912 - INFO - Categorisation Rate: 60.0
+2025-06-27 15:05:06,912 - INFO - Auto Approved: 6
+2025-06-27 15:05:06,912 - INFO - Avg Confidence: 100.0
+2025-06-27 15:05:06,913 - INFO - High Confidence Matches: 6
+2025-06-27 15:05:06,915 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_49e4970d\1234_1234_YE31122024_49e4970d.csv
+2025-06-27 15:05:06,915 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-27 16:31:22,097 - INFO - Loaded 4 directional merchants
+2025-06-27 16:31:22,132 - INFO - Loaded 1 refund edge-cases
+2025-06-27 16:31:22,140 - INFO - Starting bank statement categorization process
+2025-06-27 16:31:22,140 - INFO - Loading rules from database...
+2025-06-27 16:31:22,164 - INFO - Loaded 1899 categorisation rules.
+2025-06-27 16:31:22,164 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_611a5182\tmpmnu1xk4t.csv
+2025-06-27 16:31:22,185 - INFO - Successfully loaded 10 transactions
+2025-06-27 16:31:22,185 - INFO - Starting transaction categorization...
+2025-06-27 16:31:22,267 - INFO - Categorization completed in 0.08 seconds
+2025-06-27 16:31:22,275 - INFO - === CATEGORIZATION REPORT ===
+2025-06-27 16:31:22,275 - INFO - Total Transactions: 10
+2025-06-27 16:31:22,275 - INFO - Categorised: 6
+2025-06-27 16:31:22,275 - INFO - Uncategorised: 4
+2025-06-27 16:31:22,275 - INFO - Categorisation Rate: 60.0
+2025-06-27 16:31:22,276 - INFO - Auto Approved: 6
+2025-06-27 16:31:22,276 - INFO - Avg Confidence: 100.0
+2025-06-27 16:31:22,276 - INFO - High Confidence Matches: 6
+2025-06-27 16:31:22,280 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_611a5182\1234_1234_YE12345678_611a5182.csv
+2025-06-27 16:31:22,280 - INFO - [SUCCESS] Categorization process completed successfully
+2025-06-27 16:32:38,912 - INFO - Loaded 4 directional merchants
+2025-06-27 16:32:38,912 - INFO - Loaded 1 refund edge-cases
+2025-06-27 16:32:38,912 - INFO - Starting bank statement categorization process
+2025-06-27 16:32:38,912 - INFO - Loading rules from database...
+2025-06-27 16:32:38,929 - INFO - Loaded 1899 categorisation rules.
+2025-06-27 16:32:38,929 - INFO - Loading bank statement from C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_c6dead41\tmp1v9kjuym.csv
+2025-06-27 16:32:38,941 - INFO - Successfully loaded 10 transactions
+2025-06-27 16:32:38,941 - INFO - Starting transaction categorization...
+2025-06-27 16:32:39,012 - INFO - Categorization completed in 0.07 seconds
+2025-06-27 16:32:39,012 - INFO - === CATEGORIZATION REPORT ===
+2025-06-27 16:32:39,012 - INFO - Total Transactions: 10
+2025-06-27 16:32:39,012 - INFO - Categorised: 6
+2025-06-27 16:32:39,012 - INFO - Uncategorised: 4
+2025-06-27 16:32:39,012 - INFO - Categorisation Rate: 60.0
+2025-06-27 16:32:39,012 - INFO - Auto Approved: 6
+2025-06-27 16:32:39,012 - INFO - Avg Confidence: 100.0
+2025-06-27 16:32:39,012 - INFO - High Confidence Matches: 6
+2025-06-27 16:32:39,012 - INFO - [SUCCESS] Results saved to C:\Users\SOPHER~1.INT\AppData\Local\Temp\session_c6dead41\1234_1234_YE12345678_c6dead41.csv
+2025-06-27 16:32:39,012 - INFO - [SUCCESS] Categorization process completed successfully
