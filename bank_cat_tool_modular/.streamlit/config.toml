@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#223A5E"              # Sopher deep navy blue (used for buttons and links)
+backgroundColor = "#DDE6F0"           # Light blue background
+secondaryBackgroundColor = "#C2D1E4"  # Slightly darker blue panels
+textColor = "#6b7a8e"                 # Dark navy for strong readability
+font = "serif"
