@@ -272,32 +272,40 @@ class TransactionCategorizer:
 
     def _get_signed_value(self, row: pd.Series) -> float:
         """
-        Look through all columns in `row`, match case-insensitively
-        against POSITIVE_COLS / NEGATIVE_COLS, and return a signed float.
+        Sum up all 'positive' columns minus all 'negative' columns, regardless of order.
+        Fallback to a single 'amount' column only if neither found.
         """
-        # Iterate through each column and its value in the row
+        credit_total = 0.0
+        debit_total  = 0.0
+
+        # 1) accumulate across every column tagged as positive
         for col, val in row.items():
-            # Skip any missing values
             if pd.isnull(val):
                 continue
-            # Normalise the column name for case‐insensitive comparison
             key = col.lower().strip()
-            # If the column indicates a positive amount, return its absolute value
             if key in self.POSITIVE_COLS:
-                return abs(float(val))
-            # If the column indicates a negative amount, return the negated absolute value
-            if key in self.NEGATIVE_COLS:
-                return -abs(float(val))
+                credit_total += abs(float(val))
 
-        # Fallback: if no explicit credit/debit columns found, look for an 'amount' column
+        # 2) accumulate across every column tagged as negative
+        for col, val in row.items():
+            if pd.isnull(val):
+                continue
+            key = col.lower().strip()
+            if key in self.NEGATIVE_COLS:
+                debit_total += abs(float(val))
+
+        # 3) if we saw *any* credit or debit, return their difference
+        if credit_total != 0.0 or debit_total != 0.0:
+            return credit_total - debit_total
+
+        # 4) fallback: single 'amount' column (could already be signed)
         for col, val in row.items():
             if pd.isnull(val):
                 continue
             if col.lower().strip() == "amount":
-                # Return the raw amount (could be positive or negative already)
                 return float(val)
 
-        # If no relevant columns found, default to zero
+        # 5) truly nothing found → zero
         return 0.0
 
     def categorize_transactions(self, bank_df: pd.DataFrame) -> pd.DataFrame:
