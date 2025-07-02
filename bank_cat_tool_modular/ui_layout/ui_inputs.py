@@ -228,14 +228,26 @@ def render_download_section(editable_df, custom_filename, bank_file, sheet_to_pr
     st.markdown("### Download Options")
     include_diagnostics = st.checkbox("Include diagnostic columns in download", value=False)
 
-    bank_file.seek(0)
-    original_preserved_df = read_uploaded_file(bank_file, sheet_name=sheet_to_process)
-    clean_export = original_preserved_df.copy()
+    clean_export = editable_df.copy()
+    diagnostic_cols = [
+        "Match_Score", "Matched_Rule", "Auto_Approved", "Description_Clean"
+    ] + [col for col in clean_export.columns if col.startswith("Suggestion_")]
 
-    if "Category" in editable_df.columns:
-        clean_export["Category"] = editable_df["Category"]
-    if "Values" in editable_df.columns:
-        clean_export["Values"] = editable_df["Values"]
+    if not include_diagnostics:
+        clean_export = clean_export.drop(columns=diagnostic_cols, errors="ignore")
+
+    st.download_button(
+        label="Download Clean Categorised CSV (Original + Category and Values only)",
+        data=clean_export.to_csv(index=False).encode("utf-8"),
+        file_name=custom_filename.replace(".csv", "_clean.csv"),
+        mime="text/csv"
+    )
+    st.download_button(
+        label="Download Clean Categorised Excel (Original + Category and Values only)",
+        data=to_excel(clean_export),
+        file_name=custom_filename.replace(".csv", "_clean.xlsx"),
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
 
     if include_diagnostics:
         st.download_button(
@@ -248,18 +260,5 @@ def render_download_section(editable_df, custom_filename, bank_file, sheet_to_pr
             label="Download Full Categorised Excel (with diagnostics)",
             data=to_excel(editable_df),
             file_name=custom_filename.replace(".csv", ".xlsx"),
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
-    else:
-        st.download_button(
-            label="Download Clean Categorised CSV (Original + Category and Values only)",
-            data=clean_export.to_csv(index=False).encode("utf-8"),
-            file_name=custom_filename.replace(".csv", "_clean.csv"),
-            mime="text/csv"
-        )
-        st.download_button(
-            label="Download Clean Categorised Excel (Original + Category and Values only)",
-            data=to_excel(clean_export),
-            file_name=custom_filename.replace(".csv", "_clean.xlsx"),
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
