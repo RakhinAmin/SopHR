@@ -20,7 +20,7 @@ class Config:
     bank_statement_file: str = ""  # Input file path for bank statement
     rules_file: str = ""  # Input file path for rules
     output_file: str = ""  # Output file path
-    match_threshold: int = 90  # Minimum score to consider a match valid
+    match_threshold: int = 80  # Minimum score to consider a match valid
     num_suggestions: int = 3  # Number of suggestions to generate
     auto_approve_threshold: int = 95  # Score to auto-approve a match
     chunk_size: int = 1000  # Unused, potentially for batch processing
